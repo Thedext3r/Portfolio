@@ -27,19 +27,18 @@
       decisionCards[0].classList.add('open');
     }
 
-    // 2. Sub-Nav Scroll Spy & Jump
-    const subnavLinks = document.querySelectorAll('.bw-subnav-link');
-    subnavLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('data-target');
-        const targetEl = document.getElementById(targetId);
-        if (targetEl) {
-          const navOffset = 130;
-          const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - navOffset;
-          window.scrollTo({ top: targetPos, behavior: 'smooth' });
-        }
-      });
+    // 2. Sub-Nav Scroll Spy & Jump (Delegated for top navbar integration)
+    document.addEventListener('click', e => {
+      const link = e.target.closest('.bw-subnav-link');
+      if (!link) return;
+      e.preventDefault();
+      const targetId = link.getAttribute('data-target');
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        const navOffset = 92;
+        const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - navOffset;
+        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+      }
     });
 
     const sections = ['bw-overview', 'bw-problem', 'bw-research', 'bw-personas', 'bw-decisions', 'bw-flow', 'bw-design', 'bw-reflection']
@@ -48,7 +47,7 @@
 
     function updateActiveSubnav() {
       if (document.body.classList.contains('route-borrow')) {
-        const scrollPos = window.pageYOffset + 180;
+        const scrollPos = window.pageYOffset + 140;
         let currentSection = '';
         sections.forEach(sec => {
           if (sec.offsetTop <= scrollPos) {
@@ -56,8 +55,10 @@
           }
         });
 
+        const subnavLinks = document.querySelectorAll('.bw-subnav-link');
         subnavLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('data-target') === currentSection);
+          const isActive = link.getAttribute('data-target') === currentSection;
+          link.classList.toggle('active', isActive);
         });
       }
     }

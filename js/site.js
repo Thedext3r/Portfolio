@@ -45,6 +45,24 @@ const NAV_HTML = `
       </div>
     </div>
 
+    <div class="nav-pill bw-subnav" id="bw-subnav" aria-label="Borrow case study navigation">
+      <div class="bw-subnav-brand">
+        <span class="bw-subnav-badge" aria-hidden="true">B</span>
+        <span class="bw-subnav-title">Borrow · Case Study</span>
+      </div>
+      <div class="bw-subnav-links" id="bw-subnav-links">
+        <button type="button" class="bw-subnav-link active" data-target="bw-overview">Overview</button>
+        <button type="button" class="bw-subnav-link" data-target="bw-problem">Problem</button>
+        <button type="button" class="bw-subnav-link" data-target="bw-research">Research</button>
+        <button type="button" class="bw-subnav-link" data-target="bw-personas">Personas</button>
+        <button type="button" class="bw-subnav-link" data-target="bw-decisions">Decisions</button>
+        <button type="button" class="bw-subnav-link" data-target="bw-flow">Flow</button>
+        <button type="button" class="bw-subnav-link" data-target="bw-design">Design</button>
+        <button type="button" class="bw-subnav-link" data-target="bw-reflection">Reflection</button>
+      </div>
+      <a href="/#work" class="nav-cta bw-subnav-back">← All Projects</a>
+    </div>
+
     <div class="nav-side right">
       <button class="nav-wave" id="nav-wave" type="button" aria-label="Play music" aria-pressed="false">
         <svg class="nav-wave-svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -344,6 +362,11 @@ function initNavScroll() {
     if (navPill) {
       if (y > 50 && y > lastY) navPill.classList.add('compact');
       else if (y < lastY)      navPill.classList.remove('compact');
+    }
+    const bwSubnav = document.getElementById('bw-subnav');
+    if (bwSubnav) {
+      if (y > 50 && y > lastY) bwSubnav.classList.add('compact');
+      else if (y < lastY)      bwSubnav.classList.remove('compact');
     }
     lastY = y;
   });
