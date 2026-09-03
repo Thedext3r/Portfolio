@@ -1053,48 +1053,4 @@ class SiteFooter extends HTMLElement {
 customElements.define('site-nav', SiteNav);
 customElements.define('site-footer', SiteFooter);
 
-/* ════ GLOBAL DOT CURSOR — small inverse-blend dot that trails the pointer.
-   Fine-pointer devices only; leaves touch/coarse devices untouched. ════ */
-(function initDotCursor() {
-  const fine = window.matchMedia('(hover: hover) and (pointer: fine)');
-  if (!fine.matches) return;
 
-  const dot = document.createElement('div');
-  dot.className = 'dot-cursor';
-  dot.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(dot);
-  document.documentElement.classList.add('dot-cursor-on');
-
-  let x = window.innerWidth / 2, y = window.innerHeight / 2;
-  let shown = false, raf = 0;
-
-  const HOT = 'a,button,[role="button"],input,textarea,select,label,summary,[data-cursor="hot"]';
-
-  // paint in a rAF so multiple pointer events in a frame collapse to one write,
-  // but with NO easing — the dot sits exactly on the pointer (no trailing lag).
-  function render() {
-    raf = 0;
-    dot.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
-  }
-  function tick() { if (!raf) raf = requestAnimationFrame(render); }
-
-  window.addEventListener('pointermove', (e) => {
-    if (e.pointerType && e.pointerType !== 'mouse') return;
-    x = e.clientX; y = e.clientY;
-    if (!shown) { shown = true; dot.classList.add('on'); }
-    const overReel = !!(e.target.closest && e.target.closest('.recorder'));
-    // any element can claim the labelled cursor by declaring its own copy
-    const labelled = !overReel && e.target.closest && e.target.closest('[data-cursor-label]');
-    if (overReel) label.textContent = 'Press play, stranger';
-    else if (labelled) label.textContent = labelled.getAttribute('data-cursor-label');
-    dot.classList.toggle('reel', overReel);
-    dot.classList.toggle('labelled', !!labelled);
-    dot.classList.toggle('hot', !overReel && !labelled && !!(e.target.closest && e.target.closest(HOT)));
-    tick();
-  }, { passive: true });
-
-  window.addEventListener('pointerdown', () => dot.classList.add('down'));
-  window.addEventListener('pointerup', () => dot.classList.remove('down'));
-  document.addEventListener('mouseleave', () => { shown = false; dot.classList.remove('on'); });
-  document.addEventListener('mouseenter', () => { shown = true; dot.classList.add('on'); });
-})();
