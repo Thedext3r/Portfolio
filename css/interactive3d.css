@@ -1,0 +1,512 @@
+/* 3D Interactive Features, Labs & Coverflow CSS */
+
+/* ── 3D Card Parallax & Dynamic Glare ── */
+.project-tile,
+.ai-polaroid,
+.t-card,
+.ff-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card-3d-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Hero Audio-Reactive Visualizer Canvas ── */
+.hero-viz-canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 580px;
+  height: 580px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+.recorder {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Playground 3D Switcher Tabs ── */
+.pg-tab-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 24px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: fit-content;
+  max-width: 90vw;
+  flex-wrap: wrap;
+  z-index: 10;
+  position: relative;
+}
+
+body.night .pg-tab-bar {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.pg-tab-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-contrast);
+  opacity: 0.7;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pg-tab-btn:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.pg-tab-btn.active {
+  opacity: 1;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.night .pg-tab-btn.active {
+  background: #f6c740;
+  color: #0b0c10;
+}
+
+.pg-tab-panel {
+  display: none;
+  width: 100%;
+  animation: pgFadeIn 0.35s ease forwards;
+}
+
+.pg-tab-panel.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+@keyframes pgFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Redeveloped 3D Coverflow Styles ── */
+.pgf-stage {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 380px;
+  perspective: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  overscroll-behavior: contain;
+  margin: 12px 0 20px;
+}
+
+.pgf-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.pgf-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: min(100%, 460px);
+  width: auto;
+  aspect-ratio: 16 / 10;
+  max-width: 90vw;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.65);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  will-change: transform, opacity;
+  transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
+              opacity 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
+              filter 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
+              box-shadow 0.65s ease;
+}
+
+.pgf-card.is-active {
+  border-color: rgba(246, 199, 64, 0.65);
+  box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.85),
+              0 0 40px rgba(246, 199, 64, 0.25);
+  filter: brightness(1) saturate(1.05);
+}
+
+.pgf-card:not(.is-active) {
+  filter: brightness(0.45) saturate(0.65);
+}
+
+.pgf-card:not(.is-active):hover {
+  filter: brightness(0.7) saturate(0.85);
+}
+
+.pgf-card-media {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #090c10;
+}
+
+.pgf-card-media video,
+.pgf-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.pgf-card-vhs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 100px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pgf-card-reflection {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 40%, rgba(0,0,0,0.4) 100%);
+}
+
+.pgf-card-expand {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.pgf-card-expand i {
+  font-style: normal;
+}
+
+.pgf-card.is-active:hover .pgf-card-expand {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Arrows */
+.pgf-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(12, 16, 24, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pgf-arrow--prev { left: 24px; }
+.pgf-arrow--next { right: 24px; }
+
+.pgf-arrow:hover {
+  background: #f6c740;
+  color: #0b0c10;
+  border-color: #f6c740;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.pgf-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Pagination Dots */
+.pgf-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0 16px;
+  z-index: 5;
+}
+
+.pgf-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+body.night .pgf-dot {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.pgf-dot.active {
+  width: 28px;
+  background: #f6c740;
+}
+
+/* Caption Deck */
+.pgf-caption {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 20px;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.pgf-caption.swap {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.pgf-cap-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.pgf-cap-index {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f6c740;
+  letter-spacing: 0.1em;
+}
+
+.pgf-cap-tags {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-contrast);
+}
+
+body.night .pgf-cap-tags {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.pgf-cap-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--text-heading);
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.pgf-cap-desc {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-contrast);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ── Interactive WebGL Studio Panes ── */
+.pg-studio-pane {
+  position: relative;
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+  height: 560px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #080a0f;
+}
+
+.pg-studio-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+}
+
+.pg-studio-canvas:active {
+  cursor: grabbing;
+}
+
+.pg-studio-hud {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  border-radius: 16px;
+  background: rgba(12, 16, 24, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  z-index: 5;
+  flex-wrap: wrap;
+}
+
+.pg-hud-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #f6c740;
+}
+
+.pg-hud-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pg-hud-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pg-hud-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 90px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 99px;
+  outline: none;
+}
+
+.pg-hud-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f6c740;
+  cursor: pointer;
+}
+
+.pg-hud-pill-group {
+  display: flex;
+  gap: 4px;
+}
+
+.pg-hud-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.pg-hud-pill:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.pg-hud-pill.active {
+  background: #f6c740;
+  color: #0b0c10;
+  border-color: #f6c740;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .pg-studio-pane {
+    height: 460px;
+  }
+  .pg-studio-hud {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .pgf-stage {
+    min-height: 280px;
+  }
+  .pgf-card {
+    height: min(100%, 320px);
+  }
+  .pgf-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+  .pgf-arrow--prev { left: 10px; }
+  .pgf-arrow--next { right: 10px; }
+}

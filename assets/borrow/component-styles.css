@@ -1,0 +1,3652 @@
+/* Components */
+
+box-sizing: border-box;
+
+position: relative;
+width: 1576px;
+height: 1357px;
+
+background: #F8F9FF;
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 2px;
+
+
+/* Background+Border+Shadow */
+
+box-sizing: border-box;
+
+position: relative;
+width: 365.33px;
+height: 216px;
+left: 61px;
+top: 149px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+
+/* Property 1=Default */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 16px;
+gap: 63.92px;
+
+position: absolute;
+width: 325.33px;
+height: 78px;
+left: 20px;
+top: 20px;
+
+background: #FFFFFF;
+border: 1px solid #BCC9C6;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+border-radius: 8px;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 16px;
+
+width: 138px;
+height: 44px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Background */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 40px;
+height: 40px;
+
+background: #E5EEFF;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 20px;
+height: 18px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 20px;
+height: 18px;
+
+background: #00685F;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 4px;
+
+width: 82px;
+height: 44px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Heading 3 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 82px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Title */
+
+width: 82px;
+height: 24px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+display: flex;
+align-items: center;
+
+color: #121C28;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 82px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Subtitle */
+
+width: 68.47px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 7.4px;
+height: 12px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 7.4px;
+height: 12px;
+
+background: #BCC9C6;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=Selected */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 16px;
+gap: 63.92px;
+
+position: absolute;
+width: 325.33px;
+height: 82px;
+left: 20px;
+top: 118px;
+
+background: #D9E3F4;
+border: 3px solid #00685F;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+border-radius: 8px;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 16px;
+
+width: 138px;
+height: 44px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Background */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 40px;
+height: 40px;
+
+background: #00685F;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 20px;
+height: 18px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 20px;
+height: 18px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 4px;
+
+width: 82px;
+height: 44px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Heading 3 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 82px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Title */
+
+width: 82px;
+height: 24px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+display: flex;
+align-items: center;
+
+color: #00685F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 82px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Subtitle */
+
+width: 68.47px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #00685F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Background */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 24px;
+height: 24px;
+
+background: #00685F;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 10.87px;
+height: 8.02px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 10.87px;
+height: 8.02px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* BottomNavBar (Mobile Only) */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px;
+gap: 40px;
+
+position: relative;
+width: 402px;
+height: 70px;
+left: calc(50% - 402px/2 + 10px);
+bottom: 1184px;
+
+background: #FFFFFF;
+box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.04);
+border-radius: 12px 12px 0px 0px;
+
+
+/* Link - Home (Active) */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 30.6px;
+height: 33.8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 14.4px;
+height: 19.8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: -0.444444px 0px;
+
+
+/* Icon */
+
+width: 14.4px;
+height: 16.2px;
+
+background: #00685F;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 30.6px;
+height: 14.4px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Home Label */
+
+width: 30.6px;
+height: 14.4px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #00685F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Link - Search */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 41px;
+height: 38px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 18px;
+height: 22px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 18px;
+height: 18px;
+
+background: #3D4947;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 41px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Search Label */
+
+width: 41px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Link - Requests */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 55px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 18px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 18px;
+height: 20px;
+
+background: #3D4947;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 55px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Requests Label */
+
+width: 55px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Link - Inbox */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 30px;
+height: 36px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 20px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 20px;
+height: 16px;
+
+background: #3D4947;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 32px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Inbox Label */
+
+width: 32px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Link - Profile */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 38px;
+height: 36px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 16px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 16px;
+height: 16px;
+
+background: #3D4947;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 38px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Profile Label */
+
+width: 38px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Navigation */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 15px;
+
+position: relative;
+width: 569px;
+height: 223px;
+left: 540px;
+top: 218px;
+
+background: #FFFFFF;
+
+
+/* Link - Home (Active) */
+
+box-sizing: border-box;
+
+width: 70.12px;
+height: 127.6px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=active */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 30.12px;
+height: 33.8px;
+left: 20px;
+top: calc(50% - 33.8px/2 - 26.9px);
+
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 14.4px;
+height: 19.8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: -0.444444px 0px;
+
+
+/* Icon */
+
+width: 14.4px;
+height: 16.2px;
+
+background: #00685F;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 30.12px;
+height: 14.4px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Home Label */
+
+width: 30.12px;
+height: 14.4px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #00685F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=inactive */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 30.6px;
+height: 33.8px;
+left: 20px;
+top: calc(50% - 33.8px/2 + 26.9px);
+
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 14.4px;
+height: 19.8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: -0.444444px 0px;
+
+
+/* Icon */
+
+width: 14.4px;
+height: 16.2px;
+
+border: 2px solid #3D4947;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 30.6px;
+height: 14.4px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Home Label */
+
+width: 30.6px;
+height: 14.4px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Link - Search */
+
+box-sizing: border-box;
+
+width: 80.36px;
+height: 136px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Property 1=active */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 40.36px;
+height: 38px;
+left: 20px;
+top: calc(50% - 38px/2 - 29px);
+
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 18px;
+height: 22px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 18px;
+height: 18px;
+
+background: #00685F;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 40.36px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Search Label */
+
+width: 40.36px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #00685F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=inactive */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 40.36px;
+height: 38px;
+left: 20px;
+top: calc(50% - 38px/2 + 29px);
+
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 18px;
+height: 22px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 18px;
+height: 18px;
+
+background: #3D4947;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 40.36px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Search Label */
+
+width: 40.36px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Link - Requests */
+
+box-sizing: border-box;
+
+width: 94.95px;
+height: 140px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Property 1=active */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 54.95px;
+height: 40px;
+left: 20px;
+top: calc(50% - 40px/2 - 30px);
+
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 18px;
+height: 24px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 18px;
+height: 20px;
+
+background: #00685F;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 54.95px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Requests Label */
+
+width: 54.95px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #00685F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=inactive */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 54.95px;
+height: 40px;
+left: 20px;
+top: calc(50% - 40px/2 + 30px);
+
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 18px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 18px;
+height: 20px;
+
+background: #3D4947;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 54.95px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Requests Label */
+
+width: 54.95px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Link - Inbox */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 18px 20px;
+gap: 15px;
+
+width: 72px;
+height: 125px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Property 1=active */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 30px;
+height: 36px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 20px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 20px;
+height: 16px;
+
+background: #00685F;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 31.53px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Inbox Label */
+
+width: 31.53px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #00685F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=inactive */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 30px;
+height: 36px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 20px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 20px;
+height: 16px;
+
+background: #3D4947;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 31.53px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Inbox Label */
+
+width: 31.53px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Link - Profile */
+
+box-sizing: border-box;
+
+width: 77.39px;
+height: 132px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+
+
+/* Property 1=active */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 37.39px;
+height: 36px;
+left: 20px;
+top: calc(50% - 36px/2 - 28px);
+
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 16px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 16px;
+height: 16px;
+
+background: #00685F;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 37.39px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Profile Label */
+
+width: 37.39px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #00685F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=inactive */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: absolute;
+width: 37.39px;
+height: 36px;
+left: 20px;
+top: calc(50% - 36px/2 + 28px);
+
+
+
+/* Margin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 4px;
+
+width: 16px;
+height: 20px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 16px;
+height: 16px;
+
+background: #3D4947;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+width: 37.39px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Profile Label */
+
+width: 37.39px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Button - Primary Action */
+
+box-sizing: border-box;
+
+position: relative;
+width: 391px;
+height: 260px;
+left: 61px;
+top: 508px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+
+/* Property 1=Default */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px;
+gap: 8px;
+
+position: absolute;
+height: 60px;
+left: 20px;
+right: 20px;
+top: 20px;
+
+background: #00685F;
+box-shadow: 0px 4px 12px rgba(0, 104, 95, 0.15);
+border-radius: 12px;
+
+
+/* Send OTP Button */
+
+width: 65px;
+height: 28px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 28px;
+/* identical to box height, or 140% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 13.33px;
+height: 13.33px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 13.33px;
+height: 13.33px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=Selected */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px;
+gap: 8px;
+
+position: absolute;
+height: 60px;
+left: 20px;
+right: 20px;
+top: 100px;
+
+background: #008378;
+box-shadow: 0px 4px 12px rgba(0, 104, 95, 0.15);
+border-radius: 12px;
+
+
+/* Send OTP Button */
+
+width: 65px;
+height: 28px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 28px;
+/* identical to box height, or 140% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 13.33px;
+height: 13.33px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 13.33px;
+height: 13.33px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=subtle */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px;
+gap: 8px;
+
+position: absolute;
+height: 60px;
+left: 20px;
+right: 20px;
+top: 180px;
+
+background: #FFFFFF;
+border: 2px solid #00685F;
+border-radius: 12px;
+
+
+/* Send OTP Button */
+
+width: 65px;
+height: 28px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 28px;
+/* identical to box height, or 140% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #00685F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 13.33px;
+height: 13.33px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 13.33px;
+height: 13.33px;
+
+background: #00685F;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Tabs */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 4px;
+
+position: relative;
+width: 370px;
+height: 40px;
+left: 597px;
+top: 508px;
+
+background: #E5EEFF;
+border-radius: 9999px;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0px;
+
+width: 120.67px;
+height: 32px;
+
+background: #F8F9FF;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Tab Label */
+
+width: 15px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.12px;
+
+color: #121C28;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0px;
+
+width: 120.67px;
+height: 32px;
+
+filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.05));
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Tab Label */
+
+width: 35px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0px;
+
+width: 1px;
+height: 32px;
+
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 1;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0px;
+
+width: 120.67px;
+height: 32px;
+
+filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.05));
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Tab Label */
+
+width: 35px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Button */
+
+box-sizing: border-box;
+
+position: relative;
+width: 160.67px;
+height: 225px;
+left: 597px;
+top: 619px;
+
+background: #F1F1F1;
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+
+/* Property 1=Selected State */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0px;
+
+position: absolute;
+width: 120.67px;
+height: 32px;
+left: 20px;
+top: 20px;
+
+background: #F8F9FF;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+border-radius: 9999px;
+
+
+/* Tab Label */
+
+width: 71px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.12px;
+
+color: #121C28;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=active subtle text */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0px;
+
+position: absolute;
+width: 120.67px;
+height: 32px;
+left: 20px;
+top: 122px;
+
+background: #F8F9FF;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+border-radius: 9999px;
+
+
+/* Tab Label */
+
+width: 71px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=inactive subtle */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0px;
+
+position: absolute;
+width: 120.67px;
+height: 32px;
+left: 20px;
+top: 173px;
+
+filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.05));
+border-radius: 9999px;
+
+
+/* Tab Label */
+
+width: 71px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.12px;
+
+color: #3D4947;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=default */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0px;
+
+position: absolute;
+width: 120.67px;
+height: 32px;
+left: 20px;
+top: 71px;
+
+filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.05));
+border-radius: 9999px;
+
+
+/* Tab Label */
+
+width: 71px;
+height: 16px;
+
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height, or 133% */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.12px;
+
+color: #121C28;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Pages */
+
+box-sizing: border-box;
+
+position: relative;
+width: 84px;
+height: 84px;
+left: 915px;
+top: 726px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+
+/* Property 1=Page 1 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 44px;
+height: 8px;
+left: 20px;
+top: 20px;
+
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #00685F;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=Page 2 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 44px;
+height: 8px;
+left: 20px;
+top: 38px;
+
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #00685F;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=Page 3 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 44px;
+height: 8px;
+left: 20px;
+top: 56px;
+
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #00685F;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+box-sizing: border-box;
+
+position: relative;
+width: 61px;
+height: 48px;
+left: 915px;
+top: 652px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+
+/* Property 1=Default */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 8px;
+height: 8px;
+left: 33px;
+top: 20px;
+
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=activated */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 8px;
+height: 8px;
+left: 20px;
+top: 20px;
+
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #00685F;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* product carosel */
+
+box-sizing: border-box;
+
+position: relative;
+width: 390px;
+height: 916px;
+left: 1134px;
+top: 194px;
+
+border: 1px dashed #8A38F5;
+border-radius: 5px;
+
+
+/* Property 1=caro A */
+
+position: absolute;
+width: 350px;
+height: 250px;
+left: 20px;
+top: 20px;
+
+
+
+/* pic frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px 50px;
+gap: 50px;
+
+position: absolute;
+width: 950px;
+height: 250px;
+left: 0px;
+top: 0px;
+
+
+
+/* pic 1 */
+
+width: 250px;
+height: 250px;
+
+background: url(create camping tent image with white background.jpg), #000000;
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* pic 2 */
+
+width: 250px;
+height: 250px;
+
+background: url(close up short of the product
+.jpg);
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* pic 3 */
+
+width: 250px;
+height: 250px;
+
+background: url(back view of the product
+.jpg);
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Pages */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 44px;
+height: 8px;
+left: 149px;
+top: 233px;
+
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #00685F;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=caro B */
+
+position: absolute;
+width: 350px;
+height: 250px;
+left: 20px;
+top: 327px;
+
+
+
+/* pic frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 50px;
+
+position: absolute;
+width: 850px;
+height: 250px;
+left: calc(50% - 850px/2);
+top: 0px;
+
+
+
+/* pic 1 */
+
+width: 250px;
+height: 250px;
+
+background: url(create camping tent image with white background.jpg), #000000;
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* pic 2 */
+
+width: 250px;
+height: 250px;
+
+background: url(close up short of the product
+.jpg);
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* pic 3 */
+
+width: 250px;
+height: 250px;
+
+background: url(back view of the product
+.jpg);
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Pages */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 44px;
+height: 8px;
+left: 149px;
+top: 233px;
+
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #00685F;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Property 1=caro C */
+
+position: absolute;
+width: 350px;
+height: 250px;
+left: 20px;
+top: 646px;
+
+
+
+/* pic frame */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px 50px;
+gap: 50px;
+
+position: absolute;
+width: 950px;
+height: 250px;
+left: calc(50% - 950px/2 - 300px);
+top: 7px;
+
+
+
+/* pic 1 */
+
+width: 250px;
+height: 250px;
+
+background: url(create camping tent image with white background.jpg), #000000;
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* pic 2 */
+
+width: 250px;
+height: 250px;
+
+background: url(close up short of the product
+.jpg);
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* pic 3 */
+
+width: 250px;
+height: 250px;
+
+background: url(back view of the product
+.jpg);
+border-radius: 25px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Pages */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 44px;
+height: 8px;
+left: 149px;
+top: 233px;
+
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #BCC9C6;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Dot */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 8px;
+height: 8px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Dot Background */
+
+width: 8px;
+height: 8px;
+
+background: #00685F;
+border-radius: 9999px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
