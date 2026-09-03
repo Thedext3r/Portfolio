@@ -2900,49 +2900,6 @@
       <span class="h-line designer" id="scramble">Builds</span>
     </h1>
 
-    <!-- ── recorder (node 1:40) ── -->
-    <div class="recorder" role="region" aria-label="Audio player — Tame Impala - Loser">
-      <canvas id="hero-audio-viz" class="hero-viz-canvas" width="580" height="580" aria-hidden="true"></canvas>
-
-      <div class="disk" id="disk-l" aria-hidden="true">
-        <div class="disk-face"></div>
-        <img class="disk-texture" src="assets/imgDisk.png" alt="">
-        <img class="disk-cap c1" src="assets/imgEllipse13.svg" alt="">
-        <img class="disk-cap c2" src="assets/imgEllipse12.svg" alt="">
-        <img class="disk-cap c3" src="assets/imgEllipse11.svg" alt="">
-      </div>
-
-      <div class="rec-center">
-        <p class="rec-title">Tame Impala — Loser</p>
-
-        <div class="play-slider" id="play-slider">
-          <div class="slider-track">
-            <div class="slider-fill" id="slider-fill"></div>
-          </div>
-          <div class="slider-knob" id="slider-knob"></div>
-        </div>
-
-        <div class="timestamps">
-          <span id="t-current">0:00</span>
-          <span id="t-total">2:00</span>
-        </div>
-
-        <button class="play-circle" id="play-btn" aria-label="Play">
-          <img class="ring" src="assets/imgPlayCircle.svg" alt="">
-          <img class="tri" src="assets/imgGroup.svg" alt="">
-          <span class="pause-bars" aria-hidden="true"><span></span><span></span></span>
-        </button>
-      </div>
-
-      <div class="disk" id="disk-r" aria-hidden="true">
-        <div class="disk-face"></div>
-        <img class="disk-texture" src="assets/imgDisk.png" alt="">
-        <img class="disk-cap c1" src="assets/imgEllipse13.svg" alt="">
-        <img class="disk-cap c2" src="assets/imgEllipse12.svg" alt="">
-        <img class="disk-cap c3" src="assets/imgEllipse11.svg" alt="">
-      </div>
-    </div>
-
     </div><!-- /hero-content -->
   </section>
 
@@ -3306,98 +3263,6 @@
     <div class="aff-hold" aria-hidden="true"></div>
 
   </div><!-- /#about-view -->
-
-  <!-- ═════════════════════════════════════════════════════════════════
-       PLAYGROUND PAGE (Figma node 128:6061) — in-page view. Hidden until
-       routed to via #playground. Shares <site-nav> (top) and <site-footer>.
-       Staggered brick grid: full-width intro band, then 10 equally-sized
-       4:3 tiles whose 2nd/3rd columns are offset down so the rows weave
-       (see .pg-grid / .pg-tile:nth-of-type stagger). ═════════════════════ -->
-  <div id="playground-view" hidden="">
-    <section class="playground pg-flow" aria-label="Playground — design and creative experiments">
-      <h1 class="sr-only">Playground — design and creative experiments by Sunil Ohdar</h1>
-
-      <div class="pg-tab-bar">
-        <button type="button" class="pg-tab-btn active" data-tab="pg-tab-flow"><span>🌀</span> 3D Coverflow</button>
-        <button type="button" class="pg-tab-btn" data-tab="pg-tab-blackhole"><span>🌌</span> WebGL Black Hole Studio</button>
-        <button type="button" class="pg-tab-btn" data-tab="pg-tab-audioviz"><span>🎵</span> 3D Audio Visualizer</button>
-      </div>
-
-      <!-- Tab 1: 3D Coverflow -->
-      <div class="pg-tab-panel active" id="pg-tab-flow">
-        <div class="pgf-head">
-          <p class="pgf-lead">Each vignette is a small study in material, light, and movement, and a few grew into showcase work for FlutterFlow and Flutter Animate.</p>
-        </div>
-
-        <div class="pgf-stage" id="pgf-stage">
-          <button type="button" class="pgf-arrow pgf-arrow--prev" id="pgf-prev" aria-label="Previous">‹</button>
-          <div class="pgf-track" id="pgf-track"><!-- cards injected by JS --></div>
-          <button type="button" class="pgf-arrow pgf-arrow--next" id="pgf-next" aria-label="Next">›</button>
-        </div>
-
-        <div class="pgf-caption" id="pgf-caption">
-          <div class="pgf-cap-meta">
-            <span class="pgf-cap-index" id="pgf-cap-index"></span>
-            <span class="pgf-cap-tags" id="pgf-cap-tags"></span>
-          </div>
-          <h3 class="pgf-cap-title" id="pgf-cap-title"></h3>
-          <p class="pgf-cap-desc" id="pgf-cap-desc"></p>
-        </div>
-      </div>
-
-      <!-- Tab 2: WebGL Black Hole Studio -->
-      <div class="pg-tab-panel" id="pg-tab-blackhole">
-        <div class="pg-studio-pane">
-          <canvas id="blackhole-canvas" class="pg-studio-canvas"></canvas>
-          <div class="pg-studio-hud">
-            <div class="pg-hud-title">⚡ GRAVITATIONAL LENSING SHADER (DRAG MOUSE TO WARP)</div>
-            <div class="pg-hud-controls">
-              <div class="pg-hud-group">
-                <span>Theme:</span>
-                <div class="pg-hud-pill-group">
-                  <button type="button" class="pg-hud-pill active" data-bh-theme="amber">Amber</button>
-                  <button type="button" class="pg-hud-pill" data-bh-theme="violet">Violet</button>
-                  <button type="button" class="pg-hud-pill" data-bh-theme="cyan">Cyber</button>
-                  <button type="button" class="pg-hud-pill" data-bh-theme="solar">Solar</button>
-                </div>
-              </div>
-              <div class="pg-hud-group">
-                <label for="bh-speed-slider">Speed:</label>
-                <input id="bh-speed-slider" class="pg-hud-slider" type="range" min="0.2" max="3.0" step="0.1" value="1.2">
-              </div>
-              <div class="pg-hud-group">
-                <label for="bh-dist-slider">Gravity:</label>
-                <input id="bh-dist-slider" class="pg-hud-slider" type="range" min="0.5" max="1.8" step="0.05" value="1.0">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 3: 3D Audio Visualizer -->
-      <div class="pg-tab-panel" id="pg-tab-audioviz">
-        <div class="pg-studio-pane">
-          <canvas id="pg-audioviz-canvas" class="pg-studio-canvas"></canvas>
-        </div>
-      </div>
-    </section>
-
-    <!-- Lightbox lives OUTSIDE .pg-flow so its z-index resolves in the page root
-         stacking context (not trapped under .pg-flow's z-index:2) — otherwise the
-         nav (z-index 100) would paint over it. -->
-    <div class="pgf-lightbox" id="pgf-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Experiment viewer">
-      <button type="button" class="pgf-lb-close" id="pgf-lb-close" aria-label="Close">×</button>
-      <button type="button" class="pgf-lb-nav pgf-lb-nav--prev" id="pgf-lb-prev" aria-label="Previous">‹</button>
-      <div class="pgf-lb-stage" id="pgf-lb-stage"><!-- media injected --></div>
-      <button type="button" class="pgf-lb-nav pgf-lb-nav--next" id="pgf-lb-next" aria-label="Next">›</button>
-      <div class="pgf-lb-info">
-        <span class="pgf-lb-index" id="pgf-lb-index"></span>
-        <h3 class="pgf-lb-title" id="pgf-lb-title"></h3>
-        <p class="pgf-lb-desc" id="pgf-lb-desc"></p>
-        <span class="pgf-lb-tags" id="pgf-lb-tags"></span>
-      </div>
-    </div>
-  </div><!-- /#playground-view -->
 
   <!-- ═══════════════════════════════════════════════════════════════
        WORK · HATCHA CASE STUDY (Figma node 1:2653) — in-page view,
@@ -11350,13 +11215,6 @@
   <!-- shared chrome (js/site.js) — renders the footer + garden; mobile menu is rendered by <site-nav> -->
   <site-footer></site-footer>
 
-  <!-- (the #ocean-to-transparent SVG filter def was removed — nothing referenced it) -->
-
-  <audio id="audio" preload="auto" src="assets/tame-impala-loser.mp3?v=2">
-    <source src="assets/tame-impala-loser.mp3?v=2" type="audio/mpeg">
-    <source src="assets/recorder-song.mp3?v=2" type="audio/mpeg">
-  </audio>
-
   <script>
 
     // ── hero content scale on scroll (page-specific; nav/footer behavior lives in js/site.js) ──
@@ -11535,98 +11393,6 @@
       }, { rootMargin: '0px 0px -12% 0px', threshold: 0.2 });
       io.observe(wrap);
     })();
-
-    // ── recorder ──
-    const audio      = document.getElementById('audio');
-    const playBtn    = document.getElementById('play-btn');
-    const diskL      = document.getElementById('disk-l');
-    const diskR      = document.getElementById('disk-r');
-    const slider     = document.getElementById('play-slider');
-    const sliderFill = document.getElementById('slider-fill');
-    const sliderKnob = document.getElementById('slider-knob');
-    const tCurrent   = document.getElementById('t-current');
-    const tTotal     = document.getElementById('t-total');
-
-    const KNOB = 23.45;
-    let playing = false;
-
-    const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
-
-    function setPlaying(state) {
-      playing = state;
-      playBtn.classList.toggle('playing', state);
-      playBtn.setAttribute('aria-label', state ? 'Pause' : 'Play');
-      diskL.classList.toggle('spinning', state);
-      diskR.classList.toggle('spinning', state);
-    }
-
-    function togglePlay() {
-      if (playing) { audio.pause(); setPlaying(false); }
-      else { audio.play().catch(() => {}); setPlaying(true); }
-    }
-
-    // the whole recorder is a play/pause target — clicks anywhere toggle the song,
-    // except on the scrubber (which owns its own pointer interaction). The inner
-    // <button> stays the accessible control; its click just bubbles up to here.
-    const recorder = document.querySelector('.recorder');
-    recorder.addEventListener('click', e => {
-      if (e.target.closest('#play-slider')) return;
-      togglePlay();
-    });
-
-    audio.addEventListener('ended', () => setPlaying(false));
-    // keep the recorder UI in sync when playback is toggled elsewhere (e.g. the nav wave button)
-    audio.addEventListener('play',  () => setPlaying(true));
-    audio.addEventListener('pause', () => setPlaying(false));
-    audio.addEventListener('loadedmetadata', () => { tTotal.textContent = fmt(audio.duration); });
-
-    let scrubbing = false;
-
-    // paint the knob + fill + current-time label at a 0..1 position
-    function renderAt(pct) {
-      const knobX = pct * (slider.clientWidth - KNOB);
-      sliderKnob.style.left = knobX + 'px';
-      sliderFill.style.width = (knobX + KNOB / 2) + 'px';
-      tCurrent.textContent = fmt(pct * (audio.duration || 0));
-    }
-
-    // map a pointer x to a 0..1 position, centring the knob under the pointer
-    function pctFromEvent(e) {
-      const rect = slider.getBoundingClientRect();
-      const x = e.clientX - rect.left - KNOB / 2;
-      return Math.min(Math.max(x / (rect.width - KNOB), 0), 1);
-    }
-
-    audio.addEventListener('timeupdate', () => {
-      if (!audio.duration || scrubbing) return;
-      renderAt(audio.currentTime / audio.duration);
-    });
-
-    slider.addEventListener('pointerdown', e => {
-      if (!audio.duration) return;
-      scrubbing = true;
-      slider.classList.add('scrubbing');
-      slider.setPointerCapture(e.pointerId);
-      const pct = pctFromEvent(e);
-      renderAt(pct);
-      audio.currentTime = pct * audio.duration;
-    });
-
-    slider.addEventListener('pointermove', e => {
-      if (!scrubbing) return;
-      const pct = pctFromEvent(e);
-      renderAt(pct);
-      audio.currentTime = pct * audio.duration;
-    });
-
-    function endScrub(e) {
-      if (!scrubbing) return;
-      scrubbing = false;
-      slider.classList.remove('scrubbing');
-      try { slider.releasePointerCapture(e.pointerId); } catch (_) {}
-    }
-    slider.addEventListener('pointerup', endScrub);
-    slider.addEventListener('pointercancel', endScrub);
 
 
     /* ── scroll-driven paper plane + dotted trail ── */

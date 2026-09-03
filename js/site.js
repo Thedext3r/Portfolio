@@ -34,7 +34,6 @@ const NAV_HTML = `
       <div class="nav-links" id="nav-links-group">
         <a href="/#work" class="nav-link">Work</a>
         <a href="/about" class="nav-link">About</a>
-        <a href="/playground" class="nav-link">Playground</a>
         <a href="/#contact" class="nav-cta" data-contact-open>
           <img src="/assets/imgEmail.svg" alt="" width="24" height="24">
           Work with me
@@ -64,17 +63,6 @@ const NAV_HTML = `
     </div>
 
     <div class="nav-side right">
-      <button class="nav-wave" id="nav-wave" type="button" aria-label="Play music" aria-pressed="false">
-        <svg class="nav-wave-svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <defs><clipPath id="navWaveClip"><circle cx="20" cy="20" r="14.5"/></clipPath></defs>
-          <rect class="nav-wave-bg" width="40" height="40" rx="20"/>
-          <g clip-path="url(#navWaveClip)">
-            <g class="nav-wave-travel">
-              <path class="nav-wave-path" d="M-20 20 C -17.5 11.1 -12.5 11.1 -10 20 C -7.5 28.9 -2.5 28.9 0 20 C 2.5 11.1 7.5 11.1 10 20 C 12.5 28.9 17.5 28.9 20 20 C 22.5 11.1 27.5 11.1 30 20 C 32.5 28.9 37.5 28.9 40 20 C 42.5 11.1 47.5 11.1 50 20 C 52.5 28.9 57.5 28.9 60 20"/>
-            </g>
-          </g>
-        </svg>
-      </button>
       <button class="day-toggle" id="theme-toggle" aria-label="Toggle day / night theme" aria-pressed="false">
         <svg class="toggle-ico ico-sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4" fill="currentColor"/>
@@ -99,7 +87,6 @@ const MENU_HTML = `
       <ul class="menu-links">
         <li><a href="/#work" class="menu-link"><span class="num">01</span><span class="word">Work</span></a></li>
         <li><a href="/about" class="menu-link"><span class="num">02</span><span class="word">About</span></a></li>
-        <li><a href="/playground" class="menu-link"><span class="num">03</span><span class="word">Playground</span></a></li>
       </ul>
     </nav>
     <p class="menu-footer">GURUGRAM, INDIA</p>
@@ -1075,10 +1062,6 @@ customElements.define('site-footer', SiteFooter);
   const dot = document.createElement('div');
   dot.className = 'dot-cursor';
   dot.setAttribute('aria-hidden', 'true');
-  const label = document.createElement('span');
-  label.className = 'dot-label';
-  label.textContent = 'Press play, stranger';
-  dot.appendChild(label);
   document.body.appendChild(dot);
   document.documentElement.classList.add('dot-cursor-on');
 
