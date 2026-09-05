@@ -20,6 +20,24 @@ describe('Portfolio Site & Navigation', () => {
     cy.get('body').should('not.have.class', 'night');
   });
 
+  it('renders and interacts with the Design vs Code playground in the hero', () => {
+    cy.get('#hero-sandbox').should('be.visible');
+    cy.get('#panel-design').should('be.visible');
+    cy.get('#hsb-demo-btn').click();
+    cy.get('#hsb-demo-btn').should('contain.text', 'Request Sent');
+
+    // Switch to Code tab
+    cy.get('#tab-code').click();
+    cy.get('#panel-code').should('be.visible');
+    cy.get('#panel-design').should('not.be.visible');
+    cy.get('#hsb-copy-btn').click();
+    cy.get('#hsb-copy-btn').should('contain.text', 'Copied');
+
+    // Switch back to Design tab
+    cy.get('#tab-design').click();
+    cy.get('#panel-design').should('be.visible');
+  });
+
   it('navigates to Borrow case study via project tile click', () => {
     cy.get('.project-tile').first().click();
     cy.url().should('include', 'borrow');

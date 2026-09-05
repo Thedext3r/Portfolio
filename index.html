@@ -334,215 +334,352 @@
        tilt that only ever plays on hover — and the compositor re-walks every live
        layer each scroll frame. Promoting on the parent still gets the letters onto
        their layers before any individual one is hovered. */
-    .h-line:hover .h-letter { will-change: transform; }
-    .h-letter:hover {
-      transform: translateY(-0.16em) rotate(-7deg);
-      color: #F4D24A;
-    }
-
-    /* ════ RECORDER — Figma node 1:40 ════ */
-    .recorder {
+     /* ════ HERO INTERACTIVE DESIGN VS CODE PLAYGROUND ════ */
+    .hero-sandbox {
       position: absolute;
       left: calc(50% - 229px);
-      top: calc(50vh + 58px);
-      transform: translate(-50%, -50%) scale(1.08);
-      display: flex;
-      align-items: flex-start;
-      gap: 22px;
-      padding: 16px;
-      border-radius: 9999px;
-      background: #dfdcd5;
-      border: 1px solid #c9c9c9;
-      box-shadow: 0 11px 9.6px 0 rgba(0,0,0,0.25);
+      top: calc(50vh + 82px);
+      transform: translate(-50%, -50%);
+      width: clamp(320px, 28vw, 400px);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+      padding: 14px;
+      z-index: 5;
+      font-family: 'Space Grotesk', sans-serif;
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
-    /* neumorphic inner bevel */
-    .recorder::after {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      pointer-events: none;
-      box-shadow:
-        inset 0 5px 7.3px 2px #f5f1ee,
-        inset -2px -10px 2.3px 0 #b8b7b2;
+    body.night .hero-sandbox {
+      background: rgba(18, 24, 34, 0.85);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 18px 42px -12px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
-    /* disk (nodes 1:41 / 1:62) */
-    .disk {
-      position: relative;
-      width: 89px; height: 89px;
-      border-radius: 9999px;
-      border: 3px solid #373535;
-      box-shadow: 0 0 0 2px #62615e;
-      overflow: hidden;
+    .hsb-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    body.night .hsb-bar {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .hsb-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hsb-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #00685F;
+      box-shadow: 0 0 8px rgba(0, 104, 95, 0.6);
+      animation: hsbPulse 2s ease infinite;
+    }
+    body.night .hsb-dot {
+      background: #2ed5be;
+      box-shadow: 0 0 8px rgba(46, 213, 190, 0.8);
+    }
+    @keyframes hsbPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+    .hsb-status-text {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-contrast);
+      opacity: 0.7;
+    }
+
+    .hsb-tabs {
+      display: inline-flex;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      padding: 3px;
+      gap: 2px;
+    }
+    body.night .hsb-tabs {
+      background: rgba(255, 255, 255, 0.07);
+    }
+    .hsb-tab {
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-family: inherit;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-contrast);
+      opacity: 0.7;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+    .hsb-tab:hover {
+      opacity: 1;
+    }
+    .hsb-tab.active {
+      background: #ffffff;
+      color: var(--text-heading);
+      opacity: 1;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+    body.night .hsb-tab.active {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    .hsb-tab-icon {
+      font-size: 11px;
+    }
+
+    /* Panels */
+    .hsb-panel {
+      display: none;
+      animation: hsbFade 0.25s ease forwards;
+    }
+    .hsb-panel.active {
+      display: block;
+    }
+    @keyframes hsbFade {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Design Component Card */
+    .hsb-comp-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 14px -4px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .hsb-comp-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.1);
+    }
+    body.night .hsb-comp-card {
+      background: rgba(28, 36, 48, 0.9);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.4);
+    }
+    .hsb-comp-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .hsb-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00685F, #38bdf8);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
-
-    .disk-face {
-      position: absolute;
-      inset: 0;
-      border-radius: 9999px;
-      background: conic-gradient(from 180deg,
-        rgb(18,18,18) 0%, rgb(18,18,18) 8.76%, rgb(39,39,39) 10.18%,
-        rgb(59,59,59) 11.59%, rgb(80,80,80) 13.01%, rgb(100,100,100) 14.42%,
-        rgb(79,79,79) 18.19%, rgb(59,59,59) 21.95%, rgb(38,38,38) 31%,
-        rgb(18,18,18) 40.04%, rgb(18,18,18) 59.51%, rgb(39,39,39) 61.29%,
-        rgb(59,59,59) 63.07%, rgb(80,80,80) 64.84%, rgb(100,100,100) 66.62%,
-        rgb(79,79,79) 68.72%, rgb(57,57,57) 70.82%, rgb(38,38,38) 80.96%,
-        rgb(18,18,18) 91.1%, rgb(18,18,18) 100%);
+    .hsb-user-meta {
+      flex: 1;
+      min-width: 0;
     }
-
-    .disk-texture {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      border-radius: 9999px;
-      mix-blend-mode: color-dodge;
-      opacity: 0.1;
-    }
-
-    .disk-cap {
-      position: absolute;
-      left: 50%; top: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .disk-cap.c1 { width: 32.19px; height: 32.19px; }
-    .disk-cap.c2 { width: 18.45px; height: 18.45px; }
-    .disk-cap.c3 { width: 5.94px;  height: 5.94px;  }
-
-    .disk.spinning { animation: disk-spin 1.8s linear infinite; }
-    @keyframes disk-spin { to { transform: rotate(360deg); } }
-
-    /* center column (node 1:45) */
-    .rec-center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 171.42px;
-      align-self: stretch;
-    }
-
-    .rec-title {
-      font-family: 'JetBrains Mono', monospace;
-      /* 11 not 12: the title has to clear .rec-center's fixed 171.42px in ONE
-         line, and this string measures 180px at 12px. Kept as a wrap (not
-         nowrap) so a font fallback degrades to two lines instead of spilling
-         out of the pill. */
-      font-size: 11px;
-      letter-spacing: -0.12px;
-      color: #070707;
-      width: 100%;
-      margin-bottom: 4px;
-    }
-
-    /* play slider (node 1:49) */
-    .play-slider {
-      position: relative;
-      width: 100%;
-      height: 23.45px;
-      cursor: pointer;
-      touch-action: none;
-    }
-    /* smooth follow during playback; disabled mid-drag so scrubbing stays 1:1 */
-    .play-slider:not(.scrubbing) .slider-knob { transition: left .12s linear; }
-    .play-slider:not(.scrubbing) .slider-fill { transition: width .12s linear; }
-    .play-slider.scrubbing { cursor: grabbing; }
-
-    .slider-track {
-      position: absolute;
-      left: 0; right: 0;
-      top: 5.58px;
-      height: 12.29px;
-      border-radius: 9999px;
-      background: #686360;
-      box-shadow: 0 3px 1px 0 #ededed;
-      overflow: hidden;
-    }
-    .slider-track::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      box-shadow:
-        inset 0 -1px 3px 0 rgba(0,0,0,0.2),
-        inset 3px 3px 3.4px 0 rgba(0,0,0,0.5);
-    }
-
-    .slider-fill {
-      position: absolute;
-      left: 0;
-      top: 0.46px;
-      height: 11.83px;
-      width: 0;
-      background: var(--gold);
-    }
-
-    .slider-knob {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 23.45px; height: 23.45px;
-      border-radius: 9999px;
-      border: 1px solid #e4e5e5;
-      background: radial-gradient(circle at 50% 50%, #f6f4f5 0%, #caccc9 100%);
-      box-shadow: 2px 4px 4px 0 rgba(0,0,0,0.25);
+    .hsb-user-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-heading);
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 5px;
+      white-space: nowrap;
     }
-    .slider-knob::after {
-      content: '';
-      width: 7.32px; height: 7.32px;
+    .hsb-verified {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: #00685F;
+      background: rgba(0, 104, 95, 0.1);
+      padding: 1px 5px;
       border-radius: 9999px;
-      background: linear-gradient(150deg, #ffffff 15.95%, #8d8b8f 70.17%);
-      box-shadow: 0 1px 1.9px 0 rgba(0,0,0,0.51);
     }
-
-    .timestamps {
+    body.night .hsb-verified {
+      color: #2ed5be;
+      background: rgba(46, 213, 190, 0.15);
+    }
+    .hsb-user-sub {
+      font-size: 10.5px;
+      color: var(--text-contrast);
+      opacity: 0.7;
+    }
+    .hsb-trust-pill {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #d97706;
+      background: rgba(245, 158, 11, 0.12);
+      padding: 2px 7px;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+    body.night .hsb-trust-pill {
+      color: #f6c740;
+      background: rgba(246, 199, 64, 0.16);
+    }
+    .hsb-comp-body {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      width: 100%;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      letter-spacing: -0.1px;
-      color: #070707;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(0, 0, 0, 0.08);
     }
-
-    /* play circle (node 1:57) */
-    .play-circle {
-      position: relative;
-      width: 41.32px; height: 41.32px;
+    body.night .hsb-comp-body {
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+    .hsb-item-tag {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .hsb-borrow-btn {
+      background: #00685F;
+      color: #ffffff;
       border: none;
-      background: none;
-      padding: 0;
+      border-radius: 7px;
+      padding: 5px 12px;
+      font-family: inherit;
+      font-size: 11.5px;
+      font-weight: 700;
       cursor: pointer;
-      border-radius: 50%;
-      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
+      transition: all 0.2s ease;
+      white-space: nowrap;
     }
-    .play-circle:hover  { transform: scale(1.1); }
-    .play-circle:active { transform: scale(0.92); }
-    .play-circle:focus-visible { outline: 2px solid #070707; outline-offset: 2px; }
+    .hsb-borrow-btn:hover {
+      background: #004d46;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 104, 95, 0.35);
+    }
+    .hsb-borrow-btn.sent {
+      background: #10b981;
+    }
+    body.night .hsb-borrow-btn {
+      background: #00685F;
+      color: #ffffff;
+    }
+    body.night .hsb-borrow-btn:hover {
+      background: #2ed5be;
+      color: #070707;
+      box-shadow: 0 4px 10px rgba(46, 213, 190, 0.4);
+    }
 
-    .play-circle .ring { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .play-circle .tri  { position: absolute; inset: 8.33%; width: 83.34%; height: 83.34%; }
-
-    .pause-bars {
-      position: absolute;
-      inset: 0;
-      display: none;
+    /* Token Chips */
+    .hsb-tokens {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .hsb-token {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
+      gap: 4px;
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      background: rgba(0, 0, 0, 0.04);
+      color: var(--text-contrast);
+      padding: 3px 6px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    body.night .hsb-token {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .hsb-swatch {
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    /* Code View */
+    .hsb-code-card {
+      background: #111827;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    }
+    .hsb-code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 11px;
+      background: #1f2937;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .hsb-code-dots {
+      display: flex;
       gap: 4px;
     }
-    .pause-bars span {
-      width: 4px; height: 14px;
-      background: #070707;
-      border-radius: 2px;
+    .hsb-code-dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
     }
-    .play-circle.playing .tri { display: none; }
-    .play-circle.playing .pause-bars { display: flex; }
+    .hsb-code-dots span:nth-child(1) { background: #ef4444; }
+    .hsb-code-dots span:nth-child(2) { background: #f59e0b; }
+    .hsb-code-dots span:nth-child(3) { background: #10b981; }
+    .hsb-code-filename {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.65);
+      font-weight: 500;
+    }
+    .hsb-copy-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 5px;
+      padding: 2px 7px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .hsb-copy-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+    .hsb-pre {
+      margin: 0;
+      padding: 10px 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: #e5e7eb;
+      overflow-x: auto;
+    }
+    .tok-kw { color: #f472b6; font-weight: 600; }
+    .tok-fn { color: #60a5fa; }
+    .tok-tag { color: #34d399; }
+    .tok-attr { color: #fbbf24; }
+    .tok-str { color: #a5b4fc; }
+    .tok-num { color: #fb923c; }
 
     /* hero content wrapper — scroll-driven scale + fade */
     .hero-content {
@@ -610,10 +747,8 @@
       .hero-eyebrow             { left: calc(50% - 398px); top: calc(50vh - 200px); }
       .hero-vertical            { left: calc(50% - 445px); top: calc(50vh - 26px); }
       .h-line.multidisciplinary { left: calc(50% - 398px); top: calc(50vh - 192px); }
-      /* rotating word: centered on the recorder, tucked close and lifted up */
       .h-line.designer { left: calc(50% + 59px); top: calc(50vh - 2px); }
-      /* scale down; left edge stays on the "D"; lifted to tighten under "Designer who" */
-      .recorder { left: calc(50% - 184px); top: calc(50vh + 80px); transform: translate(-50%, -50%) scale(1.0); }
+      .hero-sandbox { left: calc(50% - 184px); top: calc(50vh + 88px); transform: translate(-50%, -50%); }
     }
 
     /* intro paragraph (node 1:115) */
@@ -1377,14 +1512,15 @@
          zero-size block, dropping "who" to its own line (rotating word is line 3). */
       .h-line.multidisciplinary .h-space { display: block; width: 0; height: 0; }
 
-      .recorder {
+      .hero-sandbox {
         position: relative;
         z-index: 2;
         left: auto; top: auto;
         transform: none;
-        width: fit-content;
-        align-self: flex-start;   /* LEFT align the recorder */
-        margin: 44px 0 0;
+        width: 100%;
+        max-width: 380px;
+        align-self: flex-start;
+        margin: 28px 0 0;
       }
     }
 
@@ -1417,21 +1553,16 @@
         /* iOS Safari's toolbars make the visible (svh) height short, so the header
            sits just under the sun — NOT pushed far down. The +45 constant is tuned
            so a bigger sun bleeds further into the top-right corner instead of
-           moving the header. Bottom pad keeps the recorder clear of the sky-band. */
+           moving the header. Bottom pad keeps the sandbox clear of the sky-band. */
         padding: calc(var(--sun-w) * 0.5 + 45px) 24px 124px var(--col-pad-l);
       }
       /* nudge the sky group down so it sits just below the nav buttons */
       .sun-group, .hero-cloud, .moon-group { transform: translateY(70px); }
 
-      .recorder {
-        transform: scale(0.66);
-        transform-origin: top left;    /* keep the left edge fixed when scaling */
-        /* was `auto`, which bottom-pinned the recorder and dumped ALL the column's
-           spare height into this one gap — fine on a 667px phone, but it grew to
-           ~170px on a tall viewport and the hero read as two split-apart blocks.
-           A bounded gap keeps eyebrow → header → recorder reading as one group at
-           any height; the leftover space now falls below, into the sky art. */
-        margin: clamp(24px, 4.5vh, 56px) 0 0;
+      .hero-sandbox {
+        margin: clamp(16px, 3vh, 32px) 0 0;
+        width: 100%;
+        max-width: 100%;
       }
 
       /* ── featured work mobile ── */
@@ -1482,11 +1613,6 @@
       .t-role { font-size: 17px; }
       .t-arrows { gap: 44px; }
 
-    }
-
-    /* very narrow phones: the recorder (natural ~425px) needs a deeper scale */
-    @media (max-width: 360px) {
-      .recorder { transform: scale(0.58); }
     }
 
 
@@ -2863,6 +2989,76 @@
       <span class="h-line multidisciplinary">Designer who</span>
       <span class="h-line designer" id="scramble">Builds</span>
     </h1>
+
+    <!-- ── Interactive Design vs Code Playground ── -->
+    <div class="hero-sandbox" id="hero-sandbox" role="region" aria-label="Interactive Design vs Code Component Playground">
+      <div class="hsb-bar">
+        <div class="hsb-status">
+          <span class="hsb-dot" aria-hidden="true"></span>
+          <span class="hsb-status-text">DESIGN TO CODE</span>
+        </div>
+        <div class="hsb-tabs" role="tablist">
+          <button type="button" class="hsb-tab active" id="tab-design" role="tab" aria-selected="true" aria-controls="panel-design">
+            <span class="hsb-tab-icon">✦</span> Design
+          </button>
+          <button type="button" class="hsb-tab" id="tab-code" role="tab" aria-selected="false" aria-controls="panel-code">
+            <span class="hsb-tab-icon">&lt;/&gt;</span> Code
+          </button>
+        </div>
+      </div>
+
+      <div class="hsb-stage">
+        <!-- PANEL 1: DESIGN -->
+        <div class="hsb-panel active" id="panel-design" role="tabpanel" aria-labelledby="tab-design">
+          <div class="hsb-comp-card">
+            <div class="hsb-comp-top">
+              <div class="hsb-avatar">AS</div>
+              <div class="hsb-user-meta">
+                <div class="hsb-user-name">Aarav Sharma <span class="hsb-verified">✓ Verified</span></div>
+                <div class="hsb-user-sub">Palm Heights · Apt 402</div>
+              </div>
+              <span class="hsb-trust-pill">★ 4.9 · 32 loans</span>
+            </div>
+            <div class="hsb-comp-body">
+              <div class="hsb-item-tag">Dewalt Cordless Drill</div>
+              <button type="button" class="hsb-borrow-btn" id="hsb-demo-btn">
+                <span class="hsb-btn-text">Request to Borrow</span>
+              </button>
+            </div>
+          </div>
+          <div class="hsb-tokens">
+            <span class="hsb-token" title="Primary Color"><span class="hsb-swatch" style="background:#00685F;"></span> #00685F</span>
+            <span class="hsb-token" title="Radius">R: 14px</span>
+            <span class="hsb-token" title="Typography">Space Grotesk</span>
+            <span class="hsb-token" title="Layout">Auto-Layout ↕</span>
+          </div>
+        </div>
+
+        <!-- PANEL 2: CODE -->
+        <div class="hsb-panel" id="panel-code" role="tabpanel" aria-labelledby="tab-code" hidden>
+          <div class="hsb-code-card">
+            <div class="hsb-code-header">
+              <div class="hsb-code-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="hsb-code-filename">BorrowCard.tsx</span>
+              <button type="button" class="hsb-copy-btn" id="hsb-copy-btn" aria-label="Copy code">Copy</button>
+            </div>
+            <pre class="hsb-pre"><code><span class="tok-kw">export function</span> <span class="tok-fn">BorrowCard</span>() {
+  <span class="tok-kw">return</span> (
+    <span class="tok-tag">&lt;Card</span> <span class="tok-attr">verified</span>=<span class="tok-str">"true"</span><span class="tok-tag">&gt;</span>
+      <span class="tok-tag">&lt;ResidentBadge</span>
+        <span class="tok-attr">trustScore</span>={<span class="tok-num">4.9</span>}
+        <span class="tok-attr">completedLoans</span>={<span class="tok-num">32</span>}
+      <span class="tok-tag">/&gt;</span>
+      <span class="tok-tag">&lt;BorrowAction</span> <span class="tok-attr">variant</span>=<span class="tok-str">"teal"</span> <span class="tok-tag">/&gt;</span>
+    <span class="tok-tag">&lt;/Card&gt;</span>
+  );
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
 
     </div><!-- /hero-content -->
   </section>
@@ -7728,6 +7924,63 @@
       }
 
       setTimeout(next, HOLD);
+    })();
+
+    /* ── Hero Interactive "Design vs Code" Playground ── */
+    (function initHeroSandbox() {
+      const sandbox = document.getElementById('hero-sandbox');
+      if (!sandbox) return;
+
+      const tabDesign = document.getElementById('tab-design');
+      const tabCode = document.getElementById('tab-code');
+      const panelDesign = document.getElementById('panel-design');
+      const panelCode = document.getElementById('panel-code');
+      const demoBtn = document.getElementById('hsb-demo-btn');
+      const copyBtn = document.getElementById('hsb-copy-btn');
+
+      function setTab(isDesign) {
+        if (!tabDesign || !tabCode || !panelDesign || !panelCode) return;
+        tabDesign.classList.toggle('active', isDesign);
+        tabDesign.setAttribute('aria-selected', String(isDesign));
+        tabCode.classList.toggle('active', !isDesign);
+        tabCode.setAttribute('aria-selected', String(!isDesign));
+
+        panelDesign.classList.toggle('active', isDesign);
+        panelDesign.hidden = !isDesign;
+        panelCode.classList.toggle('active', !isDesign);
+        panelCode.hidden = isDesign;
+      }
+
+      if (tabDesign && tabCode) {
+        tabDesign.addEventListener('click', () => setTab(true));
+        tabCode.addEventListener('click', () => setTab(false));
+      }
+
+      // Interactive demo button in design view
+      if (demoBtn) {
+        let timer = null;
+        demoBtn.addEventListener('click', () => {
+          demoBtn.classList.add('sent');
+          demoBtn.innerHTML = '<span class="hsb-btn-text">✓ Request Sent!</span>';
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            demoBtn.classList.remove('sent');
+            demoBtn.innerHTML = '<span class="hsb-btn-text">Request to Borrow</span>';
+          }, 2400);
+        });
+      }
+
+      // Copy snippet button in code view
+      if (copyBtn) {
+        const codeText = `<Card verified="true">\n  <ResidentBadge trustScore={4.9} completedLoans={32} />\n  <BorrowAction variant="teal" />\n</Card>`;
+        copyBtn.addEventListener('click', () => {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(codeText).catch(() => {});
+          }
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+        });
+      }
     })();
 
     /* ── project tiles: scrub each row from half size up to full as it scrolls
