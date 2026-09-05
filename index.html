@@ -3236,14 +3236,33 @@
     <main class="bw-container">
       <!-- ── HERO ── -->
       <header class="bw-hero">
-        <div class="bw-tag-row">
-          <span class="bw-tag">UX Research</span>
-          <span class="bw-tag">Product Thinking</span>
-          <span class="bw-tag">Solo Project</span>
-          <span class="bw-tag">5 Weeks</span>
+        <div class="bw-hero-copy">
+          <div class="bw-tag-row">
+            <span class="bw-tag">UX Research</span>
+            <span class="bw-tag">Product Thinking</span>
+            <span class="bw-tag">Solo Project</span>
+            <span class="bw-tag">5 Weeks</span>
+          </div>
+          <h1 class="bw-hero-title">Borrow</h1>
+          <p class="bw-hero-tagline">A neighborhood item-lending mobile app for verified housing-society residents.</p>
         </div>
-        <h1 class="bw-hero-title">Borrow</h1>
-        <p class="bw-hero-tagline">A neighborhood item-lending mobile app for verified housing-society residents.</p>
+
+        <div class="bw-hero-art" aria-hidden="true">
+          <figure class="bw-phone bw-phone-back">
+            <img src="/assets/borrow/screen-inbox.png" alt="" width="830" height="1562" decoding="async">
+          </figure>
+          <figure class="bw-phone bw-phone-front">
+            <img src="/assets/borrow/screen-browse.png" alt="" width="854" height="1558" decoding="async">
+          </figure>
+          <span class="bw-chip bw-chip-trust">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"/></svg>
+            <span>Trust 4.9 · 32 loans</span>
+          </span>
+          <span class="bw-chip bw-chip-return">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12.5 9.5 18 20 6.5"/></svg>
+            <span>Returned on time</span>
+          </span>
+        </div>
 
         <div class="bw-hero-meta-grid">
           <div>
@@ -3259,7 +3278,6 @@
             <div class="bw-meta-value">Figma · Google Forms · Sheets</div>
           </div>
         </div>
-
       </header>
 
       <div class="bw-divider"></div>
@@ -3287,15 +3305,15 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
           <div>
-            <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-contrast); opacity: 0.7; margin-bottom: 8px;">Problem</h4>
+            <h4 class="bw-ov-label">Problem</h4>
             <p class="bw-body-p" style="font-size: 14.5px;">Neighbors need items they don't own — drills, ladders, camping gear — but have no trustworthy, low-friction way to borrow them.</p>
           </div>
           <div>
-            <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-contrast); opacity: 0.7; margin-bottom: 8px;">What I Did</h4>
+            <h4 class="bw-ov-label">What I Did</h4>
             <p class="bw-body-p" style="font-size: 14.5px;">Surveyed 28 residents, synthesized six user archetypes, and designed an end-to-end borrowing flow anchored by a trust score.</p>
           </div>
           <div>
-            <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-contrast); opacity: 0.7; margin-bottom: 8px;">Outcome</h4>
+            <h4 class="bw-ov-label">Outcome</h4>
             <p class="bw-body-p" style="font-size: 14.5px;">A complete flow — RWA-verified onboarding, browse, request, lender review, pickup, return, and rating — grounded in survey-validated demand.</p>
           </div>
         </div>
@@ -3365,13 +3383,13 @@
           </div>
         </div>
 
-        <div class="bw-quote-card" style="border-left-color: rgba(0,0,0,0.3); background: rgba(0,0,0,0.02);">
-          <h4 style="font-size: 13px; font-weight: 700; margin: 0 0 6px;">Constraint I want to name directly</h4>
-          <p class="bw-body-p" style="font-size: 14px; margin: 0;">This is a 28-response survey from my own network — a meaningfully smaller sample than a shipped product would need, and it measures stated intent, not observed behavior. The honest read is that Borrow's concept is validated; its actual screens are not — yet.</p>
+        <div class="bw-quote-card bw-quote-note">
+          <h4 class="bw-quote-note-h">Constraint I want to name directly</h4>
+          <p class="bw-quote-note-p">This is a 28-response survey from my own network — a meaningfully smaller sample than a shipped product would need, and it measures stated intent, not observed behavior. The honest read is that Borrow's concept is validated; its actual screens are not — yet.</p>
         </div>
 
         <!-- Competitor Scan Table -->
-        <h3 style="font-size: 16px; font-weight: 700; margin: 36px 0 12px; color: var(--text-heading);">Competitor Landscape</h3>
+        <h3 class="bw-subtitle">Competitor Landscape</h3>
         <p class="bw-body-p" style="font-size: 14px;">Six alternatives residents use today — none address the verified, closed, borrowing-first gap.</p>
 
         <div class="bw-table-wrap">
@@ -3461,17 +3479,14 @@
               <span class="bw-persona-trait">Values speed</span>
               <span class="bw-persona-trait">Low friction</span>
             </div>
-            <div style="font-size: 12.5px; line-height: 1.5; color: var(--text-contrast);">
-              <strong>Core Need:</strong> Fast, searchable item discovery within their society.<br>
-              <strong>Design Impact:</strong> Drove the browse-first Home screen and category filters.
-            </div>
+            <p class="bw-persona-detail"><strong>Core Need:</strong> Fast, searchable item discovery within their society.<br><strong>Design Impact:</strong> Drove the browse-first Home screen and category filters.</p>
           </div>
 
           <!-- 02 -->
           <div class="bw-persona-card">
             <div class="bw-persona-header">
               <span class="bw-persona-name">02 · Social Avoider</span>
-              <span class="bw-persona-badge" style="background: rgba(200, 138, 42, 0.15); color: #c88a2a;">Key Insight</span>
+              <span class="bw-persona-badge gold">Key Insight</span>
             </div>
             <p class="bw-persona-quote">"I'd rather just buy it than knock on a stranger's door."</p>
             <div class="bw-persona-traits">
@@ -3479,10 +3494,7 @@
               <span class="bw-persona-trait">High social friction</span>
               <span class="bw-persona-trait">App-first</span>
             </div>
-            <div style="font-size: 12.5px; line-height: 1.5; color: var(--text-contrast);">
-              <strong>Core Need:</strong> Async, impersonal request flow — no cold messaging.<br>
-              <strong>Design Impact:</strong> Structured request form instead of open chat.
-            </div>
+            <p class="bw-persona-detail"><strong>Core Need:</strong> Async, impersonal request flow — no cold messaging.<br><strong>Design Impact:</strong> Structured request form instead of open chat.</p>
           </div>
 
           <!-- 03 -->
@@ -3497,17 +3509,14 @@
               <span class="bw-persona-trait">Goodwill motivated</span>
               <span class="bw-persona-trait">Community focus</span>
             </div>
-            <div style="font-size: 12.5px; line-height: 1.5; color: var(--text-contrast);">
-              <strong>Core Need:</strong> Easy listing, visibility of who's borrowing and why.<br>
-              <strong>Design Impact:</strong> Justified trust-score-first over deposit-first model.
-            </div>
+            <p class="bw-persona-detail"><strong>Core Need:</strong> Easy listing, visibility of who's borrowing and why.<br><strong>Design Impact:</strong> Justified trust-score-first over deposit-first model.</p>
           </div>
 
           <!-- 04 -->
           <div class="bw-persona-card">
             <div class="bw-persona-header">
               <span class="bw-persona-name">04 · Reluctant Lender</span>
-              <span class="bw-persona-badge" style="background: rgba(0,0,0,0.06); color: var(--text-contrast);">Secondary</span>
+              <span class="bw-persona-badge quiet">Secondary</span>
             </div>
             <p class="bw-persona-quote">"What if they damage it? I need some kind of protection."</p>
             <div class="bw-persona-traits">
@@ -3515,17 +3524,14 @@
               <span class="bw-persona-trait">Checks history</span>
               <span class="bw-persona-trait">Safety net</span>
             </div>
-            <div style="font-size: 12.5px; line-height: 1.5; color: var(--text-contrast);">
-              <strong>Core Need:</strong> Visible trust score + optional deposit field per listing.<br>
-              <strong>Design Impact:</strong> Added optional deposit; prominent trust score on requests.
-            </div>
+            <p class="bw-persona-detail"><strong>Core Need:</strong> Visible trust score + optional deposit field per listing.<br><strong>Design Impact:</strong> Added optional deposit; prominent trust score on requests.</p>
           </div>
 
           <!-- 05 -->
           <div class="bw-persona-card">
             <div class="bw-persona-header">
               <span class="bw-persona-name">05 · Indifferent Maximiser</span>
-              <span class="bw-persona-badge" style="background: rgba(0,0,0,0.06); color: var(--text-contrast);">Secondary</span>
+              <span class="bw-persona-badge quiet">Secondary</span>
             </div>
             <p class="bw-persona-quote">"I'd try it if there's clearly something in it for me."</p>
             <div class="bw-persona-traits">
@@ -3533,17 +3539,14 @@
               <span class="bw-persona-trait">Social proof</span>
               <span class="bw-persona-trait">Needs nudges</span>
             </div>
-            <div style="font-size: 12.5px; line-height: 1.5; color: var(--text-contrast);">
-              <strong>Core Need:</strong> Weekly digest of nearby items and requests.<br>
-              <strong>Design Impact:</strong> Flagged digest notifications as next-build feature post-MVP.
-            </div>
+            <p class="bw-persona-detail"><strong>Core Need:</strong> Weekly digest of nearby items and requests.<br><strong>Design Impact:</strong> Flagged digest notifications as next-build feature post-MVP.</p>
           </div>
 
           <!-- 06 -->
           <div class="bw-persona-card">
             <div class="bw-persona-header">
               <span class="bw-persona-name">06 · New Resident</span>
-              <span class="bw-persona-badge" style="background: rgba(0,0,0,0.06); color: var(--text-contrast);">Edge Case</span>
+              <span class="bw-persona-badge quiet">Edge Case</span>
             </div>
             <p class="bw-persona-quote">"I just moved in — I don't know anyone here yet."</p>
             <div class="bw-persona-traits">
@@ -3551,10 +3554,7 @@
               <span class="bw-persona-trait">Needs trust cues</span>
               <span class="bw-persona-trait">First-timer</span>
             </div>
-            <div style="font-size: 12.5px; line-height: 1.5; color: var(--text-contrast);">
-              <strong>Core Need:</strong> Onboarding explaining closed-society trust model.<br>
-              <strong>Design Impact:</strong> Strengthened RWA and flat-verified onboarding screens.
-            </div>
+            <p class="bw-persona-detail"><strong>Core Need:</strong> Onboarding explaining closed-society trust model.<br><strong>Design Impact:</strong> Strengthened RWA and flat-verified onboarding screens.</p>
           </div>
         </div>
       </section>
@@ -3578,6 +3578,7 @@
               <span class="bw-decision-icon">+</span>
             </button>
             <div class="bw-decision-body">
+              <div class="bw-decision-inner">
               <div class="bw-decision-row">
                 <span class="bw-decision-k">Considered</span>
                 <span class="bw-decision-v">A Nextdoor-style open map showing all nearby users within a radius — maximizes item supply.</span>
@@ -3594,6 +3595,7 @@
                 <span class="bw-decision-k">Trade-off</span>
                 <span class="bw-decision-v">Item availability is lower in smaller societies. The model requires dense housing clusters to achieve critical mass.</span>
               </div>
+              </div>
             </div>
           </div>
 
@@ -3607,6 +3609,7 @@
               <span class="bw-decision-icon">+</span>
             </button>
             <div class="bw-decision-body">
+              <div class="bw-decision-inner">
               <div class="bw-decision-row">
                 <span class="bw-decision-k">Considered</span>
                 <span class="bw-decision-v">A mandatory deposit/escrow model (Fat Llama style), providing financial guarantees for cautious lenders.</span>
@@ -3623,6 +3626,7 @@
                 <span class="bw-decision-k">Trade-off</span>
                 <span class="bw-decision-v">Lenders of higher-value items lack full financial insurance (mitigated via optional deposit listing field).</span>
               </div>
+              </div>
             </div>
           </div>
 
@@ -3636,6 +3640,7 @@
               <span class="bw-decision-icon">+</span>
             </button>
             <div class="bw-decision-body">
+              <div class="bw-decision-inner">
               <div class="bw-decision-row">
                 <span class="bw-decision-k">Considered</span>
                 <span class="bw-decision-v">A lightweight, always-on chat as primary coordination — simplest to build and closest to WhatsApp.</span>
@@ -3651,6 +3656,7 @@
               <div class="bw-decision-row">
                 <span class="bw-decision-k">Trade-off</span>
                 <span class="bw-decision-v">Coordinating partial-day adjustments or edge cases is slower than direct chat.</span>
+              </div>
               </div>
             </div>
           </div>
@@ -3680,7 +3686,7 @@
           </div>
         </div>
 
-        <div style="text-align: center; margin: 8px 0; color: #00685F; font-weight: 700;">↓</div>
+        <div class="bw-flow-connector" aria-hidden="true">↓</div>
 
         <div class="bw-flow-phase">
           <div class="bw-flow-title">Phase 2 · Discovery & Request</div>
@@ -3697,7 +3703,7 @@
           </div>
         </div>
 
-        <div style="text-align: center; margin: 8px 0; color: #00685F; font-weight: 700;">↓</div>
+        <div class="bw-flow-connector" aria-hidden="true">↓</div>
 
         <div class="bw-flow-phase">
           <div class="bw-flow-title">Phase 3 · Lender Decision & Logistics</div>
@@ -3712,7 +3718,7 @@
           </div>
         </div>
 
-        <div style="text-align: center; margin: 8px 0; color: #00685F; font-weight: 700;">↓</div>
+        <div class="bw-flow-connector" aria-hidden="true">↓</div>
 
         <div class="bw-flow-phase">
           <div class="bw-flow-title">Phase 4 · Return & Close Loop</div>
@@ -3794,15 +3800,15 @@
         </div>
 
         <!-- Wireframes -->
-        <h3 style="font-size: 18px; font-weight: 700; margin: 48px 0 12px; color: var(--text-heading);">From Sketch to Screen</h3>
-        <p class="bw-body-p" style="font-size: 14.5px;">Onboarding, browse, and request-creation sequences paper-sketched in full before any pixel work — pressure-testing interaction patterns with zero waste.</p>
+        <h3 class="bw-subtitle">From Sketch to Screen</h3>
+        <p class="bw-body-p bw-body-p--sm">Onboarding, browse, and request-creation sequences paper-sketched in full before any pixel work — pressure-testing interaction patterns with zero waste.</p>
         
         <div class="bw-wireframe-banner">
           <img src="/assets/borrow/wireframes.jpg" alt="Borrow Paper Wireframe Sketches" loading="lazy">
         </div>
 
         <!-- Design System Color Tokens -->
-        <h3 style="font-size: 18px; font-weight: 700; margin: 48px 0 16px; color: var(--text-heading);">Design System Tokens</h3>
+        <h3 class="bw-subtitle">Design System Tokens</h3>
         <div class="bw-swatch-grid">
           <div class="bw-swatch" style="background: #00685F; color: #fff;">
             <span class="bw-swatch-hex">#00685F</span>
@@ -4075,9 +4081,9 @@
         </div>
 
         <!-- Navigation Bar Asset -->
-        <div style="margin: 32px 0; border-radius: 18px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #ffffff; padding: 20px;">
-          <p style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-contrast); opacity: 0.6; margin-bottom: 12px;">App Bottom Navigation · 5 Persistent Tabs</p>
-          <img src="/assets/borrow/bottom-nav.svg" alt="Borrow 5 Tab Navigation" style="width: 100%; display: block;">
+        <div class="bw-asset-card">
+          <p class="bw-asset-label">App Bottom Navigation · 5 Persistent Tabs</p>
+          <img src="/assets/borrow/bottom-nav.svg" alt="Borrow 5 Tab Navigation" class="bw-asset-img">
         </div>
       </section>
 
@@ -4089,24 +4095,24 @@
         <h2 class="bw-section-title">What I'd do differently.</h2>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 24px;">
-          <div class="bw-stat-card">
-            <h4 style="font-size: 16px; font-weight: 700; margin: 0 0 10px; color: var(--text-heading);">Close the research-testing gap</h4>
-            <p class="bw-body-p" style="font-size: 14px; margin: 0;">I validated the concept with a survey before design, but never took the finished screens back to real residents. Next time: budget 3–5 moderated usability sessions on the clickable Figma prototype.</p>
+          <div class="bw-stat-card bw-reflect-card">
+            <h4 class="bw-reflect-title">Close the research-testing gap</h4>
+            <p class="bw-reflect-p">I validated the concept with a survey before design, but never took the finished screens back to real residents. Next time: budget 3–5 moderated usability sessions on the clickable Figma prototype.</p>
           </div>
-          <div class="bw-stat-card">
-            <h4 style="font-size: 16px; font-weight: 700; margin: 0 0 10px; color: var(--text-heading);">What I'd build next</h4>
-            <p class="bw-body-p" style="font-size: 14px; margin: 0;">The Society Directory and weekly-digest notification for the 'indifferent maximizer' segment. And an algorithm for trust score portability across multiple housing societies.</p>
+          <div class="bw-stat-card bw-reflect-card">
+            <h4 class="bw-reflect-title">What I'd build next</h4>
+            <p class="bw-reflect-p">The Society Directory and weekly-digest notification for the 'indifferent maximizer' segment. And an algorithm for trust score portability across multiple housing societies.</p>
           </div>
         </div>
 
-        <div class="bw-quote-card" style="margin-top: 28px;">
-          <h4 style="font-size: 15px; font-weight: 700; margin: 0 0 8px; color: var(--text-heading);">The lesson carried forward</h4>
-          <p class="bw-quote-text" style="font-size: 15px; font-style: normal;">A single well-evidenced insight — that awkwardness, not distrust, was the real blocker — did more to shape a good product than any amount of feature brainstorming. Narrowing scope (one society, not an open map) is often a stronger trust-building move than adding more trust features.</p>
+        <div class="bw-quote-card bw-quote-closing">
+          <h4 class="bw-quote-closing-h">The lesson carried forward</h4>
+          <p class="bw-quote-text bw-quote-text--plain">A single well-evidenced insight — that awkwardness, not distrust, was the real blocker — did more to shape a good product than any amount of feature brainstorming. Narrowing scope (one society, not an open map) is often a stronger trust-building move than adding more trust features.</p>
         </div>
 
         <!-- Next Project Footer CTA -->
-        <div style="display: flex; align-items: center; justify-content: flex-start; margin-top: 64px; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.08);">
-          <a href="/#work" style="font-weight: 700; font-size: 14px; color: #00685F; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">← Back to All Projects</a>
+        <div class="bw-next-row">
+          <a href="/#work" class="bw-backlink">← Back to All Projects</a>
         </div>
       </main>
     </div>
