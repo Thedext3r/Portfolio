@@ -35,6 +35,18 @@ describe('Borrow App Case Study', () => {
     cy.get('.bw-wireframe-banner img').should('be.visible');
   });
 
+  it('renders sticky chapter rail and allows chapter navigation', () => {
+    cy.get('.bw-chapter-rail-container').should('exist');
+    cy.get('.bw-chapter-item').should('have.length.at.least', 6);
+  });
+
+  it('interacts with live embedded working prototypes', () => {
+    cy.get('#bw-prototypes').scrollIntoView().should('be.visible');
+    cy.get('.proto-choice-chip').contains('Today (4 hrs)').click().should('have.class', 'active');
+    cy.get('.proto-send-btn').click().should('contain.text', 'Request Sent');
+    cy.get('#proto-trust-range').should('exist');
+  });
+
   it('verifies back to work navigation link', () => {
     cy.get('.bw-backlink').scrollIntoView().should('be.visible').and('contain.text', 'Back to All Projects');
   });

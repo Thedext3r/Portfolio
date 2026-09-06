@@ -83,7 +83,9 @@
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/interactive3d.css">
   <link rel="stylesheet" href="css/borrow.css">
+  <link rel="stylesheet" href="css/interactive-journey.css">
   <script src="js/borrow.js" defer></script>
+  <script src="js/interactive-journey.js" defer></script>
 
   <script>
     /* mobile gate: ≤820px at load renders case studies as a plain vertical
@@ -2626,6 +2628,11 @@
       <span class="h-line designer" id="scramble">Builds</span>
     </h1>
 
+    <div class="hero-statement-strip" data-cursor="try">
+      <span class="hero-strip-pill">✦</span>
+      <p class="hero-strip-text"><strong>Designing digital products &amp; systems</strong> that turn real human friction into frictionless, everyday moments.</p>
+    </div>
+
     </div><!-- /hero-content -->
   </section>
 
@@ -2638,6 +2645,89 @@
     <div class="intro-copy">
       <p class="intro-type">BBA in Digital Marketing from Sushant University, with specialized training in UI/UX Design from IIM SKILLS. Recently completed a summer internship at SHELeads India, crafting a brand book and customer engagement strategies in collaboration with LaunchED Global.</p>
       <p class="bold intro-type">Passionate about blending user-centered UI/UX design in Figma with impactful digital marketing strategies to create products that engage and convert.</p>
+    </div>
+
+    <!-- ── INTERACTIVE DRAGGABLE PROCESS TIMELINE ── -->
+    <div class="process-timeline-section" id="process">
+      <div class="process-header">
+        <div>
+          <span class="bw-section-label" style="display: inline-block; margin-bottom: 6px;">How I Work</span>
+          <h3 class="process-title">Case-Study-as-Journey Timeline</h3>
+        </div>
+        <div class="process-hint">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8L22 12L18 16"/><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
+          <span>Drag horizontally to explore</span>
+        </div>
+      </div>
+
+      <div class="process-drag-container" data-cursor="drag" tabindex="0" role="region" aria-label="Draggable design process timeline">
+        <div class="process-track">
+          <!-- Pin 1 -->
+          <div class="process-card">
+            <div class="process-node">01</div>
+            <div class="process-stage-label">Step 01 · Discovery</div>
+            <h4 class="process-card-title">Field Research &amp; Resident Habits</h4>
+            <p class="process-card-body">Auditing building WhatsApp chats, running a 28-resident survey, and analyzing existing rental friction in gated societies.</p>
+            <div class="process-tag-list">
+              <span class="process-chip">Surveys</span>
+              <span class="process-chip">Chat Audits</span>
+              <span class="process-chip">Competitor Scan</span>
+            </div>
+          </div>
+
+          <!-- Pin 2 -->
+          <div class="process-card">
+            <div class="process-node">02</div>
+            <div class="process-stage-label">Step 02 · Behavioral Insight</div>
+            <h4 class="process-card-title">Awkwardness &gt; Distrust Barrier</h4>
+            <p class="process-card-body">Uncovering that social discomfort of asking strangers was the true blocker, mapping 6 everyday resident mindsets to features.</p>
+            <div class="process-tag-list">
+              <span class="process-chip">6 Archetypes</span>
+              <span class="process-chip">Empathy Map</span>
+              <span class="process-chip">Root-Cause Analysis</span>
+            </div>
+          </div>
+
+          <!-- Pin 3 -->
+          <div class="process-card">
+            <div class="process-node">03</div>
+            <div class="process-stage-label">Step 03 · Architecture &amp; Flows</div>
+            <h4 class="process-card-title">Low-Fi Wireframes &amp; Logic</h4>
+            <p class="process-card-body">Pen-and-paper user journeys, RWA building verification checks, and replacing open chat with 1-tap structured request cards.</p>
+            <div class="process-tag-list">
+              <span class="process-chip">Paper Sketches</span>
+              <span class="process-chip">User Journey</span>
+              <span class="process-chip">IA States</span>
+            </div>
+          </div>
+
+          <!-- Pin 4 -->
+          <div class="process-card">
+            <div class="process-node">04</div>
+            <div class="process-stage-label">Step 04 · UI Design &amp; Tokens</div>
+            <h4 class="process-card-title">Tactile Design System in Figma</h4>
+            <p class="process-card-body">Deep teal trust palette, Manrope typography, WCAG AA accessibility contrast, and micro-animations for friendly reassurance.</p>
+            <div class="process-tag-list">
+              <span class="process-chip">Figma Components</span>
+              <span class="process-chip">Tokens</span>
+              <span class="process-chip">WCAG Contrast</span>
+            </div>
+          </div>
+
+          <!-- Pin 5 -->
+          <div class="process-card">
+            <div class="process-node">05</div>
+            <div class="process-stage-label">Step 05 · Loops &amp; Feedback</div>
+            <h4 class="process-card-title">Closing the Handover Loop</h4>
+            <p class="process-card-body">On-time return reminders, mutual reputation ratings, trust score recalculation, and defining the next-gen wishlist roadmap.</p>
+            <div class="process-tag-list">
+              <span class="process-chip">Mutual Ratings</span>
+              <span class="process-chip">Reminders</span>
+              <span class="process-chip">Roadmap</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2661,23 +2751,103 @@
       <img class="plane-sprite" src="assets/plane.svg" alt="">
     </div>
 
-    <!-- project tile grid (Borrow App Only) -->
-    <div class="project-tiles">
-
-      <div class="tiles-row">
-        <a class="project-tile tile-wide" href="/work/borrow" aria-label="Open the Borrow UX case study" style="grid-column: 1 / -1; width: 100%; height: auto; text-decoration: none;">
-          <div class="cs-hero-mock tile-mock" style="background: radial-gradient(circle at 75% 35%, #008378 0%, #005a52 50%, #00332e 100%); display: flex; align-items: center; justify-content: space-between; padding: clamp(28px, 5vw, 64px); overflow: hidden; position: relative; width: 100%; min-height: 420px; border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.18);">
-            <div style="max-width: 500px; z-index: 2;">
-              <span style="display: inline-block; padding: 6px 16px; border-radius: 999px; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px;">Featured Case Study · Mobile App</span>
-              <h3 style="font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 56px); line-height: 1.08; color: #fff; margin: 0 0 14px; letter-spacing: -0.01em;">Borrow</h3>
-              <p style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.9); margin: 0 0 24px;">A friendly mobile app that lets apartment residents borrow everyday tools and gear from neighbors in their building — without the awkward social asks.</p>
-              <span style="display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; color: #f6c740; transition: transform 0.2s ease;">Read Full Case Study →</span>
-            </div>
-            <img src="/assets/borrow/screen-browse.png" alt="Borrow App Mobile Interface" style="height: 360px; width: auto; max-width: 44%; object-fit: contain; border-radius: 20px; box-shadow: -15px 25px 60px rgba(0,0,0,0.6); transform: perspective(1000px) rotateY(-10deg) rotateX(4deg); transition: transform 0.4s ease; z-index: 1;">
-          </div>
-        </a>
+    <!-- ── ASYMMETRIC BENTO GRID (Featured Case Study + Interactive Sandbox) ── -->
+    <div class="project-tiles bento-section">
+      <div class="bento-heading-row">
+        <div>
+          <span class="bw-section-label" style="display: inline-block; margin-bottom: 6px;">Featured Work &amp; Craft</span>
+          <h2 class="bento-section-title">Case Study &amp; Interactive Sandbox</h2>
+          <p class="bento-section-subtitle">Explore the Borrow mobile app case study or test the live micro-interactions below.</p>
+        </div>
       </div>
 
+      <div class="bento-grid">
+        <!-- 01: Borrow Case Study (Main Anchor) -->
+        <a class="project-tile tile-wide bento-card bento-borrow-primary" href="/work/borrow" aria-label="Open the Borrow UX case study" data-cursor="view">
+          <div class="bento-borrow-content">
+            <div class="bento-tag-pill">
+              <span class="pulse-dot"></span>
+              <span>Featured UX Case Study · Mobile App</span>
+            </div>
+            <h3 class="bento-title">Borrow</h3>
+            <p class="bento-desc">A friendly mobile app that lets apartment residents borrow everyday tools and gear from neighbors in their building — without the awkward social asks.</p>
+            <span class="bento-cta">Read Case Study as a Journey →</span>
+          </div>
+          <div class="bento-borrow-visual">
+            <img class="bento-borrow-phone" src="/assets/borrow/screen-browse.png" alt="Borrow App Mobile Interface" width="854" height="1558">
+          </div>
+        </a>
+
+        <!-- 02: Interactive Micro-Prototype Sandbox -->
+        <div class="bento-card bento-interactive-tile" data-cursor="try">
+          <div>
+            <div class="bento-card-label">
+              <span>✦</span> Live Micro-Interaction
+            </div>
+            <h4 class="bento-subcard-title">Instant Availability Toggle</h4>
+            <p class="bento-subcard-p">Test a real UI component designed for quick neighborhood lending status:</p>
+            
+            <div class="bento-live-sandbox">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                <span style="font-family: 'Space Grotesk'; font-size: 13.5px; font-weight: 700; color: var(--text-base, #121C28);">Bosch Cordless Drill</span>
+                <label style="position: relative; display: inline-block; width: 44px; height: 24px; cursor: pointer;">
+                  <input type="checkbox" id="bento-mini-toggle" checked style="opacity: 0; width: 0; height: 0;">
+                  <span style="position: absolute; cursor: pointer; inset: 0; background-color: #00685F; transition: .3s; border-radius: 24px;"></span>
+                  <span style="position: absolute; content: ''; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></span>
+                </label>
+              </div>
+              <div class="bento-toggle-status" style="font-family: 'Space Grotesk'; font-size: 12px; font-weight: 600; color: #00685F;">Available for pickup</div>
+            </div>
+          </div>
+          <div style="font-family: 'Space Grotesk'; font-size: 12px; color: #889b96; margin-top: 14px;">Toggle directly on hover · Tactile state changes</div>
+        </div>
+
+        <!-- 03: Design Tokens & System Preview -->
+        <div class="bento-card bento-tokens-tile" data-cursor="try">
+          <div>
+            <div class="bento-card-label">Design Tokens</div>
+            <h4 class="bento-subcard-title">Accessible Harmony</h4>
+            <p class="bento-subcard-p">Deep teal primary tokens calibrated for WCAG AAA contrast:</p>
+            <div class="bento-palette-preview">
+              <div class="bento-swatch-dot" style="background: #00685F;" title="Primary Teal #00685F"></div>
+              <div class="bento-swatch-dot" style="background: #008378;" title="Teal Pressed #008378"></div>
+              <div class="bento-swatch-dot" style="background: #C88A2A;" title="Warm Gold #C88A2A"></div>
+              <div class="bento-swatch-dot" style="background: #121C28;" title="Midnight Ink #121C28"></div>
+            </div>
+          </div>
+          <div style="font-family: 'Space Grotesk'; font-size: 12px; color: #889b96;">Harmonious HSL scale &middot; Light &amp; Dark ready</div>
+        </div>
+
+        <!-- 04: Research & Validated Metrics -->
+        <div class="bento-card bento-metrics-tile">
+          <div>
+            <div class="bento-card-label">Survey Signal</div>
+            <div class="bento-metric-row">
+              <span class="bento-metric-num">82%</span>
+              <div class="bento-metric-info">Prefer sharing inside verified society over public strangers.</div>
+            </div>
+            <div class="bento-metric-row">
+              <span class="bento-metric-num">28</span>
+              <div class="bento-metric-info">Apartment residents interviewed across local societies.</div>
+            </div>
+          </div>
+          <div style="font-family: 'Space Grotesk'; font-size: 12px; color: #889b96;">Survey-backed product thinking</div>
+        </div>
+
+        <!-- 05: Audio & Tactile Micro-Details -->
+        <div class="bento-card bento-craft-tile" data-cursor="try">
+          <div>
+            <div class="bento-card-label" style="color: #00685F;">Micro-Details</div>
+            <h4 class="bento-subcard-title">Sound-Optional UI</h4>
+            <p class="bento-subcard-p">Zero-dependency Web Audio synthesizes subtle physical clicks for tactile interaction feedback.</p>
+            <button class="sound-toggle-btn" type="button" aria-label="Toggle sound feedback" style="width: fit-content; margin-top: 6px;">
+              <svg class="sound-icon-svg" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+              <span class="sound-toggle-label">Sound Off</span>
+            </button>
+          </div>
+          <div style="font-family: 'Space Grotesk'; font-size: 12px; color: #728480; margin-top: 14px;">Instant response · 0 audio files to download</div>
+        </div>
+      </div>
     </div>
 
   </section>
@@ -3043,6 +3213,20 @@
       </header>
 
       <div class="bw-divider"></div>
+
+      <!-- ── STICKY CASE-STUDY CHAPTER RAIL ── -->
+      <div class="bw-chapter-rail-container" aria-label="Case Study Chapter Navigation">
+        <nav class="bw-chapter-rail">
+          <a href="#bw-overview" class="bw-chapter-item active"><span class="bw-chapter-num">01</span><span>At A Glance</span></a>
+          <a href="#bw-problem" class="bw-chapter-item"><span class="bw-chapter-num">02</span><span>The Barrier</span></a>
+          <a href="#bw-research" class="bw-chapter-item"><span class="bw-chapter-num">03</span><span>Research</span></a>
+          <a href="#bw-personas" class="bw-chapter-item"><span class="bw-chapter-num">04</span><span>6 Personas</span></a>
+          <a href="#bw-decisions" class="bw-chapter-item"><span class="bw-chapter-num">05</span><span>Decisions</span></a>
+          <a href="#bw-flow" class="bw-chapter-item"><span class="bw-chapter-num">06</span><span>Journey</span></a>
+          <a href="#bw-design" class="bw-chapter-item"><span class="bw-chapter-num">07</span><span>UI &amp; Prototypes</span></a>
+          <a href="#bw-reflection" class="bw-chapter-item"><span class="bw-chapter-num">08</span><span>Reflection</span></a>
+        </nav>
+      </div>
 
       <!-- ── OVERVIEW ── -->
       <section id="bw-overview">
@@ -3567,6 +3751,72 @@
         
         <div class="bw-wireframe-banner">
           <img src="/assets/borrow/wireframes.jpg" alt="Borrow Paper Wireframe Sketches" loading="lazy">
+        </div>
+
+        <!-- ── LIVE WORKING MINI-PROTOTYPES (Recruiter Playgrounds) ── -->
+        <div class="live-proto-showcase" id="bw-prototypes" data-cursor="try">
+          <div class="live-proto-header">
+            <div>
+              <span class="live-proto-badge">✦ Live Working Prototypes</span>
+              <h3 class="bw-subtitle" style="margin: 8px 0 0;">Test the Flow Directly</h3>
+            </div>
+            <p style="font-family: 'Space Grotesk'; font-size: 13.5px; color: #556763; margin: 0;">Try these working micro-widgets built with pure JS/CSS.</p>
+          </div>
+
+          <div class="live-proto-grid">
+            <!-- Prototype 1: 1-Tap Request Card Widget -->
+            <div class="proto-card-widget">
+              <div class="proto-item-preview">
+                <div class="proto-item-icon">🔨</div>
+                <div>
+                  <div style="font-family: 'Space Grotesk'; font-size: 15px; font-weight: 700; color: var(--text-base, #121C28);">Black+Decker Hammer Drill</div>
+                  <div style="font-family: 'Space Grotesk'; font-size: 12px; color: #00685F; font-weight: 600;">Lender: Priya R. · Tower B-402</div>
+                </div>
+              </div>
+
+              <div class="proto-label">Select Loan Duration</div>
+              <div class="proto-chip-row">
+                <button type="button" class="proto-choice-chip active">Weekend (2 days)</button>
+                <button type="button" class="proto-choice-chip">Today (4 hrs)</button>
+                <button type="button" class="proto-choice-chip">1 Week</button>
+              </div>
+
+              <div class="proto-label">Pickup Preference</div>
+              <div class="proto-chip-row">
+                <button type="button" class="proto-choice-chip active">Doorstep Handover</button>
+                <button type="button" class="proto-choice-chip">Society Gate Security</button>
+              </div>
+
+              <button type="button" class="bw-comp-btn primary proto-send-btn" style="width: 100%; justify-content: center; margin-top: 14px; padding: 12px 20px;">
+                Send 1-Tap Request →
+              </button>
+              <div class="proto-success-notice" style="display: none; font-family: 'Space Grotesk'; font-size: 12px; color: #00685F; font-weight: 700; text-align: center; margin-top: 10px;">
+                ✓ Notification pinged to Priya! Flat 402 will confirm shortly.
+              </div>
+            </div>
+
+            <!-- Prototype 2: Trust Score Simulator -->
+            <div class="proto-trust-sim">
+              <div class="proto-label" style="text-align: center;">Neighbor Trust Simulator</div>
+              <div class="proto-score-ring-box">
+                <div class="proto-score-val">4.9</div>
+                <div class="proto-score-sub proto-score-status">★ Verified Trusted Resident</div>
+                <div class="proto-score-sub proto-score-loans" style="font-size: 11.5px; opacity: 0.85;">32 successful loans · 100% on-time</div>
+              </div>
+
+              <div class="proto-slider-wrap">
+                <div style="display: flex; justify-content: space-between; font-family: 'Space Grotesk'; font-size: 12px; color: #556763; margin-bottom: 6px;">
+                  <span>Adjust Simulated On-Time Returns:</span>
+                  <span style="font-weight: 700; color: #00685F;">Drag slider</span>
+                </div>
+                <input type="range" id="proto-trust-range" class="proto-slider" min="3.0" max="5.0" step="0.1" value="4.9" aria-label="Simulate trust score on-time return rate">
+              </div>
+
+              <p style="font-family: 'Space Grotesk'; font-size: 12px; line-height: 1.5; color: #697c77; margin: 0; text-align: center;">
+                Recalculates in real time based on verified address, return punctuality, and peer community ratings.
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Design System Color Tokens -->
