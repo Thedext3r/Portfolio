@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+  <defs>
+    <linearGradient id="ps-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071d32" />
+      <stop offset="100%" stop-color="#020b14" />
+    </linearGradient>
+    <linearGradient id="ps-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="22" height="22" rx="5.2" fill="url(#ps-bg)" stroke="url(#ps-border)" stroke-width="0.9"/>
+  <!-- Tabler brand-adobe-photoshop from universal-icons MCP -->
+  <g fill="none" stroke="#7dd3fc" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.79 15.79V12m0 0V9.276c0-.11 0-.165.004-.211c.044-.45.4-.806.85-.85c.046-.004.101-.004.211-.004h1.303a1.895 1.895 0 1 1 0 3.789zm10.388-.737c-.164-.659-.935-1.158-1.862-1.158c-1.047 0-1.895.637-1.895 1.421c0 .785.848 1.421 1.895 1.421c1.046 0 1.895.637 1.895 1.421c0 .785-.849 1.421-1.895 1.421c-.93 0-1.704-.502-1.864-1.165"/>
+  </g>
+</svg>

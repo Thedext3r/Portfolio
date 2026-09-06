@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+  <defs>
+    <linearGradient id="mail-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <filter id="mail-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect filter="url(#mail-shadow)" x="1.5" y="1.5" width="21" height="21" rx="5.2" fill="url(#mail-bg)" />
+  <!-- Remix mail-fill vector from universal-icons MCP -->
+  <g transform="translate(3.8, 3.8) scale(0.68)" fill="#ffffff">
+    <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1m9.06 8.683L5.648 6.238L4.353 7.762l7.72 6.555l7.581-6.56l-1.308-1.513z"/>
+  </g>
+</svg>
