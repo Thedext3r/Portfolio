@@ -52,6 +52,28 @@ describe('Portfolio Site & Navigation', () => {
     cy.get('.hero-clean').should('be.visible');
   });
 
+  it('renders interactive creative canvas hero with mind-cloud cards and macOS dock', () => {
+    cy.get('#canvas-board').should('be.visible');
+    cy.get('.canvas-silhouette-img').should('be.visible');
+    cy.get('.canvas-item').should('have.length.at.least', 20);
+    cy.get('#macos-dock').should('be.visible');
+    cy.get('.dock-item').should('have.length', 9);
+  });
+
+  it('allows dragging canvas items and interacting with macOS dock', () => {
+    // Click notes dock button to open notes window
+    cy.get('.dock-item[data-app="notes"]').click();
+    cy.get('#canvas-notes-window').should('be.visible');
+    cy.get('#notes-close-btn').click();
+    cy.get('#canvas-notes-window').should('not.be.visible');
+
+    // Click a canvas item to open project preview modal
+    cy.get('.canvas-item').first().click();
+    cy.get('#canvas-item-modal').should('be.visible');
+    cy.get('#item-modal-close').click();
+    cy.get('#canvas-item-modal').should('not.be.visible');
+  });
+
   it('renders modern clean testimonials grid', () => {
     cy.get('.testimonials-clean').scrollIntoView().should('be.visible');
     cy.get('.t-card-clean').should('have.length', 3);
@@ -61,7 +83,8 @@ describe('Portfolio Site & Navigation', () => {
   it('captures screenshots of clean homepage in light and dark modes', () => {
     cy.viewport(1280, 800);
     cy.get('#page-loader').should('not.be.visible', { timeout: 10000 });
-    cy.get('.hero-clean-title').should('be.visible');
+    cy.get('.hero-canvas-stage').should('be.visible');
+    cy.wait(500);
     cy.screenshot('clean-homepage-light', { capture: 'viewport' });
     cy.get('.bento-grid').scrollIntoView();
     cy.wait(400);
@@ -74,8 +97,8 @@ describe('Portfolio Site & Navigation', () => {
     cy.get('#theme-toggle').click();
     cy.get('body').should('have.class', 'night');
     cy.scrollTo('top');
-    cy.get('.hero-clean-title').should('be.visible');
-    cy.wait(400);
+    cy.get('.hero-canvas-stage').should('be.visible');
+    cy.wait(500);
     cy.screenshot('clean-homepage-dark', { capture: 'viewport' });
     cy.get('.testimonials-clean').scrollIntoView();
     cy.wait(400);

@@ -426,9 +426,214 @@
   }
 
   /* ── INITIALIZATION ─────────────────────────────────────────────────────── */
+  /* ── 7. INTERACTIVE CREATIVE CANVAS & MACOS DOCK ─────────────────────────── */
+  function initCanvasHero() {
+    const hero = document.getElementById('hero');
+    const board = document.getElementById('canvas-board');
+    const cloud = document.getElementById('canvas-mind-cloud');
+    const dock = document.getElementById('macos-dock');
+    if (!hero || !cloud) return;
+
+    const cards = Array.from(cloud.querySelectorAll('.canvas-item'));
+    const notesWin = document.getElementById('canvas-notes-window');
+    const notesCloseBtn = document.getElementById('notes-close-btn');
+    const itemModal = document.getElementById('canvas-item-modal');
+    const itemModalScrim = document.getElementById('item-modal-scrim');
+    const itemModalClose = document.getElementById('item-modal-close');
+    const modalCardImg = document.getElementById('modal-card-img');
+    const modalCardTitle = document.getElementById('modal-card-title');
+    const modalCardDesc = document.getElementById('modal-card-desc');
+
+    /* ── Draggable Cards Engine ── */
+    cards.forEach(card => {
+      let isDragging = false;
+      let startX = 0;
+      let startY = 0;
+      let initialLeft = 0;
+      let initialTop = 0;
+      let hasMoved = false;
+
+      card.addEventListener('pointerdown', e => {
+        // Only primary mouse button or touch
+        if (e.button !== 0 && e.pointerType === 'mouse') return;
+        isDragging = true;
+        hasMoved = false;
+        startX = e.clientX;
+        startY = e.clientY;
+
+        const rect = card.getBoundingClientRect();
+        const parentRect = cloud.getBoundingClientRect();
+        initialLeft = rect.left + rect.width / 2 - parentRect.left;
+        initialTop = rect.top + rect.height / 2 - parentRect.top;
+
+        card.setPointerCapture(e.pointerId);
+        card.classList.add('is-dragging');
+        SoundFX.playTick();
+      });
+
+      card.addEventListener('pointermove', e => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        if (Math.hypot(dx, dy) > 5) {
+          hasMoved = true;
+        }
+
+        const parentRect = cloud.getBoundingClientRect();
+        let newX = initialLeft + dx;
+        let newY = initialTop + dy;
+
+        // Keep inside bounds
+        newX = Math.max(20, Math.min(parentRect.width - 20, newX));
+        newY = Math.max(20, Math.min(parentRect.height - 20, newY));
+
+        const pctX = (newX / parentRect.width) * 100;
+        const pctY = (newY / parentRect.height) * 100;
+        card.style.left = pctX.toFixed(2) + '%';
+        card.style.top = pctY.toFixed(2) + '%';
+      });
+
+      function endDrag(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        card.classList.remove('is-dragging');
+        try { card.releasePointerCapture(e.pointerId); } catch (_) {}
+
+        if (!hasMoved) {
+          // Card was tapped/clicked: open preview modal
+          openCardModal(card);
+        }
+      }
+
+      card.addEventListener('pointerup', endDrag);
+      card.addEventListener('pointercancel', endDrag);
+    });
+
+    /* ── Card Modal Open / Close ── */
+    function openCardModal(card) {
+      if (!itemModal) return;
+      const label = card.getAttribute('data-label') || 'Project Artwork';
+      const subtitle = card.getAttribute('data-subtitle') || 'UI/UX & Brand Creative Direction';
+      const img = card.querySelector('img');
+
+      if (modalCardTitle) modalCardTitle.textContent = label;
+      if (modalCardDesc) modalCardDesc.textContent = subtitle + '. Crafted by Sunil Ohdar exploring high-craft visual identity, structured Figma component tokens, and tactile digital interactions.';
+      if (modalCardImg && img) {
+        modalCardImg.src = img.src;
+        modalCardImg.alt = label;
+      }
+
+      itemModal.style.display = 'flex';
+      SoundFX.playChime();
+    }
+
+    function closeCardModal() {
+      if (itemModal) itemModal.style.display = 'none';
+    }
+
+    if (itemModalScrim) itemModalScrim.addEventListener('click', closeCardModal);
+    if (itemModalClose) itemModalClose.addEventListener('click', closeCardModal);
+
+    /* ── macOS Parabolic Dock Magnification ── */
+    if (dock) {
+      const dockItems = Array.from(dock.querySelectorAll('.dock-item'));
+      const maxDist = 95;
+      const maxScale = 0.42;
+
+      dock.addEventListener('mousemove', e => {
+        const mouseX = e.clientX;
+        dockItems.forEach(item => {
+          const rect = item.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const dist = Math.abs(mouseX - centerX);
+          if (dist < maxDist) {
+            const factor = Math.cos((dist / maxDist) * (Math.PI / 2));
+            const scale = 1 + maxScale * factor;
+            item.style.transform = 'scale(' + scale.toFixed(3) + ')';
+          } else {
+            item.style.transform = 'scale(1)';
+          }
+        });
+      });
+
+      dock.addEventListener('mouseleave', () => {
+        dockItems.forEach(item => {
+          item.style.transform = 'scale(1)';
+        });
+      });
+
+      /* ── Dock Click Actions ── */
+      dockItems.forEach(item => {
+        item.addEventListener('click', e => {
+          const app = item.getAttribute('data-app');
+          item.classList.remove('dock-bounce-anim');
+          void item.offsetWidth; // trigger reflow
+          item.classList.add('dock-bounce-anim');
+          SoundFX.playClick();
+
+          if (app === 'trash') {
+            // Reset all cards back to original positions with spring stagger
+            cards.forEach((card, idx) => {
+              const homeLeft = card.getAttribute('data-home-left');
+              const homeTop = card.getAttribute('data-home-top');
+              setTimeout(() => {
+                card.style.transition = 'left 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), top 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                card.style.left = homeLeft;
+                card.style.top = homeTop;
+                setTimeout(() => {
+                  card.style.transition = '';
+                }, 460);
+              }, idx * 12);
+            });
+            SoundFX.playChime();
+          } else if (app === 'notes') {
+            if (notesWin) {
+              notesWin.style.display = notesWin.style.display === 'none' ? 'block' : 'none';
+              if (notesWin.style.display === 'block') SoundFX.playChime();
+            }
+          } else if (app === 'alert') {
+            const bento = document.getElementById('bento');
+            if (bento) bento.scrollIntoView({ behavior: 'smooth' });
+          } else if (app === 'photos') {
+            if (cards.length > 0) openCardModal(cards[0]);
+          } else if (app === 'mail') {
+            window.location.href = 'mailto:sunilohdar.design@gmail.com?subject=Design%20Inquiry%20from%20Portfolio';
+          } else if (app === 'instagram') {
+            window.open('https://instagram.com', '_blank', 'noopener');
+          } else if (app === 'ae' || app === 'ps' || app === 'ai') {
+            const toolCards = {
+              'ae': 'stage-visuals',
+              'ps': 'collage-animations',
+              'ai': 'wine-bottle'
+            };
+            const targetCard = cards.find(c => c.getAttribute('data-id') === toolCards[app]);
+            if (targetCard) openCardModal(targetCard);
+          }
+        });
+      });
+    }
+
+    /* ── Notes Window Controls ── */
+    if (notesCloseBtn && notesWin) {
+      notesCloseBtn.addEventListener('click', () => {
+        notesWin.style.display = 'none';
+        SoundFX.playClick();
+      });
+    }
+
+    // Escape key closes modals
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        if (notesWin) notesWin.style.display = 'none';
+        if (itemModal) itemModal.style.display = 'none';
+      }
+    });
+  }
+
   function initAll() {
     initCustomCursor();
     initHeroKinetic();
+    initCanvasHero();
     initDraggableProcess();
     initLivePrototypes();
     initChapterRail();

@@ -2589,50 +2589,251 @@
   <!-- shared chrome (js/site.js) — renders the nav bar + day toggle + mobile menu -->
   <site-nav></site-nav>
 
-  <!-- ════ CLEAN MINIMALIST HERO (Replaces legacy illustrative template) ════ -->
-  <section class="hero hero-clean" id="hero">
-    <div class="hero-clean-bg" aria-hidden="true">
-      <div class="hero-clean-glow glow-1"></div>
-      <div class="hero-clean-glow glow-2"></div>
-      <div class="hero-clean-grid"></div>
-    </div>
+  <!-- ════ INTERACTIVE CANVAS HERO (Creative Mind & macOS Dock) ════ -->
+  <section class="hero hero-clean hero-canvas-stage" id="hero">
+    <!-- Ambient Studio Vignette -->
+    <div class="canvas-ambient-vignette" aria-hidden="true"></div>
 
-    <div class="hero-clean-container">
-      <div class="hero-status-pill">
-        <span class="pulse-dot"></span>
-        <span>Available for UI/UX &amp; Product Design · Gurugram, India</span>
+    <!-- Top floating studio status bar -->
+    <div class="canvas-top-bar">
+      <div class="canvas-top-left">
+        <span class="canvas-dot-pulse"></span>
+        <span class="canvas-top-identity">Sunil Ohdar</span>
+        <span class="canvas-top-sep">/</span>
+        <h1 class="hero-clean-title canvas-hero-headline" style="display: inline; font-size: 13px !important; font-family: 'Space Grotesk', sans-serif !important; font-weight: 600 !important; margin: 0 !important;">
+          <span class="canvas-top-role">UI/UX &amp; Digital Marketer</span>
+        </h1>
       </div>
-
-      <p class="hero-clean-greeting">Hello, I’m <span class="hero-name-badge">Sunil Ohdar</span></p>
-
-      <h1 class="hero-clean-title">
-        UI/UX Designer <span class="hero-amp">&amp;</span><br>
-        <span class="hero-title-accent">Digital Marketer</span>
-      </h1>
-
-      <p class="hero-clean-desc">
-        I craft human-centered digital interfaces, design systems in Figma, and data-informed user experiences that turn everyday friction into effortless, memorable moments.
-      </p>
-
-      <div class="hero-clean-actions">
-        <a href="#work" class="hero-btn-primary" data-cursor="view">
-          <span>Explore Featured Work</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
-        </a>
-        <a href="#process" class="hero-btn-secondary" data-cursor="view">
-          <span>My Design Process</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <div class="canvas-top-right">
+        <a href="#story" class="canvas-explore-pill" data-cursor="view">
+          <span>Explore Work</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 13l5 5 5-5M12 4v14"/></svg>
         </a>
       </div>
+    </div>
 
-      <div class="hero-clean-tags">
-        <span class="hero-tag-item">✦ Figma Design Systems</span>
-        <span class="hero-tag-item">✦ User Research &amp; Surveys</span>
-        <span class="hero-tag-item">✦ Interactive Prototyping</span>
-        <span class="hero-tag-item">✦ Digital Marketing</span>
-        <span class="hero-tag-item">✦ WCAG AAA Contrast</span>
+    <!-- The 4:3 Interactive Creative Canvas -->
+    <div class="canvas-board" id="canvas-board">
+      <!-- Background Silhouette of Designer in cap & sunglasses -->
+      <div class="canvas-bg-wrap" aria-hidden="true">
+        <img src="assets/canvas/hero-designer-canvas.jpg" alt="Designer Silhouette" class="canvas-silhouette-img" draggable="false">
+      </div>
+
+      <!-- Mind Cloud Floating Project Cards (Draggable & Clickable) -->
+      <div class="canvas-mind-cloud" id="canvas-mind-cloud">
+        <div class="canvas-item" data-id="stage-visuals" data-label="STAGE VISUALS" data-subtitle="Motion Graphics & Stage Scenography" style="left: 38.75%; top: 26.42%;" data-home-left="38.75%" data-home-top="26.42%">
+          <div class="canvas-item-inner" style="width: 138px; height: 64.5px;">
+            <img src="assets/canvas/items/stage-visuals.png" alt="STAGE VISUALS" draggable="false">
+          </div>
+          <span class="canvas-item-label">STAGE VISUALS</span>
+        </div>
+        <div class="canvas-item" data-id="efemmera" data-label="EFEMMERA" data-subtitle="Experimental Sound & Visual Identity" style="left: 59.25%; top: 18.5%;" data-home-left="59.25%" data-home-top="18.5%">
+          <div class="canvas-item-inner" style="width: 57px; height: 57px;">
+            <img src="assets/canvas/items/efemmera.png" alt="EFEMMERA" draggable="false">
+          </div>
+          <span class="canvas-item-label">EFEMMERA</span>
+        </div>
+        <div class="canvas-item" data-id="kajecik" data-label="KAJECIK" data-subtitle="Publication Design & Editorial Sketchbook" style="left: 66.38%; top: 15.5%;" data-home-left="66.38%" data-home-top="15.5%">
+          <div class="canvas-item-inner" style="width: 45px; height: 63px;">
+            <img src="assets/canvas/items/kajecik.png" alt="KAJECIK" draggable="false">
+          </div>
+          <span class="canvas-item-label">KAJECIK</span>
+        </div>
+        <div class="canvas-item" data-id="ramowka" data-label="RAMÓWKA" data-subtitle="Brand Campaign & Season Visuals" style="left: 23.38%; top: 20.67%;" data-home-left="23.38%" data-home-top="20.67%">
+          <div class="canvas-item-inner" style="width: 51px; height: 57px;">
+            <img src="assets/canvas/items/ramowka.png" alt="RAMÓWKA" draggable="false">
+          </div>
+          <span class="canvas-item-label">RAMÓWKA</span>
+        </div>
+        <div class="canvas-item" data-id="love-song-sad" data-label="LOVE SONG SAD" data-subtitle="Cover Artwork & Typography" style="left: 32.62%; top: 21.5%;" data-home-left="32.62%" data-home-top="21.5%">
+          <div class="canvas-item-inner" style="width: 57px; height: 63px;">
+            <img src="assets/canvas/items/love-song-sad.png" alt="LOVE SONG SAD" draggable="false">
+          </div>
+          <span class="canvas-item-label">LOVE SONG SAD</span>
+        </div>
+        <div class="canvas-item" data-id="i-nie-puszcze" data-label="I NIE PUSZCZĘ" data-subtitle="Poster Art & Graphic Direction" style="left: 20.38%; top: 31.83%;" data-home-left="20.38%" data-home-top="31.83%">
+          <div class="canvas-item-inner" style="width: 57px; height: 63px;">
+            <img src="assets/canvas/items/i-nie-puszcze.png" alt="I NIE PUSZCZĘ" draggable="false">
+          </div>
+          <span class="canvas-item-label">I NIE PUSZCZĘ</span>
+        </div>
+        <div class="canvas-item" data-id="face-blue" data-label="AURORA" data-subtitle="Ambient Lighting & 3D Form Study" style="left: 28.38%; top: 34.5%;" data-home-left="28.38%" data-home-top="34.5%">
+          <div class="canvas-item-inner" style="width: 57px; height: 51px;">
+            <img src="assets/canvas/items/face-blue.png" alt="AURORA" draggable="false">
+          </div>
+          <span class="canvas-item-label">AURORA</span>
+        </div>
+        <div class="canvas-item" data-id="szept" data-label="SZEPT" data-subtitle="Sensory Interaction & Editorial Art" style="left: 26.62%; top: 41.33%;" data-home-left="26.62%" data-home-top="41.33%">
+          <div class="canvas-item-inner" style="width: 54px; height: 66px;">
+            <img src="assets/canvas/items/szept.png" alt="SZEPT" draggable="false">
+          </div>
+          <span class="canvas-item-label">SZEPT</span>
+        </div>
+        <div class="canvas-item" data-id="wtf" data-label="WTF" data-subtitle="Expressive Digital Artwork & Motion" style="left: 61.38%; top: 31.5%;" data-home-left="61.38%" data-home-top="31.5%">
+          <div class="canvas-item-inner" style="width: 57px; height: 63px;">
+            <img src="assets/canvas/items/wtf.png" alt="WTF" draggable="false">
+          </div>
+          <span class="canvas-item-label">WTF</span>
+        </div>
+        <div class="canvas-item" data-id="interludium" data-label="INTERLUDIUM" data-subtitle="Cinematic Scenography & Concept" style="left: 78.38%; top: 35.33%;" data-home-left="78.38%" data-home-top="35.33%">
+          <div class="canvas-item-inner" style="width: 57px; height: 72px;">
+            <img src="assets/canvas/items/interludium.png" alt="INTERLUDIUM" draggable="false">
+          </div>
+          <span class="canvas-item-label">INTERLUDIUM</span>
+        </div>
+        <div class="canvas-item" data-id="trasa-po-koncu-swiata" data-label="TRASA PO KOŃCU ŚWIATA" data-subtitle="Concert Tour Visual Identity" style="left: 82.75%; top: 37.67%;" data-home-left="82.75%" data-home-top="37.67%">
+          <div class="canvas-item-inner" style="width: 57px; height: 78px;">
+            <img src="assets/canvas/items/trasa-po-koncu-swiata.png" alt="TRASA PO KOŃCU ŚWIATA" draggable="false">
+          </div>
+          <span class="canvas-item-label">TRASA PO KOŃCU ŚWIATA</span>
+        </div>
+        <div class="canvas-item" data-id="sbm-ff24" data-label="SBM FF24" data-subtitle="Festival Stage Branding & App Assets" style="left: 92.0%; top: 45.83%;" data-home-left="92.0%" data-home-top="45.83%">
+          <div class="canvas-item-inner" style="width: 60px; height: 63px;">
+            <img src="assets/canvas/items/sbm-ff24.png" alt="SBM FF24" draggable="false">
+          </div>
+          <span class="canvas-item-label">SBM FF24</span>
+        </div>
+        <div class="canvas-item" data-id="chanel" data-label="CHANEL" data-subtitle="Editorial Luxury Lookbook & Digital UI" style="left: 81.75%; top: 56.17%;" data-home-left="81.75%" data-home-top="56.17%">
+          <div class="canvas-item-inner" style="width: 60px; height: 69px;">
+            <img src="assets/canvas/items/chanel.png" alt="CHANEL" draggable="false">
+          </div>
+          <span class="canvas-item-label">CHANEL</span>
+        </div>
+        <div class="canvas-item" data-id="solar-bialas" data-label="SOLAR + BIAŁAS" data-subtitle="Vinyl Packaging & Typographic Grid" style="left: 72.5%; top: 51.67%;" data-home-left="72.5%" data-home-top="51.67%">
+          <div class="canvas-item-inner" style="width: 57px; height: 75px;">
+            <img src="assets/canvas/items/solar-bialas.png" alt="SOLAR + BIAŁAS" draggable="false">
+          </div>
+          <span class="canvas-item-label">SOLAR + BIAŁAS</span>
+        </div>
+        <div class="canvas-item" data-id="collage-animations" data-label="COLLAGE ANIMATIONS" data-subtitle="Mixed Media Animation & Stop Motion" style="left: 58.13%; top: 48.67%;" data-home-left="58.13%" data-home-top="48.67%">
+          <div class="canvas-item-inner" style="width: 57px; height: 102px;">
+            <img src="assets/canvas/items/collage-animations.png" alt="COLLAGE ANIMATIONS" draggable="false">
+          </div>
+          <span class="canvas-item-label">COLLAGE ANIMATIONS</span>
+        </div>
+        <div class="canvas-item" data-id="trasa-konca-swiata" data-label="TRASA KOŃCA ŚWIATA" data-subtitle="Live Event Poster & Billboard Series" style="left: 55.12%; top: 41.67%;" data-home-left="55.12%" data-home-top="41.67%">
+          <div class="canvas-item-inner" style="width: 57px; height: 72px;">
+            <img src="assets/canvas/items/trasa-konca-swiata.png" alt="TRASA KOŃCA ŚWIATA" draggable="false">
+          </div>
+          <span class="canvas-item-label">TRASA KOŃCA ŚWIATA</span>
+        </div>
+        <div class="canvas-item" data-id="pierwszy-swag" data-label="PIERWSZY SWAG W POLSCE" data-subtitle="CD Jewel Case & Print Packaging" style="left: 47.0%; top: 36.17%;" data-home-left="47.0%" data-home-top="36.17%">
+          <div class="canvas-item-inner" style="width: 54px; height: 63px;">
+            <img src="assets/canvas/items/pierwszy-swag.png" alt="PIERWSZY SWAG W POLSCE" draggable="false">
+          </div>
+          <span class="canvas-item-label">PIERWSZY SWAG W POLSCE</span>
+        </div>
+        <div class="canvas-item" data-id="ryk" data-label="RYK" data-subtitle="Music Album Design & Merch Graphics" style="left: 39.88%; top: 40.5%;" data-home-left="39.88%" data-home-top="40.5%">
+          <div class="canvas-item-inner" style="width: 57px; height: 51px;">
+            <img src="assets/canvas/items/ryk.png" alt="RYK" draggable="false">
+          </div>
+          <span class="canvas-item-label">RYK</span>
+        </div>
+        <div class="canvas-item" data-id="grafija-vinyl" data-label="GRAFIJA VINYL" data-subtitle="Vinyl Record Sleeve & Sleevenotes" style="left: 43.88%; top: 48.5%;" data-home-left="43.88%" data-home-top="48.5%">
+          <div class="canvas-item-inner" style="width: 57px; height: 57px;">
+            <img src="assets/canvas/items/grafija-vinyl.png" alt="GRAFIJA VINYL" draggable="false">
+          </div>
+          <span class="canvas-item-label">GRAFIJA VINYL</span>
+        </div>
+        <div class="canvas-item" data-id="wine-bottle" data-label="WINE BOTTLE LABEL" data-subtitle="Artisanal Packaging & Tactile Paper" style="left: 41.12%; top: 52.67%;" data-home-left="41.12%" data-home-top="52.67%">
+          <div class="canvas-item-inner" style="width: 63px; height: 78px;">
+            <img src="assets/canvas/items/wine-bottle.png" alt="WINE BOTTLE LABEL" draggable="false">
+          </div>
+          <span class="canvas-item-label">WINE BOTTLE LABEL</span>
+        </div>
+        <div class="canvas-item" data-id="alboalbo" data-label="ALBOALBO" data-subtitle="Creative Agency Branding & Guidelines" style="left: 38.88%; top: 61.17%;" data-home-left="38.88%" data-home-top="61.17%">
+          <div class="canvas-item-inner" style="width: 60px; height: 69px;">
+            <img src="assets/canvas/items/alboalbo.png" alt="ALBOALBO" draggable="false">
+          </div>
+          <span class="canvas-item-label">ALBOALBO</span>
+        </div>
+        <div class="canvas-item" data-id="fantasmagorie" data-label="FANTASMAGORIE" data-subtitle="Noir Exhibition Identity & Booklet" style="left: 47.12%; top: 72.0%;" data-home-left="47.12%" data-home-top="72.0%">
+          <div class="canvas-item-inner" style="width: 57px; height: 66px;">
+            <img src="assets/canvas/items/fantasmagorie.png" alt="FANTASMAGORIE" draggable="false">
+          </div>
+          <span class="canvas-item-label">FANTASMAGORIE</span>
+        </div>
+        <div class="canvas-item" data-id="ryk-x-sexed" data-label="RYK X SEXED" data-subtitle="Campaign Identity & Social Ads" style="left: 58.0%; top: 72.0%;" data-home-left="58.0%" data-home-top="72.0%">
+          <div class="canvas-item-inner" style="width: 54px; height: 66px;">
+            <img src="assets/canvas/items/ryk-x-sexed.png" alt="RYK X SEXED" draggable="false">
+          </div>
+          <span class="canvas-item-label">RYK X SEXED</span>
+        </div>
+        <div class="canvas-item" data-id="merch" data-label="MERCH" data-subtitle="Custom Apparel & Screenprint Series" style="left: 54.12%; top: 66.0%;" data-home-left="54.12%" data-home-top="66.0%">
+          <div class="canvas-item-inner" style="width: 57px; height: 63px;">
+            <img src="assets/canvas/items/merch.png" alt="MERCH" draggable="false">
+          </div>
+          <span class="canvas-item-label">MERCH</span>
+        </div>
+        <div class="canvas-item" data-id="newonce" data-label="NEWONCE" data-subtitle="Streetwear Exhibition & Spatial UI" style="left: 66.31%; top: 66.83%;" data-home-left="66.31%" data-home-top="66.83%">
+          <div class="canvas-item-inner" style="width: 112.5px; height: 63px;">
+            <img src="assets/canvas/items/newonce.png" alt="NEWONCE" draggable="false">
+          </div>
+          <span class="canvas-item-label">NEWONCE</span>
+        </div>
+        <div class="canvas-item" data-id="kacperczyk-2024" data-label="KACPERCZYK 2024" data-subtitle="Album Visual Universe & Press Kit" style="left: 24.5%; top: 60.5%;" data-home-left="24.5%" data-home-top="60.5%">
+          <div class="canvas-item-inner" style="width: 57px; height: 69px;">
+            <img src="assets/canvas/items/kacperczyk-2024.png" alt="KACPERCZYK 2024" draggable="false">
+          </div>
+          <span class="canvas-item-label">KACPERCZYK 2024</span>
+        </div>
+        <div class="canvas-item" data-id="wszyscy-jestesmy-kacperczyk" data-label="WSZYSCY JESTEŚMY KACPERCZYK" data-subtitle="Tour Posters & Identity System" style="left: 18.12%; top: 54.83%;" data-home-left="18.12%" data-home-top="54.83%">
+          <div class="canvas-item-inner" style="width: 54px; height: 63px;">
+            <img src="assets/canvas/items/wszyscy-jestesmy-kacperczyk.png" alt="WSZYSCY JESTEŚMY KACPERCZYK" draggable="false">
+          </div>
+          <span class="canvas-item-label">WSZYSCY JESTEŚMY KACPERCZYK</span>
+        </div>
+        <div class="canvas-item" data-id="to-nie-pop" data-label="TO NIE POP" data-subtitle="Single Artwork & Streaming Visualizer" style="left: 30.5%; top: 52.83%;" data-home-left="30.5%" data-home-top="52.83%">
+          <div class="canvas-item-inner" style="width: 54px; height: 63px;">
+            <img src="assets/canvas/items/to-nie-pop.png" alt="TO NIE POP" draggable="false">
+          </div>
+          <span class="canvas-item-label">TO NIE POP</span>
+        </div>
       </div>
     </div>
+
+    <!-- macOS Frosted Glass Dock at the bottom -->
+    <div class="canvas-dock-container">
+      <div class="macos-dock" id="macos-dock" role="toolbar" aria-label="macOS Interactive Dock">
+        <button class="dock-item" data-app="ae" type="button" aria-label="After Effects — Motion Lab">
+          <img src="assets/canvas/dock/dock-ae.png" alt="After Effects" draggable="false">
+          <span class="dock-tooltip">After Effects</span>
+        </button>
+        <button class="dock-item" data-app="ps" type="button" aria-label="Photoshop — Visual Art">
+          <img src="assets/canvas/dock/dock-ps.png" alt="Photoshop" draggable="false">
+          <span class="dock-tooltip">Photoshop</span>
+        </button>
+        <button class="dock-item" data-app="ai" type="button" aria-label="Illustrator — Vector &amp; Typography">
+          <img src="assets/canvas/dock/dock-ai.png" alt="Illustrator" draggable="false">
+          <span class="dock-tooltip">Illustrator</span>
+        </button>
+        <button class="dock-item" data-app="alert" type="button" aria-label="Interactive Sandbox">
+          <img src="assets/canvas/dock/dock-alert.png" alt="Interactive Sandbox" draggable="false">
+          <span class="dock-tooltip">Live Sandbox</span>
+        </button>
+        <button class="dock-item" data-app="notes" type="button" aria-label="Sunil's Notes &amp; Bio">
+          <img src="assets/canvas/dock/dock-notes.png" alt="Notes" draggable="false">
+          <span class="dock-tooltip">Notes</span>
+        </button>
+        <button class="dock-item" data-app="photos" type="button" aria-label="Artifact Gallery">
+          <img src="assets/canvas/dock/dock-photos.png" alt="Photos" draggable="false">
+          <span class="dock-tooltip">Gallery</span>
+        </button>
+        <button class="dock-item" data-app="instagram" type="button" aria-label="Instagram &amp; Socials">
+          <img src="assets/canvas/dock/dock-instagram.png" alt="Instagram" draggable="false">
+          <span class="dock-tooltip">Instagram</span>
+        </button>
+        <button class="dock-item" data-app="mail" type="button" aria-label="Contact Sunil">
+          <img src="assets/canvas/dock/dock-mail.png" alt="Mail" draggable="false">
+          <span class="dock-tooltip">Contact</span>
+        </button>
+        <button class="dock-item dock-trash" data-app="trash" type="button" aria-label="Reset Canvas Cards">
+          <img src="assets/canvas/dock/dock-trash.png" alt="Trash" draggable="false">
+          <span class="dock-tooltip">Reset Canvas</span>
+        </button>
+      </div>
+    </div>
+
   </section>
 
   <!-- ════ PROJECTS / PROCESS ════ -->
@@ -7577,6 +7778,64 @@
   })();
   </script>
 
-  <!-- 3D Interactive Features & Labs -->
+    <!-- macOS Style Notes Window -->
+    <div class="macos-window" id="canvas-notes-window" style="display: none;">
+      <div class="macos-window-header">
+        <div class="macos-traffic-lights">
+          <button class="traffic-light close-btn" id="notes-close-btn" type="button" aria-label="Close window"></button>
+          <button class="traffic-light min-btn" type="button" aria-label="Minimize window"></button>
+          <button class="traffic-light max-btn" type="button" aria-label="Maximize window"></button>
+        </div>
+        <div class="macos-window-title">Notes — Sunil Ohdar</div>
+      </div>
+      <div class="macos-window-body">
+        <h2 class="notes-author-title">Sunil Ohdar</h2>
+        <p class="notes-role-tag">UI/UX Designer &amp; Digital Marketer · Gurugram, India</p>
+        <div class="notes-divider"></div>
+        <p class="notes-copy">
+          👋 Welcome to my interactive creative mind canvas! You can freely <strong>drag any card</strong> across the screen, click to inspect individual projects, or use the macOS dock below.
+        </p>
+        <div class="notes-bullet-group">
+          <div class="notes-bullet">✦ <strong>Figma Design Systems:</strong> Token architectures, WCAG AAA contrast, responsive atomic components.</div>
+          <div class="notes-bullet">✦ <strong>Borrow UX Case Study:</strong> 28-resident survey, overcoming social awkwardness in neighborhood sharing.</div>
+          <div class="notes-bullet">✦ <strong>Growth Marketing:</strong> Data-informed landing page funnels, social acquisition, engagement strategy.</div>
+        </div>
+        <div class="notes-footer-actions">
+          <a href="#story" class="notes-primary-link">Explore Full Case Studies ↓</a>
+          <a href="mailto:sunil.ohdar@example.com" class="notes-secondary-link">Get In Touch ✉</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Card Preview Lightbox -->
+    <div class="canvas-item-modal" id="canvas-item-modal" style="display: none;">
+      <div class="item-modal-scrim" id="item-modal-scrim"></div>
+      <div class="item-modal-dialog">
+        <button class="item-modal-close" id="item-modal-close" type="button" aria-label="Close modal">✕</button>
+        <div class="item-modal-content">
+          <div class="item-modal-img-wrap">
+            <img id="modal-card-img" src="" alt="Project Preview">
+          </div>
+          <div class="item-modal-details">
+            <span class="modal-badge" id="modal-card-category">FEATURED WORK</span>
+            <h2 id="modal-card-title" class="modal-card-h2">Project Title</h2>
+            <p id="modal-card-desc" class="modal-card-p">Project Description</p>
+            <div class="modal-card-tags" id="modal-card-tags">
+              <span class="m-tag">Figma</span>
+              <span class="m-tag">Creative Direction</span>
+              <span class="m-tag">Visual Identity</span>
+            </div>
+            <div class="modal-card-actions">
+              <a href="#work" class="modal-cta-btn" id="modal-card-link">
+                <span>View Borrow Case Study</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Interactive Features & Labs -->
   <script src="js/interactive3d.js" defer></script>
 </body></html>
