@@ -39,6 +39,49 @@ describe('Portfolio Site & Navigation', () => {
     cy.get('body').should('not.have.class', 'night');
   });
 
+  it('verifies that legacy template illustrative elements are removed', () => {
+    cy.get('.hero-shader').should('not.exist');
+    cy.get('.hero-sky').should('not.exist');
+    cy.get('.hero-stars').should('not.exist');
+    cy.get('.hero-meteor').should('not.exist');
+    cy.get('.sun-group').should('not.exist');
+    cy.get('.moon-group').should('not.exist');
+    cy.get('.plane-fly').should('not.exist');
+    cy.get('.t-willow').should('not.exist');
+    cy.get('.t-scrub').should('not.exist');
+    cy.get('.hero-clean').should('be.visible');
+  });
+
+  it('renders modern clean testimonials grid', () => {
+    cy.get('.testimonials-clean').scrollIntoView().should('be.visible');
+    cy.get('.t-card-clean').should('have.length', 3);
+    cy.get('.t-heading-clean').should('contain.text', 'What Mentors & Collaborators Say');
+  });
+
+  it('captures screenshots of clean homepage in light and dark modes', () => {
+    cy.viewport(1280, 800);
+    cy.get('#page-loader').should('not.be.visible', { timeout: 10000 });
+    cy.get('.hero-clean-title').should('be.visible');
+    cy.screenshot('clean-homepage-light', { capture: 'viewport' });
+    cy.get('.bento-grid').scrollIntoView();
+    cy.wait(400);
+    cy.screenshot('clean-bento-light', { capture: 'viewport' });
+    cy.get('.testimonials-clean').scrollIntoView();
+    cy.wait(400);
+    cy.screenshot('clean-testimonials-light', { capture: 'viewport' });
+
+    // Toggle dark theme
+    cy.get('#theme-toggle').click();
+    cy.get('body').should('have.class', 'night');
+    cy.scrollTo('top');
+    cy.get('.hero-clean-title').should('be.visible');
+    cy.wait(400);
+    cy.screenshot('clean-homepage-dark', { capture: 'viewport' });
+    cy.get('.testimonials-clean').scrollIntoView();
+    cy.wait(400);
+    cy.screenshot('clean-testimonials-dark', { capture: 'viewport' });
+  });
+
   it('navigates to Borrow case study via project tile click', () => {
     cy.get('.project-tile').first().click();
     cy.url().should('include', 'borrow');

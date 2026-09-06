@@ -70,9 +70,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <!-- LCP: the hero shader is the largest first-paint image — fetch it ahead of the
-       144-image queue instead of letting it queue behind everything else -->
-  <link rel="preload" as="image" href="assets/hero-shader.webp" fetchpriority="high">
+
   <!-- all font families in ONE stylesheet request — this was 4 separate render-blocking
        stylesheets (with Lato requested twice); one URL = one round-trip before first paint.
        Playfair Display (variable) = Hatcha case-study serif; Darker Grotesque + Bitter
@@ -2591,60 +2589,60 @@
   <!-- shared chrome (js/site.js) — renders the nav bar + day toggle + mobile menu -->
   <site-nav></site-nav>
 
-  <!-- ════ HERO (node 1:27) ════ -->
-  <section class="hero">
-    <img class="hero-shader" src="assets/hero-shader.webp" fetchpriority="high" alt="" aria-hidden="true">
-    <div class="hero-sky" aria-hidden="true"></div>
-    <div class="hero-stars" aria-hidden="true"></div>
-    <!-- no z-index: DOM order alone keeps the meteor above the starfield and
-         below .hero-noise and .hero-content -->
-    <div class="hero-meteor" aria-hidden="true"></div>
-    <div class="hero-noise" aria-hidden="true"></div>
-
-    <div class="hero-content" id="hero-content">
-
-    <img class="sun-group" src="assets/sun.svg" alt="" aria-hidden="true">
-    <!-- night moon (node 256:1905 — glow ellipse white 45% blur 153.4 + white disc) -->
-    <div class="moon-group" aria-hidden="true">
-      <span class="moon-glow"></span>
-      <img class="moon-disc" src="assets/moon.svg" alt="">
-
-    </div>
-    <img class="hero-cloud cloud-a" src="assets/cloud.svg" alt="" aria-hidden="true">
-    <img class="hero-cloud cloud-b" src="assets/cloud.svg" alt="" aria-hidden="true">
-
-    <p class="hero-eyebrow">
-      <img src="assets/imgEllipse14.svg" alt="">
-      Hello, I’m Sunil Ohdar. A –
-    </p>
-
-    <h1>
-      <span class="sr-only">Sunil Ohdar, UI/UX Designer &amp; Digital Marketer in Gurugram, India — </span>
-      <!-- inside h1 so the mobile rule can centre it on the heading box itself
-           (h1 is position:relative there). Desktop leaves h1 static, so this
-           still resolves against .hero-content exactly as it did before. -->
-      <span class="hero-vertical" aria-hidden="true">UI/UX / FIGMA / MARKETING</span>
-      <span class="h-line multidisciplinary">Designer who</span>
-      <span class="h-line designer" id="scramble">Builds</span>
-    </h1>
-
-    <div class="hero-statement-strip" data-cursor="try">
-      <span class="hero-strip-pill">✦</span>
-      <p class="hero-strip-text"><strong>Designing digital products &amp; systems</strong> that turn real human friction into frictionless, everyday moments.</p>
+  <!-- ════ CLEAN MINIMALIST HERO (Replaces legacy illustrative template) ════ -->
+  <section class="hero hero-clean" id="hero">
+    <div class="hero-clean-bg" aria-hidden="true">
+      <div class="hero-clean-glow glow-1"></div>
+      <div class="hero-clean-glow glow-2"></div>
+      <div class="hero-clean-grid"></div>
     </div>
 
-    </div><!-- /hero-content -->
+    <div class="hero-clean-container">
+      <div class="hero-status-pill">
+        <span class="pulse-dot"></span>
+        <span>Available for UI/UX &amp; Product Design · Gurugram, India</span>
+      </div>
+
+      <p class="hero-clean-greeting">Hello, I’m <span class="hero-name-badge">Sunil Ohdar</span></p>
+
+      <h1 class="hero-clean-title">
+        UI/UX Designer <span class="hero-amp">&amp;</span><br>
+        <span class="hero-title-accent">Digital Marketer</span>
+      </h1>
+
+      <p class="hero-clean-desc">
+        I craft human-centered digital interfaces, design systems in Figma, and data-informed user experiences that turn everyday friction into effortless, memorable moments.
+      </p>
+
+      <div class="hero-clean-actions">
+        <a href="#work" class="hero-btn-primary" data-cursor="view">
+          <span>Explore Featured Work</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+        </a>
+        <a href="#process" class="hero-btn-secondary" data-cursor="view">
+          <span>My Design Process</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-clean-tags">
+        <span class="hero-tag-item">✦ Figma Design Systems</span>
+        <span class="hero-tag-item">✦ User Research &amp; Surveys</span>
+        <span class="hero-tag-item">✦ Interactive Prototyping</span>
+        <span class="hero-tag-item">✦ Digital Marketing</span>
+        <span class="hero-tag-item">✦ WCAG AAA Contrast</span>
+      </div>
+    </div>
   </section>
 
-  <!-- ════ PROJECTS (node 1:104) — scrolls over the pinned hero ════ -->
-  <!-- id was "about"; renamed to "story" so the nav's About link no longer
-       highlights here on home (About is now a separate page via #about). -->
-  <section class="projects" id="story">
-    <div class="sky-band" aria-hidden="true"></div>
-
-    <div class="intro-copy">
-      <p class="intro-type">BBA in Digital Marketing from Sushant University, with specialized training in UI/UX Design from IIM SKILLS. Recently completed a summer internship at SHELeads India, crafting a brand book and customer engagement strategies in collaboration with LaunchED Global.</p>
-      <p class="bold intro-type">Passionate about blending user-centered UI/UX design in Figma with impactful digital marketing strategies to create products that engage and convert.</p>
+  <!-- ════ PROJECTS / PROCESS ════ -->
+  <section class="projects projects-clean" id="story">
+    <div class="story-clean-header">
+      <span class="bw-section-label" style="display: inline-block; margin-bottom: 8px;">Background &amp; Philosophy</span>
+      <div class="intro-copy">
+        <p class="intro-type">BBA in Digital Marketing from Sushant University, with specialized training in UI/UX Design from IIM SKILLS. Recently completed a summer internship at SHELeads India, crafting a brand book and customer engagement strategies in collaboration with LaunchED Global.</p>
+        <p class="bold intro-type">Passionate about blending user-centered UI/UX design in Figma with impactful digital marketing strategies to create products that engage and convert.</p>
+      </div>
     </div>
 
     <!-- ── INTERACTIVE DRAGGABLE PROCESS TIMELINE ── -->
@@ -2732,24 +2730,7 @@
   </section>
 
   <!-- ════ FEATURED WORK (node 1:117) ════ -->
-  <section class="featured-work" id="work">
-
-    <!-- scroll-driven paper plane + dotted trail (decorative).
-         Path is routed only through empty zones — never over text/logos/tiles. -->
-    <div class="plane-fly" aria-hidden="true">
-      <svg class="plane-trail" viewBox="0 0 1440 3021" fill="none" preserveAspectRatio="none">
-        <defs>
-          <mask id="planeTrailMask">
-            <path id="planeTrailMaskPath" fill="none" stroke="#fff" stroke-width="44" d="M 210 110 C 110 200 70 325 88 410 C 103 488 192 528 255 555"></path>
-          </mask>
-        </defs>
-        <!-- continuous geometry for the plane only (incl. the invisible glide
-             across the blurb); never drawn -->
-        <path id="planeMotionPath" fill="none" stroke="none" d="M 210 110 C 110 200 70 325 88 410 C 103 488 192 528 255 555"></path>
-        <path id="planeTrailPath" fill="none" stroke="#000000" stroke-width="1.4" stroke-linecap="butt" stroke-dasharray="10 6" mask="url(#planeTrailMask)" d="M 210 110 C 110 200 70 325 88 410 C 103 488 192 528 255 555"></path>
-      </svg>
-      <img class="plane-sprite" src="assets/plane.svg" alt="">
-    </div>
+  <section class="featured-work featured-work-clean" id="work">
 
     <!-- ── ASYMMETRIC BENTO GRID (Featured Case Study + Interactive Sandbox) ── -->
     <div class="project-tiles bento-section">
@@ -2852,69 +2833,52 @@
 
   </section>
 
-  <!-- ════ TESTIMONIALS (node 128:3851) ════ -->
-  <section class="testimonials" id="testimonials">
-    <div class="t-willow" aria-hidden="true"><div class="t-willow-sway"><div class="t-willow-skin"></div></div></div>
-    <img class="t-wavy" src="assets/testimonials-grass-cream.png" alt="" aria-hidden="true">
-    <!-- night crest: same silhouette PNG used as a mask, painted #111c36 (node 256:2103) -->
-    <div class="t-wavy t-wavy-night" aria-hidden="true"></div>
-    <img class="t-trees-left" src="assets/testimonials-trees.svg" alt="" aria-hidden="true">
-    <img class="t-trees-right" src="assets/testimonials-trees.svg" alt="" aria-hidden="true">
-    <img class="t-land" src="assets/testimonials-land.webp" alt="" aria-hidden="true">
+  <!-- ════ CLEAN TESTIMONIALS (Replaces legacy illustrative template) ════ -->
+  <section class="testimonials testimonials-clean" id="testimonials">
+    <div class="testimonials-clean-header">
+      <span class="bw-section-label" style="display: inline-block; margin-bottom: 8px;">Endorsements</span>
+      <h2 class="t-heading-clean">What Mentors &amp; Collaborators Say</h2>
+      <p class="t-subheading-clean">Feedback from academic advisors and internship leadership.</p>
+    </div>
 
-    <div class="t-inner">
-      <p class="t-eyebrow reveal">TESTIMONIALS</p>
-      <h2 class="t-heading reveal" style="--reveal-delay: 0.12s">In their words</h2>
+    <div class="t-cards-clean t-cards" id="t-cards">
+      <figure class="t-card-clean t-card">
+        <div class="t-card-stars">★★★★★</div>
+        <blockquote class="t-quote-clean">“Sunil is a dedicated, detail-oriented designer with strong marketing acumen. During his capstone project at SHELeads, he demonstrated exceptional ability in creating a cohesive brand book and crafting customer engagement strategies that resonated with our target audience. He collaborates proactively and communicates design decisions clearly.”</blockquote>
+        <figcaption class="t-author-clean">
+          <img class="t-avatar-clean" src="assets/t-jared-bell.jpeg" alt="SHELeads Mentor">
+          <div>
+            <div class="t-name-clean">Project Mentor</div>
+            <div class="t-role-clean">Program Lead at SHELeads India</div>
+          </div>
+        </figcaption>
+      </figure>
 
-      <!-- testimonial cards — node 203:2130. Stacked deck that fans out left/right
-           on scroll (spread progress driven from JS via --spread). -->
-      <div class="t-cards" id="t-cards">
-        <!-- front / centre of the stack -->
-        <figure class="t-card t-card--front" style="--pos: 0; z-index: 3;">
-          <img class="t-quoteicon" src="assets/t-quote.svg" alt="" aria-hidden="true">
-          <blockquote class="t-quote">Sunil is a dedicated, detail-oriented designer with strong marketing acumen. During his capstone project at SHELeads, he demonstrated exceptional ability in creating a cohesive brand book and crafting customer engagement strategies that resonated with our target audience. He collaborates proactively and communicates design decisions clearly.</blockquote>
-          <hr class="t-divider">
-          <figcaption class="t-author">
-            <div class="t-authorrow">
-              <img class="t-avatar" src="assets/t-jared-bell.jpeg" alt="SHELeads Mentor">
-              <span class="t-name">Project Mentor</span>
-            </div>
-            <span class="t-role">Program Lead at SHELeads India</span>
-          </figcaption>
-        </figure>
-        <!-- right of the stack -->
-        <figure class="t-card t-card--side" style="--pos: 1; z-index: 2;">
-          <img class="t-quoteicon" src="assets/t-quote.svg" alt="" aria-hidden="true">
-          <blockquote class="t-quote">Sunil brings a wonderful blend of business understanding and creative UI/UX design. His proficiency in Figma, empathy for users, and ability to translate digital marketing goals into clean user flows makes his work stand out. A passionate learner with great potential.</blockquote>
-          <hr class="t-divider">
-          <figcaption class="t-author">
-            <div class="t-authorrow">
-              <img class="t-avatar" src="assets/t-roopam-mishra.jpeg" alt="UI/UX Trainer">
-              <span class="t-name">Design Mentor</span>
-            </div>
-            <span class="t-role">Lead Instructor at IIM SKILLS</span>
-          </figcaption>
-        </figure>
-        <!-- left of the stack -->
-        <figure class="t-card t-card--side" style="--pos: -1; z-index: 1;">
-          <img class="t-quoteicon" src="assets/t-quote.svg" alt="" aria-hidden="true">
-          <blockquote class="t-quote">Sunil’s work reflects a deep curiosity and disciplined analytical thinking. Whether analyzing user engagement metrics or prototyping responsive interfaces, his focus on user-centered solutions and brand identity is impressive. A valuable asset to any product and design team.</blockquote>
-          <hr class="t-divider">
-          <figcaption class="t-author">
-            <div class="t-authorrow">
-              <img class="t-avatar" src="assets/t-anna-groat.jpeg" alt="Faculty Advisor">
-              <span class="t-name">Academic Advisor</span>
-            </div>
-            <span class="t-role">Faculty of Management at Sushant University</span>
-          </figcaption>
-        </figure>
-      </div>
+      <figure class="t-card-clean t-card">
+        <div class="t-card-stars">★★★★★</div>
+        <blockquote class="t-quote-clean">“Sunil brings a wonderful blend of business understanding and creative UI/UX design. His proficiency in Figma, empathy for users, and ability to translate digital marketing goals into clean user flows makes his work stand out. A passionate learner with great potential.”</blockquote>
+        <figcaption class="t-author-clean">
+          <img class="t-avatar-clean" src="assets/t-roopam-mishra.jpeg" alt="UI/UX Trainer">
+          <div>
+            <div class="t-name-clean">Design Mentor</div>
+            <div class="t-role-clean">Lead Instructor at IIM SKILLS</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="t-card-clean t-card">
+        <div class="t-card-stars">★★★★★</div>
+        <blockquote class="t-quote-clean">“Sunil’s work reflects a deep curiosity and disciplined analytical thinking. Whether analyzing user engagement metrics or prototyping responsive interfaces, his focus on user-centered solutions and brand identity is impressive. A valuable asset to any product and design team.”</blockquote>
+        <figcaption class="t-author-clean">
+          <img class="t-avatar-clean" src="assets/t-anna-groat.jpeg" alt="Faculty Advisor">
+          <div>
+            <div class="t-name-clean">Academic Advisor</div>
+            <div class="t-role-clean">Faculty of Management at Sushant University</div>
+          </div>
+        </figcaption>
+      </figure>
     </div>
   </section>
-
-  <!-- scrub zone: keeps the pinned testimonials held while the card deck fans out
-       on scroll, before the footer rises over it -->
-  <div class="t-scrub" aria-hidden="true"></div>
 
   <!-- ════════════════════════════════════════════════════════════════════
        ABOUT PAGE (Figma node 1:452) — in-page view. Hidden until routed to
@@ -7120,542 +7084,7 @@
     })();
 
 
-    /* ── scroll-driven paper plane + dotted trail ── */
-    (function () {
-      const section = document.querySelector('.featured-work');
-      const sky = document.querySelector('.sky-band');
-      const blurb = document.querySelector('.intro-copy');
-      const fly = document.querySelector('.plane-fly');
-      const sprite = document.querySelector('.plane-sprite');
-      const trail = document.getElementById('planeTrailPath');
-      const maskPath = document.getElementById('planeTrailMaskPath');
-      const motion = document.getElementById('planeMotionPath');
-      if (!section || !sky || !blurb || !fly || !sprite || !trail || !maskPath || !motion) return;
-
-      // The sprite's nose points ~31° (down-right) when un-rotated; subtract that
-      // so the nose always aligns with the path's travel direction.
-      const PLANE_OFFSET = -31;
-      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Opening arc as a FIXED-SIZE shape (px), pinned by its end point to a spot
-      // just above-left of the blurb. Rebuilt on resize so it keeps the same size
-      // and the same relationship to the (centred) blurb at any viewport width —
-      // it never stretches with the viewport above 1440.
-      const ARC = {
-        start: [210, 110],
-        curves: [
-          [[110, 200], [70, 325], [88, 410]],
-          [[103, 488], [192, 528], [255, 555]],
-        ],
-        end: [255, 555],   // pinned to (blurb.left + 26, blurbTop - 33)
-      };
-
-      // Segments 2 & 3 — the real Figma trail vectors (seg 2 = node 209:2683,
-      // seg 3 = node 209:2689) in the projects-frame coordinate system (each
-      // vector's bbox offset folded in). Anchored to the blurb at 1:1 scale so
-      // seg 2 lands on the plane beside "Work featured on" and seg 3 sweeps from
-      // the header's left edge down through the tiles to the bottom plane.
-      const FBLURB = { x: 220.55078, y: 309.10114, w: 998.8994 };
-      const FSEGS = [
-        { // segment 2 → ends at the "Work featured on" plane
-          start: [1225.129, 513.643],
-          curves: [
-            [[1400.529, 571.048], [1408.849, 837.583], [1177.289, 928.232]],
-          ],
-        },
-        { // segment 3 (node 209:2689, offset 87.294,943.689) → down to bottom plane
-          start: [526.523, 944.189],
-          curves: [
-            [[343.309, 950.485], [-12.056, 1108.034], [114.406, 1503.226]],
-            [[181.773, 1632.295], [428.301, 1799.056], [685.184, 1627.938]],
-            [[1049.722, 1385.108], [1402.934, 1429.163], [1402.934, 1762.044]],
-            [[1402.934, 2099.399], [1089.394, 2154.919], [826.844, 2073.699]],
-            [[564.300, 1992.479], [279.257, 1966.169], [203.537, 2255.019]],
-            [[123.170, 2561.609], [552.967, 2708.339], [800.401, 2549.679]],
-            [[1047.835, 2391.019], [1393.484, 2589.339], [1253.714, 2887.779]],
-          ],
-        },
-      ];
-      const norm = (v) => {
-        const m = Math.hypot(v[0], v[1]) || 1;
-        return [v[0] / m, v[1] / m];
-      };
-      // build one drawn subpath in page px → {start, end, startTan, endTan, d}
-      function makeSeg(pts) {
-        const fmt = (p) => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
-        let d = `M ${fmt(pts.start)}`;
-        for (const c of pts.curves) d += ` C ${fmt(c[0])} ${fmt(c[1])} ${fmt(c[2])}`;
-        const last = pts.curves[pts.curves.length - 1];
-        return {
-          start: pts.start, end: last[2],
-          startTan: norm([pts.curves[0][0][0] - pts.start[0], pts.curves[0][0][1] - pts.start[1]]),
-          endTan: norm([last[2][0] - last[1][0], last[2][1] - last[1][1]]),
-          d,
-        };
-      }
-
-      // overlay pixel coordinate space (1 unit = 1px); set per build
-      let curW = 1440, curH = 3021, pathTopY = 0, pathBotY = 0;
-      // each drawn segment carries its motion-space [mStart,mEnd] and
-      // visible-space [vStart,vEnd]; bridges fill the gaps between them
-      let SEGS = [], motionLen = 0, visLen = 0;
-
-      function setupGeometry() {
-        const f = section.getBoundingClientRect();
-        const sk = sky.getBoundingClientRect();
-        fly.style.top = (sk.top - f.top) + 'px';     // negative → reaches up into the sky
-        fly.style.height = (f.bottom - sk.top) + 'px';
-      }
-
-      function buildPath() {
-        const f = section.getBoundingClientRect();
-        const sk = sky.getBoundingClientRect();
-        const bl = blurb.getBoundingClientRect();
-        curW = fly.clientWidth;
-        curH = f.bottom - sk.top;
-        // pixel-matched viewBox → no horizontal/vertical distortion at any width
-        trail.closest('svg').setAttribute('viewBox', `0 0 ${curW} ${curH}`);
-        // segment 1: pin the fixed-px arc just above-left of the blurb
-        const dx = (bl.left + 26) - ARC.end[0];
-        const dy = (bl.top - sk.top - 33) - ARC.end[1];
-        const A = (pt) => [pt[0] + dx, pt[1] + dy];
-        // segments 2 & 3: Figma frame coords → overlay px, anchored to the blurb
-        const s = bl.width / FBLURB.w;
-        const F = (pt) => [
-          bl.left + (pt[0] - FBLURB.x) * s,
-          (bl.top - sk.top) + (pt[1] - FBLURB.y) * s,
-        ];
-        // assemble the drawn segments in page px (seg 1 = arc, seg 2 & 3 = Figma)
-        const segs = [];
-        segs.push(makeSeg({ start: A(ARC.start), curves: ARC.curves.map(c => c.map(A)) }));
-        for (const fs of FSEGS) segs.push(makeSeg({ start: F(fs.start), curves: fs.curves.map(c => c.map(F)) }));
-
-        // visible trail: each segment is its own subpath, so the M between them
-        // leaves a GAP — nothing is drawn across the blurb or between segments.
-        const visD = segs.map(sg => sg.d).join(' ');
-        trail.setAttribute('d', visD);
-
-        // continuous motion path = seg + invisible bridge + seg + bridge + seg …
-        // The plane parks at each segment's end while crossing a bridge, then
-        // restarts at the next segment — it never glides over the gaps.
-        let motionD = segs[0].d;
-        motion.setAttribute('d', motionD);
-        let accM = motion.getTotalLength();
-        segs[0].mStart = 0; segs[0].mEnd = accM;
-        segs[0].vStart = 0; segs[0].vEnd = accM;
-        for (let i = 1; i < segs.length; i++) {
-          const prev = segs[i - 1], cur = segs[i];
-          const span = Math.hypot(cur.start[0] - prev.end[0], cur.start[1] - prev.end[1]) * 0.4;
-          const b1 = [prev.end[0] + prev.endTan[0] * span, prev.end[1] + prev.endTan[1] * span];
-          const b2 = [cur.start[0] - cur.startTan[0] * span, cur.start[1] - cur.startTan[1] * span];
-          const bridgeD = ` C ${b1[0].toFixed(1)} ${b1[1].toFixed(1)}`
-                        + ` ${b2[0].toFixed(1)} ${b2[1].toFixed(1)}`
-                        + ` ${cur.start[0].toFixed(1)} ${cur.start[1].toFixed(1)}`;
-          motion.setAttribute('d', motionD + bridgeD);
-          const afterBridge = motion.getTotalLength();
-          motionD += bridgeD + cur.d.replace(/^M[^C]*/, ''); // append seg, drop its M
-          motion.setAttribute('d', motionD);
-          const afterSeg = motion.getTotalLength();
-          cur.mStart = afterBridge; cur.mEnd = afterSeg;
-          cur.vStart = prev.vEnd;   cur.vEnd = prev.vEnd + (afterSeg - afterBridge);
-          accM = afterSeg;
-        }
-        motionLen = motion.getTotalLength();
-        visLen = trail.getTotalLength();
-        // mask the trail with the CONTINUOUS motion path (one subpath) so the
-        // dash-reveal front tracks the plane's true distance travelled — each
-        // segment is only revealed as the plane actually reaches it.
-        maskPath.setAttribute('d', motionD);
-        maskPath.style.strokeDasharray = motionLen;
-        SEGS = segs;
-
-        const bb = motion.getBBox();
-        pathTopY = bb.y; pathBotY = bb.y + bb.height;
-
-        // scroll position at which the plane finishes its flight (p === 1):
-        // read-line (vh/2) reaches the path bottom → botVp = vh/2.
-        // botVp = sky.top + pathBotY and sky.top = skyFlowTop − scrollY, so
-        // scrollY = skyFlowTop + pathBotY − vh/2. Published for the pin logic
-        // below, which delays the testimonials slide until the plane is done.
-        const skyFlowTop = sk.top + window.scrollY;
-        window.__planeEndScroll = skyFlowTop + pathBotY - window.innerHeight * 0.5;
-      }
-
-      let lastMd = null, lastAppear = null, lastFade = 1;
-      function update() {
-        const sk = Scroll.rect(sky);
-        const vh = Scroll.vh();
-        // Don't show the plane on first load: only reveal it once the user starts
-        // scrolling and the sky band slides up over the hero. appear = 0 at the top,
-        // then eases in gently over roughly a full viewport of scroll.
-        const scrolled = Scroll.y();
-        // path top/bottom in viewport space (overlay box is 1:1 px now)
-        const topVp = sk.top + pathTopY;
-        const botVp = sk.top + pathBotY;
-        // Read-line ~half-way down the viewport: the plane completes the path as
-        // that line crosses from the path's top to its bottom — so the arc is fully
-        // flown by the time its end (above the blurb) reaches mid-screen.
-        let p = (vh * 0.5 - topVp) / (botVp - topVp);
-        p = Math.max(0, Math.min(1, p));
-        if (reduce) p = 1;
-
-        // three SEPARATE segments: the plane flies a segment, then PARKS at its
-        // end while the read-line crosses the gap (the blurb, then the header),
-        // then RESTARTS at the next segment — it never glides over a gap.
-        const md = p * motionLen;
-        const ease = (t) => { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); };
-        // p clamps to 0 before the flight and 1 after it, so md stops changing while
-        // the plane is parked — but the three getPointAtLength() samples below are the
-        // most expensive JS on the page. Bail when neither the distance nor the fade
-        // moved and the last write is still on screen.
-        const appearNow = reduce ? 1 : ease(scrolled / (vh * 0.95));
-        if (md === lastMd && appearNow === lastAppear) return;
-        const mdChanged = md !== lastMd;
-        lastAppear = appearNow;
-        // While the plane is PARKED (md unchanged) only the fade is moving — reuse
-        // the cached fade/position and skip the three getPointAtLength() samples,
-        // which are the most expensive JS on the page and used to run for the
-        // whole first viewport of scroll just to update this opacity.
-        if (!mdChanged) { sprite.style.opacity = lastFade * appearNow; return; }
-        lastMd = md;
-        // fade the plane out→in while crossing a gap (bridge) between segments,
-        // so the jump to the next segment is never seen, nor shown over the text
-        let opacity = 1;
-        for (let i = 1; i < SEGS.length; i++) {
-          const pv = SEGS[i - 1], sg = SEGS[i];
-          if (md > pv.mEnd && md < sg.mStart) {
-            const bp = (md - pv.mEnd) / (sg.mStart - pv.mEnd);
-            opacity = Math.max(1 - ease(bp / 0.4), ease((bp - 0.6) / 0.4));
-            break;
-          }
-        }
-        lastFade = opacity;
-        const pt = motion.getPointAtLength(md);
-        const pA = motion.getPointAtLength(Math.max(0, md - 1));
-        const pB = motion.getPointAtLength(Math.min(motionLen, md + 1));
-        const ang = Math.atan2(pB.y - pA.y, pB.x - pA.x) * 180 / Math.PI;
-
-        // gate everything behind the sky↔hero overlap so nothing shows on load
-        const appear = appearNow;
-
-        // reveal the trail only as far as the plane has travelled
-        maskPath.style.strokeDashoffset = motionLen - md;
-        sprite.style.opacity = opacity * appear;
-
-        // position via transform only — writing left/top here forced a layout
-        // pass on every scroll frame inside the sticky featured-work section
-        sprite.style.transform =
-          `translate(${pt.x.toFixed(1)}px, ${pt.y.toFixed(1)}px) translate(-50%, -50%) rotate(${ang + PLANE_OFFSET}deg)`;
-      }
-      function rebuild() {
-        // Skip while the section is hidden (e.g. the #about route sets it to
-        // display:none): zero-size rects would overwrite the good geometry with a
-        // collapsed path. Keep the last valid build until the section is shown again.
-        if (!section.offsetHeight || !fly.clientWidth) return;
-        lastMd = lastAppear = null;   // geometry moved → the skip-cache is stale
-        setupGeometry(); buildPath(); update();
-      }
-      Scroll.add(update);
-      window.addEventListener('resize', rebuild);
-      rebuild();
-    })();
-
-    /* ── pin featured-work's tail so testimonials scrolls up over it ──
-       sticky `top` = 100vh − section height pins the section's BOTTOM to the
-       viewport bottom: it scrolls normally through the tiles, then holds its last
-       screen while the (higher z-index) testimonials slides up and overlaps it. */
-    (function () {
-      const fw = document.querySelector('.featured-work');
-      const testi = document.querySelector('.testimonials');
-      if (!fw || !testi) return;
-      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const desktop = matchMedia('(min-width: 1101px)');   // below this it reflows static
-      const PLANE_BUFFER = 160;   // extra scroll after the plane lands before the slide
-      let mobilePinned = false;   // true while the mobile bottom-pin is active
-      // The recede dim is an OVERLAY, not a filter on the section: writing
-      // `filter: brightness()` on .featured-work every frame forced the whole
-      // subtree — four playing warped tile videos included — to re-rasterize
-      // into a filter layer per frame. An opacity fade on a black overlay is
-      // compositor-only, so the dim costs nothing while it scrubs.
-      const shade = document.createElement('div');
-      shade.setAttribute('aria-hidden', 'true');
-      shade.style.cssText = 'position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;z-index:99;';
-      fw.appendChild(shade);
-      let testiH = 0;             // cached testimonials height (avoids per-frame reflow)
-      let fwH = 0;                // ditto for the work section
-      // keep the mobile bottom-pins glued to the LIVE viewport bottom. The iOS toolbar
-      // show/hide changes innerHeight without a width change; recomputing top here (cheap,
-      // no reflow — the heights are cached) stops a gap from opening under a section where
-      // the pinned hero would otherwise peek through as a blue band.
-      // BOTH sections need this: they are bottom-pinned by the same frozen `vh - height`
-      // sum, so re-syncing only the testimonials left the work section's own bottom short
-      // of the viewport during its hold window (the gap showed up between the last tile
-      // and the testimonials sliding up).
-      function repinMobile() {
-        if (!mobilePinned) return;
-        const vh = Scroll.vh();
-        const top = Math.min(0, vh - testiH) + 'px';
-        if (top !== lastPinTop) { testi.style.top = top; lastPinTop = top; }
-        const fwTop = Math.min(0, vh - fwH) + 'px';
-        if (fwTop !== lastFwTop) { fw.style.top = fwTop; lastFwTop = fwTop; }
-      }
-      let lastPinTop = null, lastFwTop = null;
-      function setPin() {
-        lastPinTop = lastFwTop = null;   // this rewrites `top` itself; don't let the dedupe skip the next sync
-        if (reduce) {
-          fw.style.position = 'relative';   // no pin under reduced-motion
-          fw.style.top = 'auto';
-          fw.style.transform = '';
-          shade.style.opacity = '0';
-          testi.style.marginTop = '';
-          testi.style.position = '';
-          testi.style.top = '';
-          testi.style.bottom = '';
-          mobilePinned = false;
-          return;
-        }
-        // Hidden (e.g. the #about route) → offsetHeight is 0; bail so we don't pin
-        // the section to top:0 and clobber the testimonials margin with garbage.
-        if (!fw.offsetHeight) return;
-        fw.style.position = 'sticky';
-        const vh = window.innerHeight;
-        fwH = fw.offsetHeight;   // cached so repinMobile() can re-sync without a reflow
-        fw.style.top = Math.min(0, vh - fwH) + 'px';
-        if (desktop.matches) {
-          // Desktop: testimonials pins via its own CSS (sticky top:0). Hold the
-          // pinned work section until the plane has finished, THEN let the
-          // testimonials slide over it. The work section pins when its bottom hits
-          // the viewport bottom; we push the testimonials down so it doesn't enter
-          // until the plane's completion scroll (+ a small buffer) — the held screen
-          // (tiles + the plane landing) stays put through the gap, then the green
-          // slides up over it.
-          testi.style.position = '';
-          testi.style.top = '';
-          testi.style.bottom = '';
-          mobilePinned = false;
-          const planeEnd = window.__planeEndScroll || 0;
-          const testiNaturalTop = fw.offsetTop + fw.offsetHeight;   // flow top w/o margin
-          const margin = Math.max(0, planeEnd + PLANE_BUFFER + vh - testiNaturalTop);
-          testi.style.marginTop = margin + 'px';
-        } else {
-          // Mobile: no plane hold. Bottom-pin the testimonials the same way the
-          // work section is pinned, so the footer (z:12) slides up over it —
-          // the full layered reveal: work → testimonials → footer. The `top` is
-          // kept in sync with the LIVE innerHeight by repinMobile() on scroll, so
-          // the iOS toolbar showing/hiding can't leave the pinned bottom short of
-          // the viewport bottom (which opened a gap where the blue hero peeked through
-          // above the footer crest). Cache the height so the scroll handler doesn't
-          // reflow every frame.
-          //
-          // HOLD BUFFER: without this the testimonials sit exactly at the viewport
-          // bottom the instant the work section pins, so the last two tiles (which
-          // land at the bottom of the held screen) get wiped by the rising green
-          // before they can be read. Push the testimonials down by ~0.6vh of extra
-          // flow so the pinned work screen holds — the last tiles stay on-screen —
-          // for a comfortable scroll before the green slides up (the mobile analogue
-          // of the desktop PLANE_BUFFER hold).
-          testi.style.marginTop = Math.round(vh * 0.6) + 'px';
-          testi.style.bottom = '';
-          testi.style.position = 'sticky';
-          testiH = testi.offsetHeight;
-          testi.style.top = Math.min(0, vh - testiH) + 'px';
-          mobilePinned = true;
-        }
-        recede();
-      }
-      // As the testimonials section scrolls up over the pinned work section, push
-      // the work section back: dim it down as the green slides over so it visibly
-      // recedes into shadow — a more dramatic, layered reveal. (Shade overlay only —
-      // a full-bleed scale would expose the pinned hero at the section's edges.)
-      const ease = (t) => { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); };
-      function recede() {
-        // Mobile: skip the dim entirely — the section is fully covered there anyway.
-        if (reduce || !desktop.matches) { shade.style.opacity = '0'; return; }
-        const vh = Scroll.vh();
-        const top = Scroll.rect(testi).top;              // testimonials top in viewport
-        const p = ease((vh - top) / vh);                 // 0 (just entering) → 1 (covering)
-        const o = (0.45 * p).toFixed(3);                 // ≈ the old brightness(1−0.42p) dim
-        if (o !== lastShade) { shade.style.opacity = o; lastShade = o; }   // skip no-op writes
-      }
-      let lastShade = null;
-      setPin();
-      Scroll.add(() => { repinMobile(); recede(); });
-      // Only re-pin on a real width/orientation change. Mobile browsers fire `resize`
-      // on every toolbar show/hide (height-only) while scrolling; re-pinning there
-      // recomputes the sticky tops from a fluctuating innerHeight, which makes the
-      // pinned sections jump mid-scroll (the choppiness) and briefly exposes the page
-      // background (the "load state" flash). Ignoring height-only resizes keeps the
-      // pin rock-steady so the scroll stays smooth.
-      let lastW = window.innerWidth;
-      window.addEventListener('resize', () => {
-        // height-only (toolbar) change: don't run the full setPin (that's the jump/
-        // flash the note above describes) — just glue the mobile pin's bottom back to
-        // the new viewport bottom. Cheap, no reflow, no gap.
-        if (window.innerWidth === lastW) { repinMobile(); return; }
-        lastW = window.innerWidth;
-        setPin();
-      });
-      window.addEventListener('load', setPin);
-      // Both pin values are derived from .featured-work's measured height: the
-      // sticky `top` (= vh - height) that decides WHERE the section stops
-      // scrolling, and the testimonials margin that decides HOW LONG it holds.
-      // Nothing above re-reads that height when content lands late — and a short
-      // reading is not a small error: `top` becomes too shallow, so the section
-      // pins before its last tile row has scrolled into the viewport, and the
-      // testimonials then rises over a row that was never seen. A refresh serves
-      // the art from cache, so the final height is known up front and the same
-      // page looks correct — which is exactly the first-visit-only shape of this
-      // bug. Re-pin whenever the measured height actually changes. Guarded on a
-      // real change and rAF-collapsed, so it costs nothing once the page settles
-      // (and never fires for the iOS toolbar, which moves the viewport, not this
-      // section's own height).
-      if ('ResizeObserver' in window) {
-        let lastH = 0, queued = 0;
-        new ResizeObserver(() => {
-          const h = fw.offsetHeight;
-          if (!h || Math.abs(h - lastH) < 2) return;
-          lastH = h;
-          if (queued) return;
-          queued = requestAnimationFrame(() => { queued = 0; setPin(); });
-        }).observe(fw);
-      }
-    })();
-
-    /* ── testimonial deck: fan the stacked cards out left/right on scroll ──
-       The cards stay stacked through the whole slide-in; only once the section has
-       pinned (filled the viewport) does further scroll scrub the fan open. */
-    (function () {
-      const cards = document.getElementById('t-cards');
-      const section = document.querySelector('.testimonials');
-      if (!cards || !section) return;
-      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const desktop = matchMedia('(min-width: 1101px)');
-      const SCRUB = 460;   // scroll distance over which the deck fans fully open
-      const ease = (t) => { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); };
-      // The section is sticky, so once it pins its rect.top clamps to 0 and can no
-      // longer reveal where the section actually sits in the flow. While it's still
-      // scrolling in (rect.top > 0) that's a free read, so keep taking it — but that
-      // read never happens if the page LOADS already scrolled past the pin point
-      // (reload while parked here, back-navigation, a deep link). Without a flow-top
-      // the deck used to sit at --spread 0 for the rest of the session, i.e. the cards
-      // never fanned. So measure it directly in that case: drop the sticky for one
-      // synchronous layout read and put it straight back (sticky doesn't affect
-      // siblings' layout, and nothing paints in between, so this is invisible).
-      // Cached — only ever re-measured on load/resize, never per scroll frame.
-      let flowTop = null;
-      function measureFlowTop() {
-        const prevPos = section.style.position;
-        const prevTop = section.style.top;
-        section.style.position = 'static';
-        section.style.top = 'auto';
-        flowTop = section.getBoundingClientRect().top + (window.scrollY || 0);
-        section.style.position = prevPos;
-        section.style.top = prevTop;
-      }
-      function upd() {
-        if (!desktop.matches) { cards.style.removeProperty('--spread'); return; }
-        if (reduce) { cards.style.setProperty('--spread', '1'); return; }   // static, all visible
-        const sy = Scroll.y();
-        // one cached read per frame — height doubles as the visibility check, so this
-        // doesn't add a second read to the frame
-        const rect = Scroll.rect(section);
-        // Hidden (e.g. the #about route) → rects are all 0; bail rather than cache
-        // a garbage flow-top off a collapsed section.
-        if (!rect.height) return;
-        const rectTop = rect.top;
-        if (rectTop > 0.5) flowTop = rectTop + sy;   // not pinned yet → free true flow-top
-        else if (flowTop == null) measureFlowTop();  // loaded already pinned → measure it
-        // past = scroll beyond the point the section fills the viewport (pins).
-        // Stacked through the slide-in; scrub the fan only after it pins.
-        const past = sy - flowTop;
-        const p = ease(past / SCRUB);
-        cards.style.setProperty('--spread', p.toFixed(4));
-      }
-      // The pinned-work script (earlier in this file, so it subscribes first) sets the
-      // testimonials' margin-top on load/resize, which moves the flow-top. Drop the
-      // cache on those events so the next frame re-derives it.
-      function invalidate() { flowTop = null; Scroll.kick(); }
-      Scroll.add(upd);
-      window.addEventListener('resize', invalidate);
-      window.addEventListener('load', invalidate);
-    })();
-
-    /* ── testimonials (mobile): infinite-loop horizontal carousel ──
-       Below 1100px the deck is a swipe carousel; with only three cards it dead-ends.
-       Clone a full set on each side and wrap scrollLeft by one set-width at the seams
-       so swiping loops forever and seamlessly. Desktop (the fan deck) is left with its
-       original three cards untouched — clones only ever exist in the mobile range. */
-    (function () {
-      const track = document.getElementById('t-cards');
-      if (!track) return;
-      const mobile = matchMedia('(max-width: 1100px)');
-      const originals = Array.from(track.children);
-      if (originals.length < 2) return;
-      let clones = [];
-      let setW = 0, lo = 0, hi = 0, looping = false;
-
-      function clearClones() {
-        clones.forEach((c) => c.remove());
-        clones = [];
-        looping = false;
-      }
-      function measure() {
-        if (!clones.length) return;
-        const first = originals[0];
-        const trailFirst = clones[clones.length - originals.length];  // clone of originals[0], appended
-        setW = trailFirst.offsetLeft - first.offsetLeft;              // exactly one set (N strides)
-        const stride = setW / originals.length;
-        const baseX = first.offsetLeft - (track.clientWidth - first.offsetWidth) / 2;  // centre first real card
-        // Wrap band is one set wide, shifted by half a card so both edges sit in the
-        // gaps BETWEEN cards — never on a snap point (avoids boundary ping-pong) and
-        // always reachable (the ±half-card slack absorbs the centre-snap offset).
-        lo = baseX - stride / 2;
-        hi = baseX + setW - stride / 2;
-        looping = setW > 10;                                          // guard against hidden/0-width routes
-        if (looping) track.scrollLeft = baseX;
-      }
-      function build() {
-        clearClones();
-        if (!mobile.matches) return;
-        const lead = originals.map((c) => c.cloneNode(true));
-        const trail = originals.map((c) => c.cloneNode(true));
-        [...lead, ...trail].forEach((c) => { c.setAttribute('aria-hidden', 'true'); c.tabIndex = -1; });
-        lead.forEach((c) => track.insertBefore(c, originals[0]));
-        trail.forEach((c) => track.appendChild(c));
-        clones = [...lead, ...trail];
-        measure();                       // offsetLeft is valid synchronously after insertion
-        requestAnimationFrame(measure);  // re-measure once layout/fonts settle
-      }
-
-      // Wrap only AFTER the scroll settles on a snap point — never mid-scroll. A
-      // settled position outside the middle band is always a clone resting on a card
-      // centre; hopping by exactly one set-width lands on that clone's identical twin
-      // (snap-point → snap-point), so the jump is invisible and can never snap onto
-      // the wrong card (the mid-scroll version could land between cards and snap back
-      // onto the clone, showing the same author twice).
-      let idleTimer = 0;
-      track.addEventListener('scroll', () => {
-        if (!looping) return;
-        clearTimeout(idleTimer);
-        idleTimer = setTimeout(() => {
-          const x = track.scrollLeft;
-          if (x >= hi) track.scrollLeft = x - setW;        // settled on a trailing clone → hop to its twin
-          else if (x < lo) track.scrollLeft = x + setW;    // settled on a leading clone → hop to its twin
-        }, 80);
-      }, { passive: true });
-
-      mobile.addEventListener('change', build);
-      let rt;
-      window.addEventListener('resize', () => {
-        clearTimeout(rt);
-        rt = setTimeout(() => {
-          if (!mobile.matches) { clearClones(); return; }
-          if (!clones.length) build(); else measure();
-        }, 150);
-      });
-      window.addEventListener('load', () => { if (mobile.matches) measure(); });
-      build();
-    })();
+    /* ── Clean Homepage Interaction Hooks (Legacy template scripts removed) ── */
 
     /* ── hero heading: split each word into per-letter spans so each letter can
        tilt + lift (and turn gold) on its own hover. (line 2 is rebuilt by the
@@ -7833,113 +7262,7 @@
       targets.forEach(t => io.observe(t));
     });
 
-    /* ── night shooting star: one meteor at a time, crossing the hero left→right
-       on a loose cadence. Deliberately NOT an infinite CSS animation — it runs
-       ~1.5s every 5–13s, so between passes there is nothing on the compositor at
-       all. The timer parks itself whenever the hero scrolls off screen or the
-       site is in day mode, so it costs nothing on the pages/themes without it. ── */
-    (function () {
-      var hero = document.querySelector('.hero');
-      var star = document.querySelector('.hero-meteor');
-      if (!hero || !star) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      var timer = 0, flying = false;
-      var wasNight = document.body.classList.contains('night');
-
-      function rnd(a, b) { return a + Math.random() * (b - a); }
-      function schedule(ms) { clearTimeout(timer); timer = setTimeout(fire, ms); }
-
-      /* .hero is position:sticky, so it never stops intersecting the viewport —
-         the projects section just scrolls OVER it. An IntersectionObserver here
-         reports "visible" at every scroll position and gates nothing; the real
-         test is whether the page has scrolled past the hero's own height. */
-      var onHero = function () {
-        var y  = (window.Scroll && Scroll.y)  ? Scroll.y()  : (window.pageYOffset || 0);
-        var vh = (window.Scroll && Scroll.vh) ? Scroll.vh() : window.innerHeight;
-        return y < (hero.offsetHeight || vh) * 0.9;
-      };
-      var wasOnHero = onHero();
-
-      function fire() {
-        /* day mode or scrolled past — skip this pass and check back, rather than
-           tearing the loop down and needing to rebuild it on the theme toggle */
-        if (!document.body.classList.contains('night') || !onHero()) { schedule(4000); return; }
-        var h = hero.offsetHeight || window.innerHeight;
-        var w = hero.offsetWidth  || window.innerWidth;
-        /* start high and fall shallowly: at 14°+ the streak drops ~460px over a
-           desktop crossing and ploughs straight through the headline */
-        star.style.setProperty('--m-top',    Math.round(rnd(0.05, 0.28) * h) + 'px');
-        star.style.setProperty('--m-len',    Math.round(rnd(130, 260)) + 'px');
-        star.style.setProperty('--m-angle',  rnd(7, 13).toFixed(1) + 'deg');
-        /* overshoot the width so the streak fully clears the right edge */
-        star.style.setProperty('--m-travel', Math.round(w * 1.15 + 260) + 'px');
-        star.style.animation = 'none';
-        void star.offsetWidth;               // reflow, or re-assigning the same name won't restart it
-        star.style.animation = 'hero-meteor-fly ' + rnd(1.1, 1.8).toFixed(2) + 's linear';
-      }
-
-      star.addEventListener('animationstart', function () { flying = true; });
-      star.addEventListener('animationend', function () {
-        flying = false;
-        star.style.animation = 'none';       // back to the opacity:0 base state
-        schedule(rnd(5200, 13000));
-      });
-
-      /* answer the theme toggle directly instead of waiting on the day-mode poll —
-         that poll only rechecks every 4s, so flipping to night could sit empty
-         that long before the first pass. Guarded on `flying` so toggling mid-pass
-         doesn't restart a streak that is already halfway across. */
-      if ('MutationObserver' in window) {
-        new MutationObserver(function () {
-          var night = document.body.classList.contains('night');
-          if (night && !wasNight && !flying) schedule(600);
-          wasNight = night;
-        }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
-      }
-
-      /* scrolling back up to the hero resumes without waiting on the 4s poll.
-         Cheap: Scroll.y() is the value the scheduler already captured this frame,
-         so this adds a comparison and no layout read. */
-      if (window.Scroll && Scroll.add) {
-        Scroll.add(function () {
-          var now = onHero();
-          if (now && !wasOnHero && !flying) schedule(700);
-          wasOnHero = now;
-        });
-      }
-
-      schedule(1400);   // booting straight into night (persisted theme) shouldn't wait either
-    })();
-
-    /* ── day wind gust: the night→day counterpart to the shooting star. The
-       cirrus layer drifts left→right and settles, so the switch lands as a gust
-       of wind clearing the night sky rather than a straight cut. Fires only on
-       the transition, never on a plain day load — the hero is otherwise still,
-       and an unprompted drift on every visit reads as a glitch. ── */
-    (function () {
-      var sky = document.querySelector('.hero-sky');
-      if (!sky || !('MutationObserver' in window)) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      var wasNight = document.body.classList.contains('night');
-
-      sky.addEventListener('animationend', function () { sky.style.animation = 'none'; });
-
-      new MutationObserver(function () {
-        var night = document.body.classList.contains('night');
-        if (!night && wasNight) {
-          sky.style.animation = 'none';
-          void sky.offsetWidth;            // reflow, or re-assigning the same name won't restart it
-          /* curve picked off a sampled filmstrip: a harder ease covered 60% of the
-             drift in the first 360ms and then sat still for 2.5s, which reads as a
-             snap, not a gust. This one still decelerates but stays visibly in
-             motion to ~1.8s. */
-          sky.style.animation = 'hero-sky-gust 3s cubic-bezier(0.2,0.7,0.3,1)';
-        }
-        wasNight = night;
-      }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
-    })();
 
     /* ── playground: 3D coverflow carousel. Cards sit on a rotating ring —
        the centred card is upright and playing, neighbours recede in Z, rotate
