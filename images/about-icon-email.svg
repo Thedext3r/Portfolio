@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 32" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Envelope body -->
+  <rect x="3.5" y="5.5" width="33" height="21" rx="4" ry="4"/>
+  <!-- Envelope flap fold V -->
+  <path d="M4.5 7 L20 18 L35.5 7"/>
+  <!-- Subtle inner fold lines at bottom corners -->
+  <line x1="4.5" y1="25.5" x2="14" y2="16"/>
+  <line x1="35.5" y1="25.5" x2="26" y2="16"/>
+</svg>

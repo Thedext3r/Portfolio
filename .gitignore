@@ -1,6 +1,5 @@
-node_modules/
 .DS_Store
-.agents/
-scratch/
-cypress/videos/
-cypress/screenshots/
+Thumbs.db
+node_modules/
+.vscode/
+.idea/

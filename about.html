@@ -1,0 +1,1130 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Sunil Ohdar</title>
+  <meta property="og:title" content="About — Sunil Ohdar">
+  <meta property="og:description" content="Portfolio of Sunil Ohdar, UI/UX Designer & Digital Marketer based in Gurugram, India. BBA @ Sushant University, UI/UX @ IIM SKILLS.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:url" content="about.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About — Sunil Ohdar">
+  <meta name="twitter:description" content="I care about design that feels fun.">
+  <meta name="twitter:image" content="images/og-image.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&amp;family=Space+Mono:wght@400;700&amp;family=Caveat:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      cursor: none !important;
+    }
+
+    :root {
+      --blue:  #1a52d4;
+      --ink:   #1a2744;
+      --white: #ffffff;
+      --font-display: 'Noto Serif JP', serif;
+      --font-mono:    'Space Mono', monospace;
+      --font-hand:    'Caveat', cursive;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--blue);
+      font-family: var(--font-mono);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── CURSOR ── */
+    .cur-dot {
+      position: fixed;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 0 1.5px rgba(26,82,212,0.3);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%,-50%);
+      top: -100px; left: -100px;
+    }
+    .cur-ring {
+      position: fixed;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.55);
+      background: transparent;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%,-50%);
+      top: -100px; left: -100px;
+      opacity: 0;
+      transition: opacity 0.2s,
+        width 0.25s cubic-bezier(0.34,1.56,0.64,1),
+        height 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .cur-ring.show {
+      opacity: 1; width: 32px; height: 32px;
+    }
+
+    /* ── PAGE LAYOUT ── */
+    .page-body {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: calc(100vh - 64px);
+    }
+
+    /* ── LEFT COLUMN — sticky ── */
+    .left-col {
+      position: sticky;
+      top: 64px; /* nav height */
+      height: calc(100vh - 64px);
+      padding: 36px 20px 28px 44px;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+    .left-avatar {
+      width: 64px; height: 64px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 14px;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .left-avatar:hover { transform: translateY(-3px) scale(1.05); }
+    .left-caption {
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .left-facts {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.95;
+    }
+    .left-facts span { display: block; }
+    .left-facts__item {
+      margin-bottom: 10px;
+    }
+    .left-facts__handle {
+      display: block;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .left-facts__handle:hover {
+      text-decoration: underline;
+    }
+    .left-facts__role {
+      display: block;
+      color: rgba(255,255,255,0.55);
+      margin-top: 1px;
+    }
+    .quote-mark {
+      display: block;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 30px;
+      line-height: 1;
+      color: rgba(255,255,255,0.35);
+    }
+    .quote-mark--open { margin-bottom: 2px; }
+    .quote-mark--close { text-align: right; margin-top: 2px; }
+    .left-facts__link {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.35);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    .left-facts__link:hover {
+      text-decoration-color: rgba(255,255,255,0.8);
+    }
+    .left-contact {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 10px;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.9;
+    }
+    .left-contact a {
+      color: rgba(255,255,255,0.38);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .left-contact a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ── MAIN SCROLL CONTENT ── */
+    .main-content {
+      padding: 40px 44px 80px 36px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      margin-bottom: 52px;
+    }
+    .page-stop {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 10px;
+    }
+    .page-title {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 60px; }
+    .section-label {
+      font-size: 8.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 22px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ── MANGA DIVIDER ── */
+    .manga-divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 52px 0;
+      opacity: 0.35;
+    }
+    .manga-divider::before,
+    .manga-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.25);
+    }
+    .manga-divider span {
+      font-family: var(--font-hand);
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      white-space: nowrap;
+    }
+
+    /* ── INTRO ── */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 230px;
+      gap: 40px;
+      align-items: start;
+    }
+    .intro-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .intro-text strong { color: #fff; font-weight: 700; }
+    .intro-list {
+      list-style: none;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 2.1;
+    }
+    .intro-list li::before {
+      content: '·  ';
+      color: rgba(255,255,255,0.28);
+    }
+    .photo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .photo-slot {
+      background: rgba(255,255,255,0.07);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .photo-slot:nth-child(1) { aspect-ratio: 3/4; }
+    .photo-slot:nth-child(2) { aspect-ratio: 4/3; }
+    .photo-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-hint {
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+    }
+
+    /* ── COMMUNITIES ── */
+    .communities-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .community-card {
+      background: rgba(255,255,255,0.055);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .community-card:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.22);
+    }
+    .com-icon {
+      width: 44px; height: 44px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .com-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .com-role {
+      font-size: 8.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 7px;
+    }
+    .com-desc {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    /* ── FAVORITES ── */
+    .fav-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .fav-tab {
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      padding: 8px 18px 8px 0;
+      border-bottom: 1.5px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s;
+    }
+    .fav-tab:hover { color: rgba(255,255,255,0.7); }
+    .fav-tab.active { color: #fff; border-bottom-color: #fff; }
+
+    .fav-grid {
+      display: none;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .fav-grid.active { display: grid; }
+
+    .fav-card {
+      aspect-ratio: 2/3;
+      perspective: 900px;
+    }
+    .fav-card-inner {
+      width: 100%; height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.55s cubic-bezier(0.4,0.2,0.2,1);
+    }
+    .fav-card:hover .fav-card-inner { transform: rotateY(180deg); }
+    .fav-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .fav-front {
+      background: rgba(255,255,255,0.07);
+      border: 1.5px solid rgba(255,255,255,0.13);
+      display: flex;
+      flex-direction: column;
+    }
+    .fav-img {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      overflow: hidden;
+    }
+    .fav-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .fav-info { padding: 9px 10px; flex-shrink: 0; }
+    .fav-star { font-size: 7.5px; color: rgba(255,255,255,0.28); margin-bottom: 3px; }
+    .fav-title { font-size: 10px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 2px; }
+    .fav-author { font-size: 9px; color: rgba(255,255,255,0.4); }
+
+    .fav-back {
+      background: #fff;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 14px 12px;
+      gap: 7px;
+    }
+    .fav-back-title {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1.25;
+    }
+    .fav-back-note {
+      font-family: var(--font-hand);
+      font-size: 14px;
+      color: rgba(26,82,212,0.7);
+      line-height: 1.5;
+    }
+    .fav-back-tag {
+      font-size: 7.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(26,82,212,0.3);
+      margin-top: 4px;
+    }
+
+    /* ── NOW PLAYING ── */
+    .now-playing {
+      background: rgba(255,255,255,0.055);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background 0.2s;
+    }
+    .now-playing:hover { background: rgba(255,255,255,0.09); }
+    .np-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: #1DB954;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .np-label {
+      font-size: 7.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 3px;
+    }
+    .np-track { font-size: 13px; color: #fff; font-weight: 700; }
+    .np-link {
+      margin-left: auto;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+    .np-link:hover { color: #fff; }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #1a2744;
+      border-top: 2px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      position: relative;
+    }
+    .footer-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 40px 44px 32px;
+      text-align: center;
+    }
+    .footer-identity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-avatar {
+      width: 36px; height: 36px;
+      object-fit: contain;
+      opacity: 0.85;
+    }
+    .footer-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+    .footer-tagline {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      justify-content: center;
+      line-height: 1.5;
+    }
+    .footer-heart {
+      color: #c8001e;
+      font-size: 17px;
+      animation: hb 2s ease-in-out infinite;
+    }
+    @keyframes hb {
+      0%,100% { transform: scale(1);    }
+      15%      { transform: scale(1.28); }
+      30%      { transform: scale(1);    }
+      45%      { transform: scale(1.14); }
+      60%      { transform: scale(1);    }
+    }
+    .footer-playlist-link {
+      color: rgba(255,255,255,0.85);
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.3);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+      white-space: nowrap;
+    }
+    .footer-playlist-link:hover {
+      text-decoration-color: rgba(255,255,255,0.9);
+    }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .footer-link {
+      color: rgba(255,255,255,0.38);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s, transform 0.18s;
+    }
+    .footer-link:hover {
+      color: rgba(255,255,255,0.85);
+      transform: translateY(-2px);
+    }
+    .footer-link--text {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      width: 100%;
+      justify-content: center;
+    }
+    .footer-copy {
+      font-family: 'Space Mono', monospace;
+      font-size: 8.5px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.18);
+      text-transform: uppercase;
+    }
+    .footer-top-btn {
+      font-family: 'Space Mono', monospace;
+      font-size: 8.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+      background: none;
+      border: none;
+      transition: color 0.2s;
+    }
+    .footer-top-btn:hover {
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* scrollbar */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.12);
+      border-radius: 2px;
+    }
+    .main-content {
+      max-width: 640px;
+    }
+    .about-hero {
+      padding: 100px 0 60px;
+    }
+    .about-hero__statement {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 42px;
+      font-weight: 300;
+      line-height: 1.3;
+      color: #fff;
+      max-width: 480px;
+    }
+    .about-intro {
+      padding-bottom: 40px;
+    }
+    .about-intro p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.85);
+      max-width: 480px;
+    }
+    .about-trains-link {
+      padding-bottom: 70px;
+    }
+    .about-trains-link a {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .about-trains-link a:hover { color: #fff; }
+    .about-section {
+      padding-bottom: 60px;
+    }
+    .about-section__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 20px;
+    }
+    .about-exp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 0;
+    }
+    .about-exp-list li {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 14px;
+      max-width: 480px;
+    }
+    .about-exp-list__role {
+      color: rgba(255,255,255,0.6);
+    }
+    .about-interests {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0;
+    }
+    .about-interests li {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+    }
+    .about-interests__icon {
+      width: auto;
+      height: 28px;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    .about-interests__icon--sm { height: 24px; }
+    .about-interests__icon--lg { height: 32px; }
+    .about-interests a {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.35);
+      text-underline-offset: 3px;
+    }
+    .about-interests a:hover { text-decoration-color: #fff; }
+    .about-closing {
+      padding: 40px 0 100px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .about-closing__cta {
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .about-closing__cta a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .about-closing__secondary {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+    }
+    .about-closing__secondary a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: underline;
+    }
+    .main-content {
+      position: relative;
+    }
+    .right-scroll {
+      position: relative;
+    }
+    .about-sketchbook {
+      position: absolute;
+      top: 500px;
+      right: 200px;
+      width: 500px;
+      aspect-ratio: 911 / 715;
+      pointer-events: none;
+    }
+    .about-sketchbook__page {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .about-sketchbook__panel {
+      position: absolute;
+      left: 52%;
+      top: 8%;
+      width: 44%;
+      height: 60%;
+      border: 2px solid var(--blue);
+      overflow: hidden;
+      z-index: 2;
+    }
+    .about-popup {
+      position: absolute;
+      top: -100px;
+      right: -80px;
+      width: 1200px;
+      height: auto;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .about-parallax__layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .about-parallax__behind {
+      z-index: 1;
+    }
+    .about-parallax__train {
+      z-index: 2;
+      transition: transform 0.1s linear;
+      object-fit: contain;
+    }
+    .about-parallax__train.arrived {
+      transform: translateX(0);
+    }
+    .about-parallax__front {
+      z-index: 3;
+    }
+
+    @media (max-width: 1400px) {
+      .about-sketchbook {
+        display: none;
+      }
+      .about-popup {
+        display: none;
+      }
+    }
+    #fun-word {
+      cursor: default;
+      position: relative;
+      text-decoration: none;
+      padding-bottom: 6px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='10' viewBox='0 0 60 10'%3E%3Cpath d='M1 5 Q6 0.5 11 5 T21 5 T31 5 T41 5 T51 5 T61 5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-position: 0 100%;
+      background-size: 22px 10px;
+      opacity: 1;
+      animation: fun-word-wiggle 1.8s ease-in-out infinite;
+    }
+    @keyframes fun-word-wiggle {
+      0%, 100% { background-position: 0 100%; opacity: 0.9; }
+      50%      { background-position: 4px 96%; opacity: 1; }
+    }
+    .fun-trail-symbol {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      font-family: var(--font-hand);
+      font-size: 20px;
+      color: #fff;
+      transform: translate(-50%, -50%);
+      animation: fun-trail-float 0.7s ease-out forwards;
+    }
+    @keyframes fun-trail-float {
+      0%   { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+      100% { opacity: 0; transform: translate(-50%, -160%) scale(0.6) rotate(20deg); }
+    }
+  </style>
+  <script type="module" crossorigin="" src="js/avatar-bubble.js"></script>
+  <script type="module" crossorigin="" src="js/footer-cat-bubble.js"></script>
+  <script type="module" crossorigin="" src="js/mobile-gate.js"></script>
+  <link rel="stylesheet" crossorigin="" href="css/avatar-bubble.css">
+  <link rel="stylesheet" crossorigin="" href="css/footer-cat-bubble.css">
+  <link rel="stylesheet" crossorigin="" href="css/mobile-gate.css">
+  <link rel="stylesheet" crossorigin="" href="css/layout.css">
+</head>
+<body>
+
+  <!-- cursors -->
+  <div class="cur-dot" id="cur-dot"></div>
+  <div class="cur-ring" id="cur-ring"></div>
+
+  <nav id="main-nav" class="train-nav" aria-label="Main">
+    <div class="train-nav__track">
+      <div class="train-nav__line" aria-hidden="true"></div>
+      <div class="train-nav__fill"></div>
+      <ol class="train-nav__stops">
+        <li class="train-nav__stop">
+          <a href="index.html">
+            <span class="train-nav__dot"></span>
+            <span class="train-nav__label">home</span>
+          </a>
+        </li>
+        <li class="train-nav__stop">
+          <a href="index.html#work">
+            <span class="train-nav__dot"></span>
+            <span class="train-nav__label">work</span>
+          </a>
+        </li>
+        <li class="train-nav__stop is-active">
+          <a href="about.html">
+            <span class="train-nav__dot"></span>
+            <span class="train-nav__label">about</span>
+          </a>
+        </li>
+        <li class="train-nav__stop">
+          <a href="play.html">
+            <span class="train-nav__dot"></span>
+            <span class="train-nav__label">play</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ══ PAGE BODY ══ -->
+  <div class="page-body">
+
+    <aside class="left-col">
+      <a href="index.html" class="avatar-link">
+        <img src="images/boy-avatar.png" alt="Sunil Ohdar" class="left-avatar">
+      </a>
+      <div class="left-name">Sunil<br>Ohdar.</div>
+      <div class="left-caption">"I care about design that feels fun!"</div>
+      <div class="left-facts">
+        <div class="left-facts__item">
+          <a href="#" class="left-facts__handle">@Sushant Univ</a>
+          <span class="left-facts__role">BBA Digital Marketing</span>
+        </div>
+        <div class="left-facts__item">
+          <a href="#" class="left-facts__handle">@IIM SKILLS</a>
+          <span class="left-facts__role">UI/UX Design</span>
+        </div>
+      </div>
+
+      <div class="sidebar-walk">
+        <div class="cityscape-wrap">
+          <div class="cityscape-track">
+
+            <!-- city artwork — appears twice for seamless loop -->
+            <img class="city-block" src="images/city-block.png" alt="">
+            <img class="city-block" src="images/city-block.png" alt="">
+
+          </div>
+        </div>
+
+        <img src="images/walking-character.gif" alt="walking character" class="walk-animation">
+      </div>
+
+      <div class="left-contact">
+        <a href="https://www.linkedin.com/in/sunilohdar" target="_blank" rel="noopener">linkedin</a> · <a href="resume.pdf" target="_blank">resume</a><br>
+        sunilohdar02@gmail.com
+      </div>
+    </aside>
+
+    <div class="right-scroll">
+      <img src="images/about-popup.png" alt="" class="about-popup">
+      <div class="about-sketchbook" id="about-parallax">
+        <img src="images/about-sketchbook.png" alt="" class="about-sketchbook__page">
+        <div class="about-sketchbook__panel">
+          <img src="images/about-station-behind.png" alt="" class="about-parallax__layer about-parallax__behind">
+          <img src="images/about-train-body.png" alt="" class="about-parallax__layer about-parallax__train" id="about-train">
+          <img src="images/about-station-front.png" alt="" class="about-parallax__layer about-parallax__front">
+        </div>
+      </div>
+      <div class="about-polaroid about-polaroid--1">
+        <img src="images/photo-1.jpg" alt="" class="about-polaroid__img">
+        <div class="about-polaroid__caption">Hi! I'm Sunil</div>
+      </div>
+      <div class="about-polaroid about-polaroid--2">
+        <img src="images/IBM.jpg" alt="" class="about-polaroid__img">
+        <div class="about-polaroid__caption">SHELeads India internship</div>
+      </div>
+
+      <div class="about-polaroid about-polaroid--4">
+        <img src="images/matcha.jpg" alt="" class="about-polaroid__img">
+        <div class="about-polaroid__caption">learning UI/UX @ IIM SKILLS</div>
+      </div>
+    <main class="main-content">
+
+      <div class="about-hero">
+        <div class="work-stop-label">stop 02</div>
+        <p class="about-hero__statement">Design should be <span id="fun-word">impactful</span>!</p>
+      </div>
+
+      <div class="about-intro">
+        <p>I completed my Bachelor of Business Administration in Digital Marketing at Sushant University, with specialized training in UI/UX Design through IIM SKILLS. I am passionate about blending user research, interface design, and growth strategy to build intuitive, user-centered digital solutions and impactful marketing strategies.</p>
+      </div>
+
+      <div class="about-trains-link">
+        <a href="about-the-trains.html">why does this whole site have trains? →</a>
+        <br>
+        <a href="how-i-built-this.html">curious how I built this whole site? →</a>
+      </div>
+
+      <div class="about-section">
+        <div class="about-section__label">experience + education</div>
+        <ul class="about-exp-list">
+          <li><span class="about-exp-list__org">SHELeads India</span><span class="about-exp-list__role">Summer Intern — Brand Book &amp; Customer Strategy (LaunchED Global)</span></li>
+          <li><span class="about-exp-list__org">IIM SKILLS</span><span class="about-exp-list__role">UI/UX Design Certification</span></li>
+          <li><span class="about-exp-list__org">Sushant University</span><span class="about-exp-list__role">BBA in Digital Marketing (2023 – 2026)</span></li>
+          <li><span class="about-exp-list__org">HubSpot Academy</span><span class="about-exp-list__role">Certified in Digital Marketing</span></li>
+          <li><span class="about-exp-list__org">Deloitte Australia</span><span class="about-exp-list__role">Data Analytics Job Simulation</span></li>
+          <li><span class="about-exp-list__org">Mastercard</span><span class="about-exp-list__role">Advisors &amp; Consulting Job Simulation</span></li>
+        </ul>
+      </div>
+
+      <div class="about-section">
+        <div class="about-section__label">skills &amp; competencies</div>
+        <ul class="about-exp-list">
+          <li><span class="about-exp-list__org">UI/UX Design</span><span class="about-exp-list__role">User Interface Design, User Experience (UED), Wireframing, Prototyping</span></li>
+          <li><span class="about-exp-list__org">Tools</span><span class="about-exp-list__role">Figma, Adobe Creative Suite, Design Systems</span></li>
+          <li><span class="about-exp-list__org">Marketing</span><span class="about-exp-list__role">Brand Book Development, Customer Engagement, Digital Marketing</span></li>
+          <li><span class="about-exp-list__org">Location</span><span class="about-exp-list__role">Gurugram, Haryana, India · Open to Opportunities</span></li>
+        </ul>
+      </div>
+
+      <div class="about-section">
+        <div class="about-section__label">connect &amp; reach out</div>
+        <ul class="about-interests">
+          <li><img class="about-interests__icon" src="images/about-icon-linkedin.png" alt="LinkedIn"> linkedin — <a href="https://www.linkedin.com/in/sunilohdar" target="_blank" rel="noopener">linkedin.com/in/sunilohdar</a></li>
+          <li><img class="about-interests__icon" src="images/about-icon-email.png" alt="Email"> email — <a href="mailto:sunilohdar02@gmail.com">sunilohdar02@gmail.com</a></li>
+          <li><img class="about-interests__icon" src="images/about-icon-phone.png" alt="Phone"> phone — <a href="tel:+918340741049">+91 8340741049</a></li>
+          <li><img class="about-interests__icon" src="images/about-icon-resume.png" alt="Resume"> resume — <a href="resume.pdf" target="_blank">download resume (PDF)</a></li>
+        </ul>
+      </div>
+
+      <div class="about-closing">
+        <p class="about-closing__cta">want to see what I've built? <a href="index.html#work">→ selected work</a></p>
+        <p class="about-closing__secondary">still curious about the trains? <a href="about-the-trains.html">that's here too →</a></p>
+      </div>
+
+    </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <!-- footer platform illustration -->
+      <div class="footer-platform-wrap">
+        <img src="images/footer-platform.png" alt="Train platform, end of the line" class="footer-platform-img">
+        <img src="images/footer-cat.png" alt="" class="footer-cat" id="footer-cat">
+      </div>
+
+      <!-- identity -->
+      <div class="footer-identity">
+        <img src="images/boy-avatar.png" alt="Sunil Ohdar" class="footer-avatar">
+        <div class="footer-name">Sunil Ohdar</div>
+      </div>
+
+      <!-- personality line -->
+      <div class="footer-tagline">
+        made with <span class="footer-heart">♥</span>, 
+        <a href="https://open.spotify.com/playlist/7yMoUp0jc4P6jhtd92jAb2?si=505ede79e90547ba" target="_blank" rel="noopener" class="footer-playlist-link">
+          this playlist
+          <svg width="9" height="9" viewBox="0 0 10 10" fill="none" style="display:inline;vertical-align:middle;margin-left:2px">
+            <path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        , and too many open tabs...
+      </div>
+
+      <!-- links -->
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/sunilohdar" target="_blank" rel="noopener" class="footer-link">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></rect>
+            <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.5"></circle>
+          </svg>
+        </a>
+        <a href="mailto:sunilohdar02@gmail.com" class="footer-link">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sunilohdar" target="_blank" rel="noopener" class="footer-link">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sunilohdar" target="_blank" rel="noopener" class="footer-link" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"></rect>
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"></circle>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"></circle>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sunilohdar" target="_blank" rel="noopener" class="footer-link" aria-label="X">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+            <path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-7-6.2 7H1.6l8.1-9.3L1 2h7l4.9 6.4L18.9 2z" fill="currentColor"></path>
+          </svg>
+        </a>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="footer-link footer-link--text">resume ↗</a>
+      </div>
+
+      <!-- bottom row: copyright -->
+      <div class="footer-bottom" id="footer-end-sentinel">
+        <span class="footer-copy">
+          © <span id="footer-year"></span> sunil ohdar · designed &amp; built by me
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+    </div><!-- /right-scroll -->
+  </div><!-- /page-body -->
+
+  <script>
+    // ── cursor ──
+    const dot  = document.getElementById('cur-dot');
+    const ring = document.getElementById('cur-ring');
+    let mx=-100,my=-100,rx=-100,ry=-100;
+
+    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+
+    document.querySelectorAll('a,.fav-card,.community-card,.fav-tab,.left-avatar')
+      .forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('show'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('show'));
+      });
+
+    (function loop() {
+      dot.style.left=mx+'px';  dot.style.top=my+'px';
+      rx+=(mx-rx)*0.12;        ry+=(my-ry)*0.12;
+      ring.style.left=rx+'px'; ring.style.top=ry+'px';
+      requestAnimationFrame(loop);
+    })();
+
+    // ── favorites tabs ──
+    document.querySelectorAll('.fav-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.fav-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.fav-grid').forEach(g => g.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ── "fun" hover trail ──
+    const funWord = document.getElementById('fun-word');
+    if (funWord) {
+      const FUN_SYMBOLS = ['✦', '✧', '˚⋆', '★', '♪', '♫'];
+      let lastSpawn = 0;
+      funWord.addEventListener('mousemove', e => {
+        const now = Date.now();
+        if (now - lastSpawn < 70) return;
+        lastSpawn = now;
+        const symbol = document.createElement('span');
+        symbol.className = 'fun-trail-symbol';
+        symbol.textContent = FUN_SYMBOLS[Math.floor(Math.random() * FUN_SYMBOLS.length)];
+        symbol.style.left = e.clientX + 'px';
+        symbol.style.top = e.clientY + 'px';
+        document.body.appendChild(symbol);
+        symbol.addEventListener('animationend', () => symbol.remove());
+      });
+    }
+  </script>
+
+
+<script>
+  (function () {
+    const STOP_WIDTHS = (function () {
+      const track = document.querySelector('.train-nav__track');
+      const stops = document.querySelectorAll('.train-nav__stops > .train-nav__stop');
+      if (!track || !stops.length) return ['0%', '33.3333%', '66.6667%', '100%'];
+      const trackRect = track.getBoundingClientRect();
+      return Array.from(stops).map((stop) => {
+        const dot = stop.querySelector('.train-nav__dot');
+        if (!dot) return '0%';
+        const dotRect = dot.getBoundingClientRect();
+        const fraction = ((dotRect.left + dotRect.width / 2) - trackRect.left) / trackRect.width;
+        return (fraction * 100) + '%';
+      });
+    })();
+    const fill = document.querySelector('.train-nav__fill');
+    if (!fill) return;
+    const stored = sessionStorage.getItem('navStopIndex');
+    if (stored !== null && STOP_WIDTHS[stored] !== undefined) {
+      fill.style.transition = 'none';
+      fill.style.width = STOP_WIDTHS[stored];
+      void fill.offsetWidth;
+      fill.style.transition = '';
+    }
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        fill.style.width = STOP_WIDTHS[2];
+        sessionStorage.setItem('navStopIndex', 2);
+      });
+    });
+  })();
+</script>
+
+
+</body></html>
