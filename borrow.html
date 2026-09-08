@@ -552,12 +552,14 @@ body {
   width: 100%;
   max-width: 220px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
-  transition: transform 0.25s ease;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35));
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 .screen-item__mockup img:hover {
   transform: translateY(-4px) scale(1.02);
+  filter: drop-shadow(0 16px 32px rgba(0,0,0,0.45));
 }
 .screen-item__content {
   display: flex;
