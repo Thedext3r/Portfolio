@@ -13,6 +13,7 @@
   <meta name="twitter:description" content="I care about design that feels fun.">
   <meta name="twitter:image" content="images/og-image.png">
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&amp;family=Space+Mono:wght@400;700&amp;family=Caveat:wght@400;700&amp;display=swap" rel="stylesheet">
   <style>
@@ -709,6 +710,7 @@
       width: 44%;
       height: 60%;
       border: 2px solid var(--blue);
+      background: #fff;
       overflow: hidden;
       z-index: 2;
     }
@@ -742,12 +744,27 @@
       z-index: 3;
     }
 
-    @media (max-width: 1400px) {
-      .about-sketchbook {
-        display: none;
-      }
+    /* Responsive scaling for laptop screens below 1400px */
+    @media (max-width: 1400px) and (min-width: 1101px) {
       .about-popup {
-        display: none;
+        display: block !important;
+        transform: scale(0.78);
+        transform-origin: top right;
+        right: -80px;
+        top: -60px;
+      }
+      .about-sketchbook {
+        display: block !important;
+        transform: scale(0.78);
+        transform-origin: top right;
+        right: 120px;
+        top: 450px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .about-sketchbook, .about-popup {
+        display: none !important;
       }
     }
     #fun-word {
@@ -877,19 +894,6 @@
           <img src="images/about-train-body.png" alt="" class="about-parallax__layer about-parallax__train" id="about-train">
           <img src="images/about-station-front.png" alt="" class="about-parallax__layer about-parallax__front">
         </div>
-      </div>
-      <div class="about-polaroid about-polaroid--1">
-        <img src="images/photo-1.jpg" alt="" class="about-polaroid__img">
-        <div class="about-polaroid__caption">Hi! I'm Sunil</div>
-      </div>
-      <div class="about-polaroid about-polaroid--2">
-        <img src="images/IBM.jpg" alt="" class="about-polaroid__img">
-        <div class="about-polaroid__caption">SHELeads India internship</div>
-      </div>
-
-      <div class="about-polaroid about-polaroid--4">
-        <img src="images/matcha.jpg" alt="" class="about-polaroid__img">
-        <div class="about-polaroid__caption">learning UI/UX @ IIM SKILLS</div>
       </div>
     <main class="main-content">
 
