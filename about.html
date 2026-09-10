@@ -629,18 +629,27 @@
       flex-direction: column;
       gap: 14px;
       padding: 0;
+      max-width: 560px;
     }
     .about-exp-list li {
-      display: flex;
-      justify-content: space-between;
-      font-size: 15px;
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      column-gap: 24px;
+      align-items: baseline;
+      font-size: 14.5px;
+      line-height: 1.55;
       color: #fff;
       border-bottom: 1px solid rgba(255,255,255,0.1);
       padding-bottom: 14px;
-      max-width: 480px;
+    }
+    .about-exp-list__org {
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
     }
     .about-exp-list__role {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
     }
     .about-interests {
       list-style: none;
@@ -648,6 +657,7 @@
       flex-direction: column;
       gap: 16px;
       padding: 0;
+      max-width: 560px;
     }
     .about-interests li {
       display: flex;
@@ -673,6 +683,39 @@
     .about-closing {
       padding: 40px 0 100px;
       border-top: 1px solid rgba(255,255,255,0.1);
+      max-width: 560px;
+    }
+    @media (max-width: 600px) {
+      .main-content {
+        padding: 28px 20px 60px;
+      }
+      .about-hero {
+        padding: 40px 0 36px;
+      }
+      .about-hero__statement {
+        font-size: 32px;
+      }
+      .about-intro {
+        padding-bottom: 40px;
+      }
+      .about-section {
+        padding-bottom: 44px;
+      }
+      .about-exp-list {
+        max-width: 100%;
+      }
+      .about-exp-list li {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 4px;
+      }
+      .about-exp-list__org {
+        white-space: normal;
+      }
+      .about-interests,
+      .about-closing {
+        max-width: 100%;
+      }
     }
     .about-closing__cta {
       font-size: 17px;
@@ -911,22 +954,52 @@
       <div class="about-section">
         <div class="about-section__label">experience + education</div>
         <ul class="about-exp-list">
-          <li><span class="about-exp-list__org">SHELeads India</span><span class="about-exp-list__role">Summer Intern — Brand Book &amp; Customer Strategy (LaunchED Global)</span></li>
-          <li><span class="about-exp-list__org">IIM SKILLS</span><span class="about-exp-list__role">UI/UX Design Certification</span></li>
-          <li><span class="about-exp-list__org">Sushant University</span><span class="about-exp-list__role">BBA in Digital Marketing (2023 – 2026)</span></li>
-          <li><span class="about-exp-list__org">HubSpot Academy</span><span class="about-exp-list__role">Certified in Digital Marketing</span></li>
-          <li><span class="about-exp-list__org">Deloitte Australia</span><span class="about-exp-list__role">Data Analytics Job Simulation</span></li>
-          <li><span class="about-exp-list__org">Mastercard</span><span class="about-exp-list__role">Advisors &amp; Consulting Job Simulation</span></li>
+          <li>
+            <span class="about-exp-list__org">SHELeads India</span>
+            <span class="about-exp-list__role">Summer Intern — Brand Book &amp; Customer Strategy (LaunchED Global)</span>
+          </li>
+          <li>
+            <span class="about-exp-list__org">IIM SKILLS</span>
+            <span class="about-exp-list__role">UI/UX Design Certification</span>
+          </li>
+          <li>
+            <span class="about-exp-list__org">Sushant University</span>
+            <span class="about-exp-list__role">BBA in Digital Marketing (2023 – 2026)</span>
+          </li>
+          <li>
+            <span class="about-exp-list__org">HubSpot Academy</span>
+            <span class="about-exp-list__role">Certified in Digital Marketing</span>
+          </li>
+          <li>
+            <span class="about-exp-list__org">Deloitte Australia</span>
+            <span class="about-exp-list__role">Data Analytics Job Simulation</span>
+          </li>
+          <li>
+            <span class="about-exp-list__org">Mastercard</span>
+            <span class="about-exp-list__role">Advisors &amp; Consulting Job Simulation</span>
+          </li>
         </ul>
       </div>
 
       <div class="about-section">
         <div class="about-section__label">skills &amp; competencies</div>
         <ul class="about-exp-list">
-          <li><span class="about-exp-list__org">UI/UX Design</span><span class="about-exp-list__role">User Interface Design, User Experience (UED), Wireframing, Prototyping</span></li>
-          <li><span class="about-exp-list__org">Tools</span><span class="about-exp-list__role">Figma, Adobe Creative Suite, Design Systems</span></li>
-          <li><span class="about-exp-list__org">Marketing</span><span class="about-exp-list__role">Brand Book Development, Customer Engagement, Digital Marketing</span></li>
-          <li><span class="about-exp-list__org">Location</span><span class="about-exp-list__role">Gurugram, Haryana, India · Open to Opportunities</span></li>
+          <li>
+            <span class="about-exp-list__org">UI/UX Design</span>
+            <span class="about-exp-list__role">User Interface Design, User Experience (UED), Wireframing, Prototyping</span>
+          </li>
+          <li>
+            <span class="about-exp-list__org">Tools</span>
+            <span class="about-exp-list__role">Figma, Adobe Creative Suite, Design Systems</span>
+          </li>
+          <li>
+            <span class="about-exp-list__org">Marketing</span>
+            <span class="about-exp-list__role">Brand Book Development, Customer Engagement, Digital Marketing</span>
+          </li>
+          <li>
+            <span class="about-exp-list__org">Location</span>
+            <span class="about-exp-list__role">Gurugram, Haryana, India · Open to Opportunities</span>
+          </li>
         </ul>
       </div>
 
