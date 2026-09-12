@@ -2,6 +2,7 @@
  * Smooth Scroll Engine for Sunil Ohdar Portfolio
  * Combines Lenis smooth inertia scrolling with native smooth anchor glides.
  * Responsive: Targets .right-scroll on desktop and window on mobile/tablet.
+ * Tuned for fast, responsive, snappy scrolling without sluggish lag.
  * Respects prefers-reduced-motion automatically.
  */
 (function () {
@@ -40,21 +41,26 @@
 
     currentMode = targetMode;
 
+    // Fast, responsive momentum scrolling configuration
+    // Using lerp (0.14) instead of long duration gives immediate frame-1 reaction,
+    // natural velocity scaling, and eliminates sluggish drag.
+    // wheelMultiplier (1.85) covers ~90% more distance per wheel notch.
     var lenisOptions = {
-      duration: 1.2,
-      easing: function (t) {
-        return Math.min(1, 1.001 - Math.pow(2, -10 * t));
-      },
+      lerp: 0.14,
+      wheelMultiplier: 1.85,
+      touchMultiplier: 1.5,
+      smoothWheel: true,
       orientation: 'vertical',
       gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1.2,
-      infinite: false
+      infinite: false,
+      eventsTarget: window
     };
 
+    // Ensure CSS scroll-behavior does not conflict with Lenis RAF updates
+    document.documentElement.style.scrollBehavior = 'auto';
+    if (document.body) document.body.style.scrollBehavior = 'auto';
+
     if (targetMode === 'container' && container) {
-      // Avoid CSS scroll-behavior conflict with Lenis RAF updates
       container.style.scrollBehavior = 'auto';
       lenisOptions.wrapper = container;
 
@@ -63,14 +69,17 @@
         origContainerScrollTo = container.scrollTo;
         container.scrollTo = function (options) {
           if (lenis && typeof options === 'object' && options.behavior === 'smooth') {
-            lenis.scrollTo(options.top !== undefined ? options.top : 0, { duration: 1.2 });
+            lenis.scrollTo(options.top !== undefined ? options.top : 0, {
+              duration: 0.6,
+              easing: function (t) {
+                return Math.min(1, 1.001 - Math.pow(2, -10 * t));
+              }
+            });
           } else if (origContainerScrollTo) {
             origContainerScrollTo.apply(container, arguments);
           }
         };
       }
-    } else {
-      document.documentElement.style.scrollBehavior = 'auto';
     }
 
     try {
@@ -84,6 +93,24 @@
         }
       }
       rafId = requestAnimationFrame(rafLoop);
+
+      // Handle direct page load with hash anchor (e.g. /#work)
+      if (window.location.hash) {
+        setTimeout(function () {
+          try {
+            var hashTarget = document.querySelector(window.location.hash);
+            if (hashTarget && lenis) {
+              lenis.scrollTo(hashTarget, {
+                offset: 0,
+                duration: 0.6,
+                easing: function (t) {
+                  return Math.min(1, 1.001 - Math.pow(2, -10 * t));
+                }
+              });
+            }
+          } catch (e) {}
+        }, 120);
+      }
     } catch (err) {
       console.warn('Lenis smooth scroll initialization skipped:', err);
     }
@@ -103,15 +130,15 @@
     resizeTimeout = setTimeout(initSmoothScroll, 150);
   });
 
-  // Smooth Anchor Navigation Handler
+  // Smooth Anchor Navigation Handler - Fast & snappy 0.6s glides
   document.addEventListener('click', function (event) {
-    var trigger = event.target.closest('a[href*="#"], button.work-back-top, button.footer-top-btn');
+    var trigger = event.target.closest('a[href*="#"], button.work-back-top, button.footer-top-btn, #scroll-up');
     if (!trigger) return;
 
     var href = trigger.getAttribute('href');
     var targetSelector = null;
 
-    if (trigger.classList.contains('work-back-top') || trigger.classList.contains('footer-top-btn')) {
+    if (trigger.classList.contains('work-back-top') || trigger.classList.contains('footer-top-btn') || trigger.id === 'scroll-up') {
       targetSelector = '#home';
     } else if (href) {
       var isSamePage = false;
@@ -138,7 +165,10 @@
     if (lenis) {
       lenis.scrollTo(targetEl, {
         offset: 0,
-        duration: 1.2,
+        duration: 0.6,
+        easing: function (t) {
+          return Math.min(1, 1.001 - Math.pow(2, -10 * t));
+        },
         immediate: false
       });
     } else {
